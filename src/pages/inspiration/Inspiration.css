@@ -1,0 +1,1370 @@
+:root {
+  --color-brand: #007A70;
+  --color-brand-2: #00B4A0;
+  --color-brand-3: #52aea7;
+  --color-brand-4: #00b3a1;
+  --color-accent: #b7e19d;
+  --color-text: #333;
+  --color-text-muted: #7f8c8d;
+  --color-heading: #007A70;
+  --color-surface: #ffffff;
+  --color-surface-muted: rgba(255, 255, 255, 0.85);
+  --bg-grad-page: linear-gradient(174.2deg, rgba(255,244,228,1) 7.1%, rgba(240,246,238,1) 67.4%);
+  --shadow-1: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-2: 0 10px 20px rgba(0, 0, 0, 0.15);
+  --radius-1: 10px;
+  --radius-2: 24px;
+  --radius-3: 16px;
+  --radius-4: 20px;
+  --radius-pill: 25px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-grad-page);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.stellar-hero {
+  padding-top: 140px;
+  padding-bottom: 60px;
+  text-align: center;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 116, 24, 0.28) 0%, rgba(171, 91, 38, 0.18) 100%),
+    linear-gradient(
+      to bottom,
+      rgba(255,244,228,0.92) 0%,
+      rgba(255,247,230,0.86) 30%,
+      rgba(254,250,232,0.80) 60%,
+      rgba(253,255,238,0.74) 100%
+    );
+  color: var(--color-brand);
+  position: relative;
+  overflow: hidden;
+}
+
+.stellar-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.main-title {
+  font-family: 'Playwrite', sans-serif;
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.tips-category {
+  margin-bottom: 4rem;
+}
+
+.category-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-family: 'Playwrite', sans-serif;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: 700;
+  flex-wrap: wrap;
+}
+
+.category-icon {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+}
+
+.category-desc {
+  color: var(--color-text-muted);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.tip-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-3);
+  padding: 2rem;
+  box-shadow: var(--shadow-1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.tip-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-brand), var(--color-brand-2));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tip-card:hover::before {
+  transform: scaleX(1);
+}
+
+.tip-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-2);
+}
+
+.tip-number {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: rgba(0, 122, 112, 0.1);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.tip-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(0, 122, 112, 0.1), rgba(0, 180, 160, 0.1));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.tip-card:hover .tip-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.tip-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-brand);
+}
+
+.tip-title {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.tip-description {
+  color: var(--color-text);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.tip-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.badge-custom {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.bg-prep {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-technique {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.bg-flavor {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.bg-safety {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.bg-pro {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.difficulty {
+  color: #f39c12;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-weight: 600;
+}
+
+.chef-secret-card {
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-2) 100%);
+  color: white;
+  padding: 3rem;
+  border-radius: var(--radius-2);
+  box-shadow: 0 15px 40px rgba(0, 122, 112, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.secret-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.secret-badge svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.secret-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.secret-description {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.secret-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+}
+
+.stat-item strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  opacity: 0.9;
+}
+
+.secret-illustration {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.orbit-ring {
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-ring:nth-child(1) {
+  width: 150px;
+  height: 150px;
+  animation: rotate 10s linear infinite;
+}
+
+.orbit-ring.ring-2 {
+  width: 100px;
+  height: 100px;
+  animation: rotate 7s linear infinite reverse;
+}
+
+.orbit-ring.ring-3 {
+  width: 50px;
+  height: 50px;
+  animation: rotate 5s linear infinite;
+}
+
+.central-star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-family: 'Playwrite', sans-serif;
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+.quick-tip {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius-1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.quick-tip:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.quick-icon {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.quick-tip h4 {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+
+.quick-tip p {
+  font-size: clamp(0.85rem, 1.5vw, 0.9rem);
+  color: var(--color-text-muted);
+  margin: 0;
+  flex-grow: 1;
+}
+
+.stellar-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(to bottom, rgba(255, 116, 24, 0.18) 0%, rgba(171, 91, 38, 0.08) 100%), 
+    linear-gradient(
+      to bottom,
+      rgba(255,244,228,0.92) 0%,
+      rgba(255,247,230,0.86) 30%,
+      rgba(254,250,232,0.80) 60%,
+      rgba(253,255,238,0.74) 100%
+    );
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.stellar-nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 1rem 2rem 0.3rem;
+  gap: 2rem;
+}
+
+.stellar-nav-left-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stellar-nav-left {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.stellar-dropdown {
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.stellar-link {
+  color: var(--color-brand);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  letter-spacing: 0.08em;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.stellar-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--color-brand-2);
+  transition: width 0.3s ease;
+}
+
+.stellar-link:hover::before {
+  width: 80%;
+}
+
+.stellar-link:hover,
+.stellar-link.active {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.stellar-link.active {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stellar-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 60%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, 
+    rgba(255, 255, 255, 0.98) 0%, 
+    rgba(240, 250, 248, 0.98) 100%);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  min-width: 280px;
+  padding: 1rem 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  border: 1px solid rgba(0, 122, 112, 0.1);
+  margin-top: 0;
+}
+
+.stellar-dropdown:hover .stellar-dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.stellar-dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  color: #007A70;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.stellar-dropdown-menu a:hover {
+  background: linear-gradient(90deg, 
+    rgba(0, 191, 165, 0.1), 
+    rgba(0, 191, 165, 0.05));
+  padding-left: 1.5rem;
+}
+
+.stellar-dropdown-menu a img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00BFA5;
+  box-shadow: 0 4px 12px rgba(0, 191, 165, 0.3);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.stellar-dropdown-menu a:hover img {
+  transform: rotate(360deg) scale(1.1);
+}
+
+.stellar-brand {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  justify-self: center;
+}
+
+.stellar-brand:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.brand-text {
+  font-family: 'Playwrite', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: var(--color-brand);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.brand-icon {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  animation: twinkle 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+.brand-glow {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50px;
+  background: linear-gradient(45deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stellar-nav-right {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.stellar-icon-link {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.stellar-icon-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.stellar-icon-link img {
+  width: 1.375rem;
+  height: 1.375rem;
+  filter: brightness(0.5) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.stellar-icon-link:hover img {
+  transform: rotate(15deg);
+}
+
+.stellar-menu-toggle {
+  display: none;
+}
+
+.stellar-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.stellar-menu-btn span {
+  width: 25px;
+  height: 3px;
+  background: var(--color-brand);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.stellar-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.toggle-label { display: none; }           
+.desktop-trigger { display: inline-block; } 
+.stellar-submenu-toggle { display: none; }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .stellar-nav-container {
+    padding: 0.85rem 1.5rem 0.3rem;
+    gap: 1.5rem;
+  }
+
+  .stellar-nav-left {
+    gap: 1.5rem;
+  }
+
+  .stellar-link {
+    padding: 0.45rem 0.85rem;
+  }
+
+  .stellar-brand {
+    padding: 0.65rem 1.25rem;
+  }
+
+  .stellar-icon-link {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .stellar-icon-link img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .stellar-hero {
+    padding-top: 130px;
+    padding-bottom: 50px;
+  }
+
+  .tips-category {
+    margin-bottom: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 601px) {
+  .stellar-nav-container {
+    padding: 0.75rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .stellar-hero {
+    padding-top: 120px;
+    padding-bottom: 45px;
+  }
+
+  .stellar-brand {
+    padding: 0.6rem 1.15rem;
+  }
+
+  .stellar-icon-link {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .stellar-icon-link img {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .tip-card {
+    padding: 1.75rem;
+  }
+
+  .chef-secret-card {
+    padding: 2.25rem;
+  }
+
+  .secret-illustration {
+    width: 160px;
+    height: 160px;
+  }
+
+  .quick-tips-section {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .stellar-menu-btn {
+    display: flex;
+    z-index: 1002;
+    position: relative;
+  }
+
+  .stellar-nav-container {
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .stellar-nav-right {
+    gap: 0.65rem;
+  }
+
+  .stellar-icon-link {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+
+  .stellar-icon-link img {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+
+  .stellar-nav-left {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, 
+      rgba(0, 122, 112, 0.98), 
+      rgba(0, 180, 160, 0.98));
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem 1rem;
+    gap: 0.5rem;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .stellar-link {
+    font-size: 1rem;
+    color: white;
+  }
+
+  .stellar-menu-toggle:checked ~ .stellar-nav-container .stellar-nav-left {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .stellar-menu-toggle:checked ~ .stellar-nav-container .stellar-menu-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .stellar-menu-toggle:checked ~ .stellar-nav-container .stellar-menu-btn span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .stellar-menu-toggle:checked ~ .stellar-nav-container .stellar-menu-btn span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  .stellar-dropdown {
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .desktop-trigger { display: none; }
+  .toggle-label {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .toggle-label::after {
+    content: ' ▾';
+    font-size: 0.85em;
+  }
+  .stellar-submenu-toggle:checked + .toggle-label::after {
+    content: ' ▴';
+  }
+
+  .stellar-dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+  }
+
+  .stellar-dropdown:hover .stellar-dropdown-menu,
+  .stellar-dropdown:focus-within .stellar-dropdown-menu {
+    opacity: 0;
+    max-height: 0;
+    pointer-events: none;
+    margin-top: 0;
+  }
+
+  .stellar-submenu-toggle:checked ~ .stellar-dropdown-menu {
+    opacity: 1;
+    max-height: 500px;
+    pointer-events: auto;
+    margin-top: 0.5rem;
+  }
+
+  .stellar-brand {
+    padding: 0.5rem 1rem;
+    gap: 0.35rem;
+    white-space: nowrap;
+  }
+
+  .stellar-dropdown-menu a {
+    padding: 1rem;
+    color: white;
+  }
+
+  .stellar-dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    padding-left: 1rem;
+  }
+
+  .stellar-hero {
+    padding-top: 110px;
+    padding-bottom: 40px;
+  }
+
+  .tip-card {
+    padding: 1.65rem;
+  }
+
+  .chef-secret-card {
+    padding: 2rem;
+  }
+
+  .secret-illustration {
+    width: 140px;
+    height: 140px;
+  }
+
+  .orbit-ring:nth-child(1) {
+    width: 120px;
+    height: 120px;
+  }
+
+  .orbit-ring.ring-2 {
+    width: 80px;
+    height: 80px;
+  }
+
+  .orbit-ring.ring-3 {
+    width: 40px;
+    height: 40px;
+  }
+
+  .central-star {
+    font-size: 2.5rem;
+  }
+
+  .category-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .tips-category {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 480px) and (min-width: 421px) {
+  .stellar-nav-container {
+    padding: 0.7rem 0.85rem;
+    gap: 0.6rem;
+  }
+
+  .stellar-nav-right {
+    gap: 0.55rem;
+  }
+
+  .stellar-icon-link {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .stellar-icon-link img {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .stellar-brand {
+    padding: 0.45rem 0.9rem;
+    gap: 0.3rem;
+  }
+
+  .stellar-hero {
+    padding-top: 105px;
+    padding-bottom: 35px;
+  }
+
+  main {
+    padding: 1.5rem 0.85rem;
+  }
+
+  .tip-card {
+    padding: 1.5rem;
+  }
+
+  .chef-secret-card {
+    padding: 1.75rem;
+  }
+
+  .secret-illustration {
+    width: 130px;
+    height: 130px;
+  }
+
+  .orbit-ring:nth-child(1) {
+    width: 110px;
+    height: 110px;
+  }
+
+  .orbit-ring.ring-2 {
+    width: 70px;
+    height: 70px;
+  }
+
+  .orbit-ring.ring-3 {
+    width: 35px;
+    height: 35px;
+  }
+
+  .central-star {
+    font-size: 2.25rem;
+  }
+
+  .category-header {
+    margin-bottom: 2.25rem;
+  }
+
+  .tips-category {
+    margin-bottom: 2.75rem;
+  }
+
+  .quick-tips-section {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 420px) and (min-width: 361px) {
+  .stellar-nav-container {
+    padding: 0.65rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .stellar-nav-right {
+    gap: 0.5rem;
+  }
+
+  .stellar-icon-link {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+
+  .stellar-icon-link img {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+
+  .stellar-brand {
+    padding: 0.4rem 0.8rem;
+    gap: 0.25rem;
+  }
+
+  .stellar-hero {
+    padding-top: 100px;
+    padding-bottom: 32px;
+  }
+
+  main {
+    padding: 1.35rem 0.75rem;
+  }
+
+  .tip-card {
+    padding: 1.35rem;
+  }
+
+  .tip-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 1.25rem;
+  }
+
+  .tip-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .chef-secret-card {
+    padding: 1.5rem;
+  }
+
+  .secret-badge {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .secret-badge svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .secret-illustration {
+    width: 120px;
+    height: 120px;
+  }
+
+  .orbit-ring:nth-child(1) {
+    width: 100px;
+    height: 100px;
+  }
+
+  .orbit-ring.ring-2 {
+    width: 65px;
+    height: 65px;
+  }
+
+  .orbit-ring.ring-3 {
+    width: 32px;
+    height: 32px;
+  }
+
+  .central-star {
+    font-size: 2rem;
+  }
+
+  .secret-stats {
+    gap: 1.5rem;
+  }
+
+  .category-header {
+    margin-bottom: 2rem;
+  }
+
+  .tips-category {
+    margin-bottom: 2.5rem;
+  }
+
+  .quick-tips-section {
+    margin-bottom: 2.25rem;
+  }
+
+  .quick-tip {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .stellar-nav-container {
+    padding: 0.6rem 0.65rem;
+    gap: 0.4rem;
+  }
+
+  .stellar-nav-right {
+    gap: 0.45rem;
+  }
+
+  .stellar-icon-link {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .stellar-icon-link img {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .stellar-menu-btn {
+    padding: 6px;
+    gap: 4px;
+  }
+
+  .stellar-menu-btn span {
+    width: 22px;
+    height: 2.5px;
+  }
+
+  .stellar-brand {
+    padding: 0.35rem 0.7rem;
+    gap: 0.2rem;
+  }
+
+  .stellar-nav-left {
+    top: 65px;
+    max-height: calc(100vh - 65px);
+    padding: 1.25rem 0.85rem;
+  }
+
+  .toggle-label {
+    padding: 0.85rem;
+  }
+
+  .stellar-dropdown-menu a {
+    padding: 0.85rem;
+    font-size: 0.85rem;
+  }
+
+  .stellar-dropdown-menu a img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .stellar-hero {
+    padding-top: 95px;
+    padding-bottom: 28px;
+  }
+
+  main {
+    padding: 1.2rem 0.65rem;
+  }
+
+  .tip-card {
+    padding: 1.2rem;
+  }
+
+  .tip-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1.15rem;
+  }
+
+  .tip-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .tip-description {
+    margin-bottom: 1.25rem;
+  }
+
+  .badge-custom {
+    padding: 0.35rem 0.85rem;
+  }
+
+  .chef-secret-card {
+    padding: 1.35rem;
+  }
+
+  .secret-badge {
+    padding: 0.45rem 0.9rem;
+    margin-bottom: 1.15rem;
+    font-size: 0.75rem;
+  }
+
+  .secret-badge svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .secret-description {
+    margin-bottom: 1.75rem;
+  }
+
+  .secret-illustration {
+    width: 110px;
+    height: 110px;
+  }
+
+  .orbit-ring:nth-child(1) {
+    width: 90px;
+    height: 90px;
+  }
+
+  .orbit-ring.ring-2 {
+    width: 60px;
+    height: 60px;
+  }
+
+  .orbit-ring.ring-3 {
+    width: 30px;
+    height: 30px;
+  }
+
+  .central-star {
+    font-size: 1.85rem;
+  }
+
+  .secret-stats {
+    gap: 1.25rem;
+  }
+
+  .category-header {
+    margin-bottom: 1.85rem;
+  }
+
+  .tips-category {
+    margin-bottom: 2.25rem;
+  }
+
+  .quick-tips-section {
+    margin-bottom: 2rem;
+  }
+
+  .quick-tip {
+    padding: 1.15rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 900px) {
+  .stellar-nav-container {
+    padding: 0.85rem 1.2rem 0.3rem;
+    gap: 0.5rem;
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .stellar-nav-left {
+    gap: 1rem;
+  }
+
+  .stellar-link {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.78rem;
+  }
+
+  .stellar-brand {
+    padding: 0.45rem 0.75rem;
+    justify-self: center;
+  }
+
+  .brand-text {
+    font-size: 0.95rem;
+  }
+
+  .brand-icon {
+    font-size: 0.95rem;
+  }
+
+  .stellar-icon-link {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .stellar-icon-link img {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+
+  .stellar-nav-right {
+    gap: 0.6rem;
+  }
+
+  .stellar-dropdown-menu {
+    min-width: 240px;
+    left: 7rem;
+    transform: translateX(-50%);
+  }
+
+  .stellar-dropdown-menu a {
+    padding: 0.65rem 1rem;
+    font-size: 0.78rem;
+  }
+
+  .stellar-dropdown-menu a img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .stellar-hero {
+    padding-top: 130px;
+    padding-bottom: 50px;
+  }
+
+  .tips-category {
+    margin-bottom: 3.5rem;
+  }
+}

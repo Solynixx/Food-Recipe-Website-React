@@ -1,3 +1,6 @@
+/**
+ * HeroSection — hero text, CTAs and site search; includes TodayPicks.
+ */
 import React from 'react';
 import TodayPicks from './TodayPicks';
 
@@ -8,22 +11,12 @@ class HeroSection extends React.Component {
     this.heroContent = {
       title: 'Cook like a star - quick, seasonal recipes',
       description:
-        'Discover a universe of easy-to-make, seasonal recipes that bring the flavors of the cosmos to your kitchen. Whether you\'re a novice cook or a seasoned chef, our collection of stellar dishes will inspire you to create meals that are out of this world.',
+        "Discover a universe of easy-to-make, seasonal recipes that bring the flavors of the cosmos to your kitchen. Whether you're a novice cook or a seasoned chef, our collection of stellar dishes will inspire you to create meals that are out of this world.",
     };
 
     this.ctaButtons = [
-      {
-        type: 'button',
-        className: 'explore',
-        label: 'EXPLORE RECIPES',
-        href: '',
-      },
-      {
-        type: 'link',
-        className: 'subscribe',
-        label: 'SUBSCRIBE',
-        href: '#quick-recipes-form',
-      },
+      { type: 'button', className: 'explore', label: 'EXPLORE RECIPES', href: '' },
+      { type: 'link', className: 'subscribe', label: 'SUBSCRIBE', href: '#quick-recipes-form' },
     ];
   }
 
@@ -31,22 +24,14 @@ class HeroSection extends React.Component {
     return this.ctaButtons.map((btn, index) => {
       if (btn.type === 'button') {
         return (
-          <button
-            key={index}
-            type="button"
-            className={btn.className}
-          >
+          <button key={index} type="button" className={btn.className}>
             {btn.label}
           </button>
         );
       }
 
       return (
-        <a
-          key={index}
-          href={btn.href}
-          className={btn.className}
-        >
+        <a key={index} href={btn.href} className={btn.className}>
           {btn.label}
         </a>
       );
@@ -62,12 +47,8 @@ class HeroSection extends React.Component {
           <div className="hero">
             <h1>{heroContent.title}</h1>
           </div>
-          <p className="herodesc">
-            {heroContent.description}
-          </p>
-          <div className="more">
-            {this.renderCtas()}
-          </div>
+          <p className="herodesc">{heroContent.description}</p>
+          <div className="more">{this.renderCtas()}</div>
 
           <TodayPicks />
         </div>
@@ -75,20 +56,9 @@ class HeroSection extends React.Component {
         <form className="site-search" action="#">
           <div className="search">
             <button type="submit" title="Search">
-              <img
-                className="img-fluid"
-                src="/assets/icons/search.png"
-                alt="search"
-                width="24"
-                height="24"
-              />
+              <img className="img-fluid" src="/assets/icons/search.png" alt="search" width="24" height="24" />
             </button>
-            <input
-              type="text"
-              id="site-search"
-              className="form-control"
-              placeholder="Start searching..."
-            />
+            <input type="text" id="site-search" className="form-control" placeholder="Start searching..." aria-label="Site search" />
           </div>
         </form>
       </div>
