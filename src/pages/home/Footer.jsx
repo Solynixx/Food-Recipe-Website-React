@@ -1,3 +1,6 @@
+/**
+ * Footer — site footer with socials and policy links.
+ */
 import React from 'react';
 
 class Footer extends React.Component {
@@ -5,36 +8,11 @@ class Footer extends React.Component {
     super(props);
 
     this.socialLinks = [
-      {
-        href: 'https://github.com/Dendroculus/Food-Recipe-Website',
-        src: '/assets/logo/Github.png',
-        alt: 'Github',
-        extraClass: '',
-      },
-      {
-        href: 'https://www.instagram.com/',
-        src: '/assets/logo/Instagram.png',
-        alt: 'Instagram',
-        extraClass: '',
-      },
-      {
-        href: 'https://www.facebook.com/',
-        src: '/assets/logo/Facebook.png',
-        alt: 'Facebook',
-        extraClass: 'Facebook',
-      },
-      {
-        href: 'https://twitter.com/',
-        src: '/assets/logo/X.png',
-        alt: 'X',
-        extraClass: '',
-      },
-      {
-        href: 'https://www.linkedin.com/',
-        src: '/assets/logo/LinkedIn.jpg',
-        alt: 'LinkedIn',
-        extraClass: '',
-      },
+      { href: 'https://github.com/Dendroculus/Food-Recipe-Website', src: '/assets/logo/Github.png', alt: 'Github', extraClass: '' },
+      { href: 'https://www.instagram.com/', src: '/assets/logo/Instagram.png', alt: 'Instagram', extraClass: '' },
+      { href: 'https://www.facebook.com/', src: '/assets/logo/Facebook.png', alt: 'Facebook', extraClass: 'Facebook' },
+      { href: 'https://twitter.com/', src: '/assets/logo/X.png', alt: 'X', extraClass: '' },
+      { href: 'https://www.linkedin.com/', src: '/assets/logo/LinkedIn.jpg', alt: 'LinkedIn', extraClass: '' },
     ];
 
     this.footerLinks = [
@@ -48,23 +26,19 @@ class Footer extends React.Component {
   render() {
     return (
       <footer className="main-footer">
-        <h1 className="footer-title">Socials</h1>
+        <h2 className="footer-title">Socials</h2>
 
         <div className="socials-logo">
-          {this.socialLinks.map((item, index) => (
-            <a key={index} href={item.href}>
-              <img
-                className={`img-fluid ${item.extraClass}`}
-                src={item.src}
-                alt={item.alt}
-              />
+          {this.socialLinks.map((item) => (
+            <a key={item.href} href={item.href} aria-label={item.alt}>
+              <img className={`img-fluid ${item.extraClass}`} src={item.src} alt={item.alt} loading="lazy" width="48" height="48" />
             </a>
           ))}
         </div>
 
         <nav className="footer-policy-links">
-          {this.footerLinks.map((link, index) => (
-            <a key={index} href={link.href}>
+          {this.footerLinks.map((link) => (
+            <a key={link.href} href={link.href}>
               {link.label}
             </a>
           ))}

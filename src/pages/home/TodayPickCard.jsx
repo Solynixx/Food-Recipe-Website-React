@@ -1,4 +1,8 @@
+/**
+ * TodayPickCard — simple presentational card for a single pick.
+ */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class TodayPickCard extends React.Component {
   render() {
@@ -6,12 +10,23 @@ class TodayPickCard extends React.Component {
 
     return (
       <div className="fyp-image">
-        <img className="img-fluid" src={image} alt={title} />
+        <img className="img-fluid" src={image} alt={title} loading="lazy" width="400" height="300" />
         <a href={href}>{title}</a>
         <p>{meta}</p>
       </div>
     );
   }
 }
+
+TodayPickCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+  meta: PropTypes.string,
+};
+
+TodayPickCard.defaultProps = {
+  meta: '',
+};
 
 export default TodayPickCard;

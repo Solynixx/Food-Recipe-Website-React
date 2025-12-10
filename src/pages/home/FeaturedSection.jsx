@@ -1,10 +1,12 @@
+/**
+ * FeaturedSection — renders the featured recipe card and spotlight/tips section.
+ */
 import React from 'react';
 
 class FeaturedSection extends React.Component {
   constructor(props) {
     super(props);
 
-    // Featured recipe card data
     this.featuredRecipe = {
       image: '/assets/main_course/Pork Chops Charcutiere Sauce.png',
       alt: 'Recipe of the Week',
@@ -17,29 +19,12 @@ class FeaturedSection extends React.Component {
       href: './five-course-meal/recipes-html/main-course-recipes.html#pork-chops',
     };
 
-    // Spotlight table data for Quick Compare
     this.spotlightRecipes = [
-      {
-        name: 'Pork Chops Charcutiere',
-        prep: '30 min',
-        difficulty: 'Medium',
-        calories: '520 kcal',
-      },
-      {
-        name: 'Panacotta',
-        prep: '2 hr',
-        difficulty: 'Medium',
-        calories: '350 kcal',
-      },
-      {
-        name: 'Provino Salad',
-        prep: '10 min',
-        difficulty: 'Easy',
-        calories: '210 kcal',
-      },
+      { name: 'Pork Chops Charcutiere', prep: '30 min', difficulty: 'Medium', calories: '520 kcal' },
+      { name: 'Panacotta', prep: '2 hr', difficulty: 'Medium', calories: '350 kcal' },
+      { name: 'Provino Salad', prep: '10 min', difficulty: 'Easy', calories: '210 kcal' },
     ];
 
-    // Tips list data
     this.tips = [
       'Use seasonal produce for better flavor and lower cost.',
       'Rest meat 5–10 minutes before slicing for juicier results.',
@@ -51,21 +36,14 @@ class FeaturedSection extends React.Component {
     const { featuredRecipe, spotlightRecipes, tips } = this;
 
     return (
-      <section
-        className="before-footer-features container my-4"
-        aria-labelledby="featured-heading"
-      >
+      <section className="before-footer-features container my-4" aria-labelledby="featured-heading">
         <h2 id="featured-heading" className="section-title">
           Featured — Recipe of the Week & Kitchen Tips
         </h2>
 
         <div className="row g-3">
-          {/* Left: Featured Recipe Card */}
           <div className="col-12 col-md-6">
-            <article
-              className="card feature-card h-100 text-decoration-none"
-              aria-labelledby="weekly-recipe-title"
-            >
+            <article className="card feature-card h-100 text-decoration-none" aria-labelledby="weekly-recipe-title">
               <div className="row g-0 h-100 align-items-stretch">
                 <div className="col-4 col-sm-4 col-md-4">
                   <div className="media-wrap">
@@ -73,6 +51,9 @@ class FeaturedSection extends React.Component {
                       src={featuredRecipe.image}
                       alt={featuredRecipe.alt}
                       className="img-fluid rounded-start"
+                      loading="lazy"
+                      width="360"
+                      height="240"
                     />
                     <span className="tag-badge" aria-hidden="true">
                       {featuredRecipe.badgeLabel}
@@ -89,16 +70,10 @@ class FeaturedSection extends React.Component {
                     <p className="small text-muted mb-2">{featuredRecipe.meta}</p>
                     <p className="card-text">{featuredRecipe.description}</p>
                     <div className="d-flex gap-2 mt-2">
-                      <a
-                        href={featuredRecipe.href}
-                        className="btn btn-sm btn-success"
-                      >
+                      <a href={featuredRecipe.href} className="btn btn-sm btn-success">
                         View Recipe
                       </a>
-                      <button
-                        type="button"
-                        className="btn btn-sm btn-outline-secondary"
-                      >
+                      <button type="button" className="btn btn-sm btn-outline-secondary">
                         Save
                       </button>
                     </div>
@@ -108,7 +83,6 @@ class FeaturedSection extends React.Component {
             </article>
           </div>
 
-          {/* Right: Spotlight / Tips / Quick Compare */}
           <div className="col-12 col-md-6">
             <div className="card h-100 spotlight-card">
               <div className="card-body">
@@ -121,14 +95,10 @@ class FeaturedSection extends React.Component {
                 </ul>
 
                 <details className="mt-2 nutrition-details">
-                  <summary className="summary-btn">
-                    Quick Compare (click to open)
-                  </summary>
+                  <summary className="summary-btn">Quick Compare (click to open)</summary>
                   <div className="table-responsive">
                     <table className="table table-sm align-middle nutrition-table mb-0">
-                      <caption className="visually-hidden">
-                        Quick comparison of featured recipes
-                      </caption>
+                      <caption className="visually-hidden">Quick comparison of featured recipes</caption>
                       <colgroup>
                         <col style={{ width: '46%' }} />
                         <col style={{ width: '18%' }} />
@@ -159,10 +129,7 @@ class FeaturedSection extends React.Component {
                   </div>
                 </details>
 
-                <p className="small text-muted mt-3 mb-0">
-                  Want more? Use the search above or subscribe to get weekly recipes in
-                  your inbox.
-                </p>
+                <p className="small text-muted mt-3 mb-0">Want more? Use the search above or subscribe to get weekly recipes in your inbox.</p>
                 <div className="spotlight-cta">
                   <a href="#site-search" className="btn-ghost">
                     Get the checklist
