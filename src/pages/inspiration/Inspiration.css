@@ -844,19 +844,28 @@ button.stellar-link.desktop-trigger:focus-visible {
     position: relative;
   }
 
+  .stellar-brand {
+    padding: 0.35rem 0.85rem;
+    gap: 0.3rem;
+    font-size: 0.95rem;
+  }
+
   .stellar-nav-container {
-    padding: 0.75rem 1rem;
-    gap: 0.75rem;
+    padding: 0.5rem 0.75rem 0.25rem;
+    gap: 0.5rem;
     grid-template-columns: auto 1fr auto;
+    align-items: center;
   }
 
   .stellar-nav-right {
-    gap: 0.65rem;
+    gap: 0.45rem;
   }
 
   .stellar-icon-link {
-    width: 2.35rem;
-    height: 2.35rem;
+    width: 2rem;
+    height: 2rem;
+    border-width: 1px;
+    padding: 0; 
   }
 
   .stellar-icon-link img {
@@ -1429,4 +1438,34 @@ button.stellar-link.desktop-trigger:focus-visible {
   .tips-category {
     margin-bottom: 3.5rem;
   }
+}
+
+@media (max-width: 1400px) {
+  .stellar-dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .stellar-nav-container {
+    padding: 0.85rem 1.3rem 0.3rem;
+    gap: 1.25rem;
+  }
+
+  .stellar-nav-left {
+    gap: 1.25rem;
+  }
+}
+
+.stellar-dropdown:first-child .stellar-dropdown-menu {
+  left: 0;
+  transform: none;
+}
+
+@media (orientation: portrait) and (max-height: 740px) {
+  .stellar-nav-container { padding: 0.5rem 0.75rem 0.25rem; gap: 0.5rem; }
+  .brand-text { max-width: 9rem; overflow: hidden; text-overflow: ellipsis; display:inline-block; }
+  .stellar-nav-right { gap: 0.45rem; }
+  .stellar-icon-link { width: 2rem; height: 2rem; padding: 0; }
+  .stellar-icon-link img { width: 0.95rem; height: 0.95rem; }
+  .stellar-menu-btn span { width: 20px; height: 2.5px; }
 }
