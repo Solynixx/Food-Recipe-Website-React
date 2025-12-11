@@ -13,10 +13,7 @@ const routes = [
     path: '/inspiration/seasonal-constellations',
     component: React.lazy(() => import('./pages/inspiration/seasonal_constellations/SeasonalConstellations')),
   },
-  {
-  }
-  // add new routes here, for example:
-  // { path: '/about', component: React.lazy(() => import('./pages/about/About')) },
+  // add new routes here
 ];
 
 export default routes;
