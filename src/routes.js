@@ -20,8 +20,13 @@ const routes = [
   {
     path: '/about-us/AboutUs',
     component: React.lazy(() => import('./pages/about-us/AboutUs')),
+  },
+  {
+    path: '/payment/Payment',
+    component: React.lazy(() => import('./pages/payment/Payment')),
   }
-  // add new routes here
+
+
 ];
 
 export default routes;
