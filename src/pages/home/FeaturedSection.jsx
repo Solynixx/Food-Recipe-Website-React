@@ -1,6 +1,3 @@
-/**
- * FeaturedSection — renders the featured recipe card and spotlight/tips section.
- */
 import React from 'react';
 
 class FeaturedSection extends React.Component {
@@ -8,7 +5,7 @@ class FeaturedSection extends React.Component {
     super(props);
 
     this.featuredRecipe = {
-      image: '/assets/main_course/Pork Chops Charcutiere Sauce.png',
+      image: '/assets/main_course/Pork/Pork Chops Charcutiere Sauce.png',
       alt: 'Recipe of the Week',
       badgeLabel: 'Weekly Pick',
       title: 'Recipe of the Week',

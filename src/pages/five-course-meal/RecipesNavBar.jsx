@@ -10,28 +10,28 @@ class RecipeNavbar extends React.Component {
         key: "main-course",
         label: "Main Course",
         img: "/assets/main_course/main_course_pfp.jpg",
-        href: "/five-course-meal/main-page/main-course.html",
+        href: "/five-course-meal/main-page/main-course",
         match: "main-course",
       },
       {
         key: "dessert",
         label: "Dessert",
         img: "/assets/desserts/desserts_pfp.jpg",
-        href: "/five-course-meal/main-page/dessert.html",
+        href: "/five-course-meal/main-page/dessert",
         match: "dessert",
       },
       {
         key: "salad",
         label: "Salad",
         img: "/assets/salad/salad_pfp.jpg",
-        href: "/five-course-meal/main-page/salad.html",
+        href: "/five-course-meal/main-page/salad",
         match: "salad",
       },
       {
         key: "appetizer",
         label: "Appetizer",
         img: "/assets/appetizers/appetizers_pfp.jpg",
-        href: "/five-course-meal/main-page/appetizer.html",
+        href: "/five-course-meal/main-page/appetizer",
         match: "appetizer",
       },
       {
@@ -84,13 +84,13 @@ class RecipeNavbar extends React.Component {
             </li>
 
             <li className="other-logo">
-              <a href="/index.html" id="home" className="other" target="_blank" rel="noreferrer">
+              <a href="/" id="home" className="other" rel="noreferrer">
                 <img src="/assets/icons/house.png" alt="home" width="32" height="32" />
               </a>
               <a href="/forms/index.html" className="other" target="_blank" rel="noreferrer">
                 <img src="/assets/icons/user.png" alt="user" width="32" height="32" />
               </a>
-              <a href="/payment/payment.html" className="other" target="_blank" rel="noreferrer">
+              <a href="/payment/payment" className="other" target="_blank" rel="noreferrer">
                 <img src="/assets/icons/shopping_cart.png" alt="shopping bag" width="32" height="32" />
               </a>
             </li>

@@ -1,7 +1,7 @@
 import React from "react";
 import "../../home/Home.css";
 import "../styles/main.css";
-import Navbar from "../../home/Navbar";
+import RecipeNavBar from "../RecipesNavBar"; 
 import Footer from "../../home/Footer";
 
 export default class Dessert extends React.Component {
@@ -51,7 +51,7 @@ export default class Dessert extends React.Component {
   render() {
     return (
       <div className="page-wrapper">
-        <Navbar />
+        <RecipeNavBar />
 
         <main>
           <h1 className="main-title">Dessert</h1>
