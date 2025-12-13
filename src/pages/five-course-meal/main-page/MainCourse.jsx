@@ -1,7 +1,7 @@
 import React from "react";
 import "../../home/Home.css";
 import "../styles/main.css";
-import Navbar from "../../home/Navbar";
+import RecipeNavBar from "../RecipesNavBar"; 
 import Footer from "../../home/Footer";
 import Chicken from "./RecipeCard";
 
@@ -71,7 +71,7 @@ export default class MainCourse extends React.Component {
   render() {
     return (
       <div className="page-wrapper">
-        <Navbar />
+        <RecipeNavBar />
 
         <main>
           <h1 className="head-title">Main Course</h1>
