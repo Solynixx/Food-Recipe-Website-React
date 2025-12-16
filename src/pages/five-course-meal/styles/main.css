@@ -658,7 +658,7 @@ main {
     height: 15rem;
     border-radius: 20%;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px #00000026;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
     contain: layout style paint;
@@ -667,7 +667,7 @@ main {
 
 .recommended-card:hover {
     transform: translateY(-0.1rem);
-    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.1rem 0.2rem #00000033;
 }
 
 .recommended-card img {
@@ -830,28 +830,87 @@ main {
     gap: 2rem;
 }
 
-.recipe-section img {
+.recipe-section .card-container .card {
+    background: #fff;
+    border: 0.1rem solid #00000033;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.1rem 0.2rem #00000033;
+}
+
+.recipe-section .card-container .card .card-image {
+    height: 25rem;
+    width: 100%;
+    padding: 1.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.recipe-section .card-container .card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-top-left-radius: 20%;
-    border-top-right-radius: 20%;
+    border-radius: 0.5rem;
     cursor: pointer;
     display: block;
 }
 
-.card-image {
-  height: 12.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+.recipe-section .card-container .card .fa-heart {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    line-height: 3.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    background: #fff;
+    border-radius: 50%;
+    color: #1e8a7a;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.recipe-section .card:hover {
-    transform: translateY(-0.5rem);
-    transition: transform 0.6s ease;
+.recipe-section .card-container .card .fa-heart:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0.1rem 0.2rem #00000033;
+    background: #1e8a7a;
+    color: #fff;
+}
+
+.recipe-section .card-container .card .fa-heart:active {
+    transform: scale(0.95);
+}
+
+.recipe-section .card-container .card .fa-heart::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #2c5f5f;
+    padding: 0.1rem 0.5rem;
+    border-radius: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 900;
+    white-space:  nowrap;
+    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+    font-family: "Montserrat";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipe-section .card-container .card .fa-heart:hover::after,
+.recipe-section .card-container .card .fa-heart:hover::before {
+    opacity: 1;
+    visibility: visible;
 }
 
 :is(.card, .card a:visited) {
