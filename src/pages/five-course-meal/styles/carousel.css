@@ -69,6 +69,39 @@
     object-position: center;
 }
 
+.carousel-slide .card .text {
+    padding: 1rem 2rem;
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+:is(.carousel-slide .card .text a, .carousel-slide .card .text a:visited) {
+    text-decoration: none;
+    color: #007A70;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding-inline: 0.2rem;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s ease;
+}
+
+:is(.carousel-slide .card .text a:hover, .carousel-slide .card .text a:active) {
+    color: #35c5ad;
+}
+
+.carousel-slide .card .text p {
+    font-size: 1.2rem;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    opacity: 0.5;
+    margin-bottom: 2rem;
+}
+
 .carousel-button {
     background: #fff;
     border: 0.125rem solid #007A70;
@@ -173,7 +206,7 @@
     }
 
     .carousel-slide .card .text a {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
     }
 
     .carousel-slide .card .text p {
@@ -313,6 +346,7 @@
     
     .carousel-slide .card {
         max-width: 95%;
+        height: 15.5rem;
     }
 
     .carousel-slide .card .card-image {
@@ -323,12 +357,29 @@
         padding: 0.2rem;
     }
 
-    .carousel-slide .card .text a {
-        font-size: 0.85rem;
+    :is(.carousel-slide .card .text a, .carousel-slide .card .text a:visited) {
+        text-decoration: none;
+        color: #007A70;
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding-inline: 0.2rem;
+        display: block;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        transition: color 0.2s ease;
+    }
+
+    :is(.carousel-slide .card .text a:hover, .carousel-slide .card .text a:active) {
+        color: #35c5ad;
     }
 
     .carousel-slide .card .text p {
-        font-size: 0.65rem;
+        font-size: 0.8rem;
+        color: #333;
+        font-family: 'Montserrat', sans-serif;
+        font-weight:  700;
+        opacity: 0.5;
+        margin-bottom: 2rem;
     }
 
     .carousel-track {

@@ -1,36 +1,35 @@
-import React from "react";
+import React, {Fragment} from "react";
 import "../../home/Home.css";
 import "../styles/main.css";
 import RecipeNavBar from "../RecipesNavBar"; 
 import Footer from "../../home/Footer";
-import MainCourseRecipeCard from "./MainCourseRecipeCard";
+import RecipeCard from "./RecipeCard";
 import TopPicks from "./TopPicks";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaHeart, FaRegHeart } from "react-icons/fa";
+import { chicken, beef, lamb, pork, seafood, allRecipes } from './MainCourseData';
 
 export default class MainCourse extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      savedRecipes: []
+      savedRecipes: [],
+      currentPage: 1,
+      recipesPerPage: 8,
+      tappedHeart: null
     };
     this.toggleSave = this.toggleSave.bind(this);
+    this.paginate = this.paginate.bind(this);
+    this.handleHeartTap = this.handleHeartTap.bind(this);
   }
 
-  allRecipes = [
-    { img: "/assets/main_course/Chicken/Chicken Cordon Bleu.png", title: "Chicken Cordon Bleu", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "1 hr 15 mins" },
-    { img: "/assets/main_course/Chicken/Chicken Marsala.jpg", title: "Chicken Marsala", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "30 mins" },
-    { img: "/assets/main_course/Chicken/Chicken Roulade.jpg", title: "Chicken Roulade", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "1 hr 10 mins" },
-    { img: "/assets/main_course/Chicken/Chicken Wellington.png", title: "Chicken Wellington", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "55 mins" },
-    { img: "/assets/main_course/Chicken/Juicy Pan-Seared Chicken.jpg", title: "Juicy Pan-Seared Chicken", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "15 mins" },
-    { img: "/assets/main_course/Seafood/Lobster Mango Salad.png", title: "Lobster Mango Salad", href: "/five-course-meal/recipes-html/main-course-recipes.html#lobster-mango-salad", time: "1 hr" },
-    { img: "/assets/main_course/Pork/Pork Chops Charcutiere Sauce.png", title: "Pork Chops", href: "/five-course-meal/recipes-html/main-course-recipes.html#pork-chops", time: "25 mins" },
-    { img: "/assets/main_course/Seafood/Salmon Steak in Coconut Milk with Peas.png", title: "Salmon Steak", href: "/five-course-meal/recipes-html/main-course-recipes.html#salmon-steak", time: "24 mins" },
-    { img: "/assets/main_course/Seafood/Shrimp Avocado Cocktail.png", title: "Shrimp Avocado Cocktail", href: "/five-course-meal/recipes-html/main-course-recipes.html#shrimp-avocado-cocktail", time: "1 hr 45 mins" },
-    { img: "/assets/main_course/Seafood/Sole and Salmon Mousse Terrine with Indian Sauce.jpg", title: "Mousse Terrine", href: "/five-course-meal/recipes-html/main-course-recipes.html#mousse-terrine", time: "1 hr 5 mins" },
-    { img: "/assets/main_course/Beef/Coffee-Rubbed Braised Short Ribs.png", title: "Braised Short Ribs", href: "/five-course-meal/recipes-html/main-course-recipes.html#short-ribs", time: "3 hr 55 mins" },
-    { img: "/assets/main_course/Lamb/Fig Arugula and Prosciutto Salad.jpg", title: "Arugula & Prosciutto Salad", href: "/five-course-meal/recipes-html/main-course-recipes.html#arugula-prosciutto-salad", time: "15 mins" },
-  ];
+  handleHeartTap(recipeTitle) {
+    this.toggleSave(recipeTitle);
+    this.setState({tappedHeart: recipeTitle});
+    setTimeout(() => {
+      this.setState({tappedHeart: null});
+    }, 300);
+  }
 
   toggleSave(recipeTitle) {
     this.setState((state) => {
@@ -51,35 +50,86 @@ export default class MainCourse extends React.Component {
     return this.state.savedRecipes.includes(recipeTitle);
   }
 
-  renderAllRecipes() {
+  paginate(pageNumber) {
+    this.setState({currentPage: pageNumber});
+    const allRecipesTitle = document.querySelector('.all-recipes');
+    if (allRecipesTitle) {
+      allRecipesTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  renderCategoryRecipes() {
     return (
-      <section className="recipe-section">
-        {this.allRecipes.map((r) => {
-          const isSaved = this.isRecipesSaved(r.title);
-          return (
-          <div className="card-container">
-            <div className="card" key={r.title}>
-              <div className="card-image">
-                <img src={r.img} alt={r.title} />
-                <span 
-                  className="fa-heart"
-                  data-tooltip={isSaved ? "Recipe Saved" : "Save Recipe"}
-                  onClick={() => this.toggleSave(r.title)}
-                  role="button">
-                  {isSaved ? <FaHeart /> : <FaRegHeart />}
-                </span>
-              </div>
-              <div className="card-content">
-                <div className="text">
-                  <a href={r.href}>{r.title}</a>
-                  <p>{r.time}</p>
+      <Fragment>
+        <RecipeCard recipes={chicken} title="Chicken" />
+        <RecipeCard recipes={beef} title="Beef" />
+        <RecipeCard recipes={lamb} title="Lamb" />
+        <RecipeCard recipes={pork} title="Pork" />
+        <RecipeCard recipes={seafood} title="Seafood" />
+      </Fragment>
+    )
+  }
+
+  renderAllRecipes() {
+    const { currentPage, recipesPerPage } = this.state;
+    const indexOfLastRecipe = currentPage * recipesPerPage;
+    const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
+    const currentRecipes = allRecipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
+    const totalPages = Math.ceil(allRecipes.length / recipesPerPage);
+    const pageNumbers = [];
+    for (let i = 1; i <= totalPages; i++) {
+      pageNumbers.push(i);
+    }
+
+    return (
+      <Fragment>
+        <section className="recipe-section">
+          {currentRecipes.map((r) => {
+            const isSaved = this.isRecipesSaved(r.title);
+            return (
+            <div className="card-container" key={r.title}>
+              <div className="card">
+                <div className="card-image">
+                  <img src={r.img} alt={r.title} />
+                  <span 
+                    className="fa-heart"
+                    data-tooltip={isSaved ? "Recipe Saved" : "Save Recipe"}
+                    onClick={() => this.handleHeartTap(r.title)}
+                    role="button">
+                    {isSaved ? <FaHeart /> : <FaRegHeart />}
+                  </span>
+                </div>
+                <div className="card-content">
+                  <div className="text">
+                    <a href={r.href}>{r.title}</a>
+                    <p>{r.time}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        )
-        })}
-      </section>
+          )
+          })}
+        </section>
+        <div className="pagination-container">
+          {currentPage > 1 && (
+            <button className="pagination-btn pagination-prev" onClick={() => this.paginate(currentPage - 1)}>
+              <FaChevronLeft />
+            </button>
+          )}
+
+          {pageNumbers.map((number) => (
+            <button key={number} className={`pagination-btn ${currentPage === number ? 'active' : ''}`} onClick={() => this.paginate(number)}>
+              {number}
+            </button>
+          ))}
+
+          {currentPage < totalPages && (
+            <button className="pagination-btn pagination-next" onClick={() => this.paginate(currentPage + 1)}>
+              <FaChevronRight />
+            </button>
+          )}
+        </div>
+      </Fragment>
     );
   }
 
@@ -101,7 +151,7 @@ export default class MainCourse extends React.Component {
 
           <TopPicks />
 
-          <MainCourseRecipeCard />
+          {this.renderCategoryRecipes()}
 
           <div className="all-recipes">
             <h3 className="all-recipes">
@@ -110,12 +160,6 @@ export default class MainCourse extends React.Component {
           </div>
 
           {this.renderAllRecipes()}
-
-          <section className="button">
-            <div className="text-center mt-4">
-              <button type="button" className="btn btn-secondary">More &gt;</button>
-            </div>
-          </section>
 
           <section className="more-recipes-section">
             <div className="container">
