@@ -5,8 +5,17 @@ import RecipeNavBar from "../RecipesNavBar";
 import Footer from "../../home/Footer";
 import MainCourseRecipeCard from "./MainCourseRecipeCard";
 import TopPicks from "./TopPicks";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 export default class MainCourse extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      savedRecipes: []
+    };
+    this.toggleSave = this.toggleSave.bind(this);
+  }
 
   allRecipes = [
     { img: "/assets/main_course/Chicken/Chicken Cordon Bleu.png", title: "Chicken Cordon Bleu", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "1 hr 15 mins" },
@@ -23,20 +32,53 @@ export default class MainCourse extends React.Component {
     { img: "/assets/main_course/Lamb/Fig Arugula and Prosciutto Salad.jpg", title: "Arugula & Prosciutto Salad", href: "/five-course-meal/recipes-html/main-course-recipes.html#arugula-prosciutto-salad", time: "15 mins" },
   ];
 
+  toggleSave(recipeTitle) {
+    this.setState((state) => {
+      const { savedRecipes } = state;
+      if (savedRecipes.includes(recipeTitle)) {
+        return {
+          savedRecipes: savedRecipes.filter(title => title !== recipeTitle)
+        };
+      } else {
+        return {
+          savedRecipes: [...savedRecipes, recipeTitle]
+        };
+      }
+    });
+  }
+
+  isRecipesSaved(recipeTitle) {
+    return this.state.savedRecipes.includes(recipeTitle);
+  }
+
   renderAllRecipes() {
     return (
       <section className="recipe-section">
-        {this.allRecipes.map((r) => (
-          <div className="card" key={r.title}>
-            <div className="card-image">
-              <img src={r.img} alt={r.title} />
-            </div>
-            <div className="text">
-              <a href={r.href}>{r.title}</a>
-              <p>{r.time}</p>
+        {this.allRecipes.map((r) => {
+          const isSaved = this.isRecipesSaved(r.title);
+          return (
+          <div className="card-container">
+            <div className="card" key={r.title}>
+              <div className="card-image">
+                <img src={r.img} alt={r.title} />
+                <span 
+                  className="fa-heart"
+                  data-tooltip={isSaved ? "Recipe Saved" : "Save Recipe"}
+                  onClick={() => this.toggleSave(r.title)}
+                  role="button">
+                  {isSaved ? <FaHeart /> : <FaRegHeart />}
+                </span>
+              </div>
+              <div className="card-content">
+                <div className="text">
+                  <a href={r.href}>{r.title}</a>
+                  <p>{r.time}</p>
+                </div>
+              </div>
             </div>
           </div>
-        ))}
+        )
+        })}
       </section>
     );
   }
