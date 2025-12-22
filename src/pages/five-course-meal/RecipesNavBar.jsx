@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import "../home/Home.css";
 import "./styles/main.css";
 
@@ -84,15 +84,15 @@ class RecipeNavbar extends React.Component {
             </li>
 
             <li className="other-logo">
-              <a href="/" id="home" className="other" rel="noreferrer">
+              <Link to="/" id="home" className="other" rel="noreferrer">
                 <img src="/assets/icons/house.png" alt="home" width="32" height="32" />
-              </a>
-              <a href="/forms/index.html" className="other" target="_blank" rel="noreferrer">
+              </Link>
+              <Link to="/forms/index.html" className="other" target="_blank" rel="noreferrer">
                 <img src="/assets/icons/user.png" alt="user" width="32" height="32" />
-              </a>
-              <a href="/payment/payment" className="other" target="_blank" rel="noreferrer">
+              </Link>
+              <Link to="/payment/payment" className="other" target="_blank" rel="noreferrer">
                 <img src="/assets/icons/shopping_cart.png" alt="shopping bag" width="32" height="32" />
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
