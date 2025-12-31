@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import StarRating from './StarRating';
 import '../styles/recipe.css'
 import { 
@@ -9,7 +9,8 @@ import {
     FaCheckCircle, 
     FaTags, 
     FaPrint, 
-    FaBookmark
+    FaBookmark,
+    FaClock
 } from "react-icons/fa";
 
 export default class RecipeSection extends React.Component {
@@ -69,20 +70,29 @@ ${recipe.instructions.map(section => {
                         <h1 className="recipe-title">{recipe.title}</h1>
                         <div className="recipe-meta">
                             <div className="meta-item">
-                            <FaRegClock />
-                            <span>{recipe.meta.prepTime} prep</span>
+                                <FaRegClock />
+                                <span>{recipe.meta.prepTime} prep</span>
                             </div>
                             <div className="meta-item">
-                            <FaFire />
-                            <span>{recipe.meta.cookTime} cook</span>
+                                {recipe.meta.cookTime ? (
+                                    <Fragment>
+                                        <FaFire />
+                                        <span>{recipe.meta.cookTime} cook</span>
+                                    </Fragment>
+                                ) : (
+                                    <Fragment>
+                                        <FaClock />
+                                        <span>{recipe.meta.waitTime} wait</span>
+                                    </Fragment>
+                                )}
                             </div>
                             <div className="meta-item">
-                            <FaCalendarCheck />
-                            <span>{recipe.meta.totalTime} total</span>
+                                <FaCalendarCheck />
+                                <span>{recipe.meta.totalTime} total</span>
                             </div>
                             <div className="meta-item">
-                            <FaSignal />
-                            <span>{recipe.meta.difficulty}</span>
+                                <FaSignal />
+                                <span>{recipe.meta.difficulty}</span>
                             </div>
                         </div>
                         <StarRating rating={recipe.meta.rating} reviews={recipe.meta.reviews} />

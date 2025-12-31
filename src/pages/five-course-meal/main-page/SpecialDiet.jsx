@@ -8,7 +8,7 @@ import TopPicks from "./TopPicks";
 import { FaCanadianMapleLeaf, FaChevronLeft, FaChevronRight, FaHeart, FaRegHeart, FaSnowflake, FaLeaf, FaSun, FaGift } from "react-icons/fa";
 import { PiRabbit } from "react-icons/pi";
 import { GiChickenOven, GiPumpkinLantern } from "react-icons/gi";
-import { dairy_free, gluten_free, vegan, vegetarian, allSpecialDietsRecipes } from './SpecialDietsData';
+import { dairyFree, glutenFree, vegan, vegetarian, allSpecialDietsRecipes } from './SpecialDietsData';
 import Search from "./Search";
 
 export default class Salad extends React.Component {
@@ -86,8 +86,8 @@ export default class Salad extends React.Component {
   renderCategoryRecipes() {
     return (
       <Fragment>
-        <RecipeCard recipes={dairy_free} title="Dairy Free" />
-        <RecipeCard recipes={gluten_free} title="Gluten Free" />
+        <RecipeCard recipes={dairyFree} title="Dairy Free" />
+        <RecipeCard recipes={glutenFree} title="Gluten Free" />
         <RecipeCard recipes={vegan} title="Vegan" />
         <RecipeCard recipes={vegetarian} title="Vegetarian" />
       </Fragment>

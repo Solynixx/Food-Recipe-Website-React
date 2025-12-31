@@ -174,12 +174,12 @@ p {
 }
 
 .subtitle {
-    font-size: 1.2rem;
-    color: #333;
+    font-size: 1rem;
+    color: #015e57;
     margin-block: 1.25rem;
     font-weight: 700;
     padding-bottom: 0.625rem;
-    border-bottom: 2px solid #808080;
+    border-bottom: 2px solid #c6d4d2;
     text-align: center;
 }
 

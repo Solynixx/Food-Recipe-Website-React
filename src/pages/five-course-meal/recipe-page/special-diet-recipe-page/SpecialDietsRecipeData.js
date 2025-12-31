@@ -7,7 +7,7 @@ export const dairyfreerecipes = [
     meta: {
       prepTime: "35 mins",
       cookTime: "25 mins",
-      totalTime: "1 hr 45",
+      totalTime: "1 hr 45 mins",
       difficulty: "Easy",
       rating: 5,
       reviews: 20,

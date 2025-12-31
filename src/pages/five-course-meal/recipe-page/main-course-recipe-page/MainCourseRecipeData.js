@@ -444,8 +444,8 @@ export const beefRecipes = [
     description: "Braised short ribs are a rich, hearty dish that features beef short cooked low and slow in a flavorful braising liquid until the meat is fall-apart tender. It’s the kind of comforting dish that’s perfect for a cozy Sunday supper.",
     meta: {
       prepTime: "25 mins",
-      cookTime: "3 hr 30 mins",
-      totalTime: "3 hr 55 mins",
+      cookTime: "3 hrs 30 mins",
+      totalTime: "3 hrs 55 mins",
       difficulty: "Easy",
       rating: 4.5,
       reviews: 180
@@ -592,7 +592,7 @@ export const beefRecipes = [
     meta: {
       prepTime: "45 mins",
       cookTime: "35 mins",
-      totalTime: "2 hr 10 mins",
+      totalTime: "2 hrs 10 mins",
       difficulty: "Easy",
       rating: 4.5,
       reviews: 120

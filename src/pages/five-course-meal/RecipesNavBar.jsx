@@ -45,14 +45,7 @@ class RecipeNavbar extends React.Component {
   }
 
   renderMenuItems() {
-    const { location } = this.props;
-    const currentPath = (location?.pathname || "").toLowerCase();
-
-    const itemsToShow = this.getMenuItems().filter(
-      (item) => !currentPath.includes(item.match.toLowerCase())
-    );
-
-    return itemsToShow.map((item) => (
+    return this.getMenuItems().map((item) => (
       <div id={item.key} className="border-bottom" key={item.key}>
         <img src={item.img} alt={`${item.label} Profile`} />
         <a href={item.href}>{item.label}</a>
