@@ -1,462 +1,1023 @@
-export const dessertRecipes = [
+export const cakeRecipes = [
   {
-    id: "chocolate-cake",
-    name: "Chocolate Sheet Cake",
-    prepTime: "20 mins",
-    cookTime: "30 mins",
-    totalTime: "50 mins",
-    difficulty: "Easy",
-    rating: 4.5,
-    reviews: 50,
-    image: "../../assets/desserts/Chocolate Sheet Cake.jpg",
-    description: "This incredible chocolate cake recipe is just as easy to make as a boxed cake mix. It's crazy moist and super delicious. The luscious chocolate frosting is silky-smooth and creamy.",
-    ingredients: [
-      "1 3/4 cups (228g) all purpose flour",
-      "2 cups (400g) granulated sugar",
-      "3/4 cup (85g) natural unsweetened cocoa powder",
-      "2 1/4 tsp baking soda",
-      "1/2 tsp baking powder",
-      "1 teaspoon salt",
-      "1 cup (240ml) milk",
-      "1/2 cup (120ml) vegetable oil",
-      "1 1/2 teaspoon vanilla extract",
-      "2 large eggs",
-      "1 cup (240ml) hot water",
-      "1 cup (227g) unsalted butter",
-      "4 cups (500g) powdered sugar",
-      "4-6 tablespoons milk or cream",
-      "1/2 cup (57g) natural unsweetened cocoa powder",
-      "1 teaspoon vanilla extract",
-      "Sprinkles"
-    ],
-    instructions: [
-      { step: "", details: ["Preheat oven to 350F and grease a 9×13″ baking pan with non-stick baking spray or butter.", "In a large bowl, whisk together the flour, sugar, cocoa powder, baking soda, baking powder and salt. Set aside.", "In a medium bowl, whisk together the milk, vegetable oil, vanilla and eggs.", "Add the wet ingredients to the dry ingredients and mix until combined with a rubber spatula.", "Add in the hot water and whisk until smooth.", "Pour into the prepared baking pan and bake for 30-32 minutes or until a toothpick inserted into the center comes out with a few moist crumbs.", "Let cool completely before frosting.", "Using a handheld or stand mixer, beat the butter for 1 minute until creamy. Mix in 1 cup of powder sugar and with 1 tbsp of milk/cream at a time, mixing well in between.", "Mix in the cocoa powder and vanilla until smooth. Add more milk/cream if necessary for a spreadable consistency."] }
-    ],
-    nutrition: {
-      calories: 307,
-      carbs: "47g",
-      protein: "3g",
-      fat: "14g",
-      saturatedFat: "6g",
-      transFat: "0g",
-      cholesterol: "35mg",
-      sodium: "222mg",
-      potassium: "106mg",
-      fiber: "2g",
-      sugar: "37g",
-      vitaminA: "277IU",
-      calcium: "33mg",
-      iron: "1mg"
+    id: "blueberry-heaven-cake",
+    title: "Blueberry Heaven on Earth Cake",
+    image: "/assets/desserts/Cake/Blueberry Heaven on Earth Cake.jpg",
+    description: "A heavenly layered cake with fresh blueberries, creamy filling, and light sponge cake layers.",
+    meta: {
+      prepTime: "30 mins",
+      waitTime: "40 mins",
+      totalTime: "1 hr 10 mins",
+      difficulty: "Medium",
+      rating: 4.8,
+      reviews: 156
     },
-    tags: ["Dessert", "Chocolate", "Easy", "Family Favorite", "Best for Birthday"],
-    video: "https://www.youtube.com/embed/VRFhLCyDSJk?si=czWlOhYDJ3lkBEcu"
-  },
-  {
-    id: "blueberry-cake",
-    name: "Blueberry Heaven on Earth Cake",
-    prepTime: "30 mins",
-    waitTime: "4 hrs",
-    totalTime: "4 hrs 30 mins",
-    difficulty: "Medium",
-    rating: 5,
-    reviews: 206,
-    image: "../../assets/desserts/Blueberry Heaven on Earth Cake.jpg",
-    description: "This blueberry heaven on earth cake truly lives up to its name, featuring moist cake, a delightful homemade blueberry pie filling, two luscious creams, and toasted almonds to top it off!",
     ingredients: [
-      "240g (1 cup) whole milk 3% fat",
-      "50g (1/4 cups) granulated sugar",
-      "40g egg yolk",
-      "12g (1 1/2 tablespoon) corn starch",
-      "12g (1 1/2 tablespoon) all purpose flour",
-      "1 teaspoon vanilla extract",
-      "28g (2 tablespoons) unsalted butter",
-      "115g (1/2 cups) heavy cream",
-      "230g (1 cup) heavy cream",
-      "75g (1/3 cups) mascarpone",
-      "30g (1/4 cups) powdered sugar",
-      "1/2 teaspoon vanilla extract",
-      "600g (21 ounce) blueberry pie filling",
-      "400g (14 ounce) angel food cake",
-      "Toasted almond slivers"
-    ],
-    instructions: [
-      { step: "Luxurious Vanilla Cream Layer", details: ["Whisk the sugar and egg yolks until fluffy, then mix in the cornstarch, flour, and vanilla until you get a smooth paste.", "Heat the milk until simmering, then slowly pour it over the egg mixture while whisking vigorously. Return the mixture to the saucepan and cook for a few minutes until thickened.", "Gradually stir in the softened butter until fully incorporated. The pastry cream needs to completely cool before folding the heavy cream in. Cover it with plastic wrap to prevent skin from forming.", "Once cooled, whisk the pastry cream for 1-2 minutes to get a smooth texture. Make sure you do not over-whisk it, as it can get runny. Give it a few whisks only until smooth.", "Whip the very cold heavy cream to soft peaks. Gently fold the whipped cream into the pastry cream in three stages, mixing carefully after each addition. Refrigerate your vanilla cream layer while preparing the rest of the layers."] },
-      { step: "Chantilly Whipped Cream Layer", details: ["Using an electric hand mixer, whip the very cold heavy cream, mascarpone, and sifted powdered sugar for about a minute, then add the vanilla extract.", "Continue whipping for 2 to 3 minutes, or until the cream reaches a fluffy, pipeable consistency (after soft peaks but before stiff peaks). Be sure to stop whipping right away to avoid over-beating. If you continue, the chantilly cream will separate and become runny."] },
-      { step: "Blueberry Layer", details: ["Open a tin of blueberry pie filling can or prepare it from scratch using my recipe."] },
-      { step: "Assembly", details: ["Layer the Blueberry Heaven on Earth cake from the bottom to top (1/2 blueberry filling layer minus three tablespoons that will go to the top, 1/2 vanilla layer, whipped cream layer and the three tablespoons of blueberry pie filling swirled into it). Make sure to spread the layers evenly in the pan, smoothing each level with an offset spatula before adding the next.", "Refrigerate for 4 hours for the cake to set. Just before serving, add some toasted almond slivers on top.", "Store leftovers in an airtight container in the refrigerator for up to 2 days."] }
-    ],
-    nutrition: {
-      calories: 366,
-      carbs: "52g",
-      protein: "5g",
-      fat: "17g",
-      saturatedFat: "10g",
-      transFat: "0g",
-      cholesterol: "82mg",
-      sodium: "197mg",
-      potassium: "166mg",
-      fiber: "1g",
-      sugar: "35g",
-      vitaminC: "1mg",
-      vitaminA: "660IU",
-      calcium: "99mg",
-      iron: "1mg"
-    },
-    tags: ["Dessert", "Blueberry", "Sweet", "Party"],
-    video: "https://www.youtube.com/embed/D6MUFiwL0UE?si=BPdZCVnJH3ekqOx9"
-  },
-  {
-    id: "boston-cake",
-    name: "Boston Cream Poke Cake",
-    prepTime: "20 mins",
-    cookTime: "30 mins",
-    totalTime: "50 mins",
-    difficulty: "Easy",
-    rating: 5,
-    reviews: 22,
-    image: "../../assets/desserts/Boston Cream Poke Cake.jpg",
-    description: "This Boston cream poke cake is a fun variation of a Boston cream pie. Made with boxed cake and instant pudding mixes, this super easy dessert is sure to be a hit with family and friends.",
-    ingredients: [
-      "1 (15.25 ounce) package yellow cake mix",
-      "1 cup water",
+      "2 cups all-purpose flour",
+      "1 1/2 cups granulated sugar",
+      "1 cup fresh blueberries",
+      "1 cup heavy cream",
       "3 large eggs",
-      "1/4 cup vegetable oil",
-      "4 cups milk",
-      "2 (3.5 ounce) packages instant vanilla pudding mix",
-      "2 cups semisweet chocolate chips",
-      "1 cup heavy whipping cream"
+      "1/2 cup unsalted butter, softened",
+      "1 tsp vanilla extract",
+      "1 tsp baking powder",
+      "1/2 tsp salt",
+      "1/4 cup blueberry jam"
     ],
     instructions: [
-      { step: "", details: ["Preheat the oven to 350 degrees F (175 degrees C). Grease a 9x13-inch pan.", "Beat cake mix, water, eggs, and oil in a large bowl with an electric mixer until combined. Pour batter into the prepared pan.", "Bake in the preheated oven until a toothpick inserted into the center comes out clean, about 30 minutes. Let cool for 15 to 30 minutes.", "Whisk milk and pudding mix together in a bowl until just starting to thicken. Poke holes all over cake with the handle of a wooden spoon. Pour pudding mixture over cake, and spread over entire surface to fill the holes. Refrigerate until firm, about 1 hour.", "When the cake is almost firm, place chocolate chips into a glass bowl.", "Heat cream in a small saucepan over medium-low heat, stirring frequently, until bubbles form, about 3 minutes. Pour hot cream over chocolate chips (whisk until smooth).", "Spread ganache over cake."] }
+      {
+        section: "Preparation",
+        steps: [
+          "Preheat oven to 350°F (175°C). Grease and flour two 9-inch round cake pans.",
+          "In a medium bowl, whisk together flour, baking powder, and salt.",
+          "In a separate bowl, cream together butter and sugar until light and fluffy."
+        ]
+      },
+      {
+        section: "Baking",
+        steps: [
+          "Add eggs one at a time, beating well after each addition.",
+          "Gradually add dry ingredients to wet ingredients, mixing until just combined.",
+          "Fold in fresh blueberries gently.",
+          "Divide batter evenly between prepared pans and bake for 35-40 minutes."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Let cakes cool completely on wire racks.",
+          "Whip heavy cream with vanilla extract until stiff peaks form.",
+          "Spread blueberry jam on one cake layer, top with whipped cream, then add second layer.",
+          "Decorate with additional blueberries and whipped cream."
+        ]
+      }
     ],
     nutrition: {
-      calories: 386,
-      carbs: "49g",
+      calories: "380",
+      carbs: "52g",
+      protein: "4g",
+      fat: "18g",
+      saturatedFat: "11g",
+      cholesterol: "85mg",
+      sodium: "220mg",
+      sugar: "35g"
+    },
+    tags: ["Dessert", "Cake", "Blueberry", "Fruit", "Baking"],
+    video: "https://www.youtube.com/embed/D6MUFiwL0UE?si=IUqMc_98lsxTY5_4"
+  },
+  {
+    id: "boston-cream-poke-cake",
+    title: "Boston Cream Poke Cake",
+    image: "/assets/desserts/Cake/Boston Cream Poke Cake.jpg",
+    description: "A moist yellow cake filled with creamy vanilla pudding and topped with rich chocolate ganache.",
+    meta: {
+      prepTime: "20 mins",
+      cookTime: "35 mins",
+      totalTime: "1 hr 15 mins",
+      difficulty: "Easy",
+      rating: 4.7,
+      reviews: 234
+    },
+    ingredients: [
+      "1 box yellow cake mix",
+      "1 package vanilla instant pudding mix",
+      "2 cups milk",
+      "1 cup heavy cream",
+      "4 oz semisweet chocolate",
+      "2 tbsp corn syrup",
+      "1/2 cup powdered sugar"
+    ],
+    instructions: [
+      {
+        section: "Cake Preparation",
+        steps: [
+          "Prepare yellow cake mix according to package directions in a 9x13 inch pan.",
+          "Bake as directed and let cool for 15 minutes.",
+          "Use the handle of a wooden spoon to poke holes all over the cake."
+        ]
+      },
+      {
+        section: "Filling",
+        steps: [
+          "Whisk together pudding mix and milk until thickened.",
+          "Pour pudding over the warm cake, spreading evenly to fill holes.",
+          "Refrigerate for 30 minutes to set."
+        ]
+      },
+      {
+        section: "Ganache",
+        steps: [
+          "Heat heavy cream until steaming.",
+          "Pour over chopped chocolate and let sit for 5 minutes.",
+          "Whisk until smooth, then add corn syrup.",
+          "Pour ganache over chilled cake and spread evenly."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "420",
+      carbs: "58g",
       protein: "5g",
       fat: "20g",
-      saturatedFat: "9g",
-      transFat: "0g",
-      cholesterol: "57mg",
-      sodium: "399mg",
-      potassium: "214mg",
-      fiber: "2g",
-      sugar: "35g",
-      vitaminC: "0mg",
-      calcium: "131mg",
-      iron: "1mg"
+      saturatedFat: "12g",
+      cholesterol: "65mg",
+      sodium: "380mg",
+      sugar: "42g"
     },
-    tags: ["Dessert", "Boston", "Chocolate", "Easy", "Family Favorite"],
-    video: "https://www.youtube.com/embed/0sAQufFPHfQ?si=40l9E4VZNVTCcsXT"
+    tags: ["Dessert", "Cake", "Chocolate", "Pudding", "Easy"],
+    video: "https://www.youtube.com/embed/ZHGBQUTkZAs?si=O3Xh8l-sYdM7AlnC"
   },
   {
-    id: "lemon-ricotta-cake",
-    name: "Italian Lemon Ricotta Cake",
-    prepTime: "12 mins",
-    cookTime: "55 mins",
-    totalTime: "1 hr 7 mins",
-    difficulty: "Medium",
-    rating: 4.5,
-    reviews: 301,
-    image: "../../assets/desserts/Italian Lemon Ricotta Cake.jpeg",
-    description: "This Italian Lemon Ricotta Cake is light, fluffy, and full of flavor. Made with ricotta cheese and fresh lemon, you're going to love this traditional Italian dessert that's also great served as a breakfast or brunch treat.",
+    id: "chocolate-sheet-cake",
+    title: "Chocolate Sheet Cake",
+    image: "/assets/desserts/Cake/Chocolate Sheet Cake.jpg",
+    description: "Classic Texas-style chocolate sheet cake with rich chocolate frosting and moist texture.",
+    meta: {
+      prepTime: "15 mins",
+      cookTime: "25 mins",
+      totalTime: "40 mins",
+      difficulty: "Easy",
+      rating: 4.9,
+      reviews: 312
+    },
     ingredients: [
-      "3/4 cup butter, softened 1 1/2 sticks",
-      "1 1/2 cups sugar",
-      "15 ounces whole milk ricotta cheese",
+      "2 cups all-purpose flour",
+      "2 cups granulated sugar",
+      "1/2 cup buttermilk",
+      "2 large eggs",
+      "1 tsp baking soda",
+      "1 tsp vanilla extract",
+      "1/2 cup unsalted butter",
+      "1/2 cup vegetable oil",
+      "4 tbsp cocoa powder",
+      "1 cup water"
+    ],
+    instructions: [
+      {
+        section: "Cake Batter",
+        steps: [
+          "Preheat oven to 350°F (175°C). Grease a 10x15 inch jelly roll pan.",
+          "In a large bowl, whisk together flour, sugar, and baking soda.",
+          "In a saucepan, combine butter, oil, cocoa, and water. Bring to a boil."
+        ]
+      },
+      {
+        section: "Baking",
+        steps: [
+          "Pour hot cocoa mixture over dry ingredients and mix well.",
+          "Add eggs, buttermilk, and vanilla. Beat until smooth.",
+          "Pour into prepared pan and bake for 20-25 minutes."
+        ]
+      },
+      {
+        section: "Frosting",
+        steps: [
+          "While cake bakes, prepare frosting by melting butter with cocoa and milk.",
+          "Remove from heat and whisk in powdered sugar and vanilla.",
+          "Pour hot frosting over warm cake immediately after baking."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "350",
+      carbs: "48g",
+      protein: "3g",
+      fat: "18g",
+      saturatedFat: "7g",
+      cholesterol: "45mg",
+      sodium: "180mg",
+      sugar: "36g"
+    },
+    tags: ["Dessert", "Cake", "Chocolate", "Sheet Cake", "Classic"],
+    video: "https://www.youtube.com/embed/Iwmd-EdsBdM?si=6N75WHDs4Clrju_l"
+  },
+  {
+    id: "italian-lemon-ricotta-cake",
+    title: "Italian Lemon Ricotta Cake",
+    image: "/assets/desserts/Cake/Italian Lemon Ricotta Cake.jpeg",
+    description: "Light and moist Italian cake made with ricotta cheese and fresh lemon zest.",
+    meta: {
+      prepTime: "25 mins",
+      cookTime: "50 mins",
+      totalTime: "1 hr 15 mins",
+      difficulty: "Medium",
+      rating: 4.6,
+      reviews: 189
+    },
+    ingredients: [
+      "15 oz ricotta cheese",
+      "1 1/2 cups all-purpose flour",
+      "1 cup granulated sugar",
       "3 large eggs",
-      "1 teaspoon vanilla",
-      "1 large lemon, zested and juiced",
-      "1/2 teaspoon baking soda",
-      "1/2 teaspoon salt",
-      "1 1/2 cups flour",
-      "Powdered sugar for dusting top of cake"
+      "1/4 cup unsalted butter, melted",
+      "Zest of 2 lemons",
+      "Juice of 1 lemon",
+      "1 tsp baking powder",
+      "1/2 tsp salt",
+      "Powdered sugar for dusting"
     ],
     instructions: [
-      { step: "", details: ["Preheat oven to 350 degrees. Grease a 9 inch springform pan using butter and powdered sugar, set aside.", "In a large mixing bowl or stand up mixer, cream together the butter and sugar until combined. Add in the ricotta cheese and blend until light and fluffy, about 4 to 5 minutes.", "Mix in the eggs, one at a time. Add in the vanilla, lemon zest, and lemon juice and mix to combine. In the same bowl, stir in the baking soda and salt. Lastly, add in the flour and mix until just combined, scraping down the sides of bowl to full incorporate all of the ingredients.", "Pour the batter into the prepared springform pan. Bake for 45-55 minutes, or until the cake is set and a toothpick inserted in the middle of the cake comes out clean.", "Let cool in pan for 15 minutes before removing the collar and base of the pan. Cool on a wire rack and dust with powdered sugar before serving."] }
+      {
+        section: "Preparation",
+        steps: [
+          "Preheat oven to 350°F (175°C). Grease and line a 9-inch springform pan.",
+          "In a large bowl, beat eggs and sugar until pale and fluffy.",
+          "Add ricotta cheese and mix until smooth."
+        ]
+      },
+      {
+        section: "Mixing",
+        steps: [
+          "Add melted butter, lemon zest, and lemon juice. Mix well.",
+          "In a separate bowl, whisk together flour, baking powder, and salt.",
+          "Gradually fold dry ingredients into wet ingredients until just combined."
+        ]
+      },
+      {
+        section: "Baking",
+        steps: [
+          "Pour batter into prepared pan and smooth the top.",
+          "Bake for 45-50 minutes until golden and a toothpick comes out clean.",
+          "Cool completely before dusting with powdered sugar."
+        ]
+      }
     ],
     nutrition: {
-      calories: 501,
-      carbs: "57g",
-      protein: "11g",
-      fat: "26g",
-      saturatedFat: "16g",
-      transFat: "1g",
-      cholesterol: "134mg",
-      sodium: "285mg",
-      fiber: "1g",
-      sugar: "38g",
-      iron: "2mg",
-      vitaminC: "2mg",
-      vitaminA: "858IU"
+      calories: "320",
+      carbs: "42g",
+      protein: "8g",
+      fat: "14g",
+      saturatedFat: "8g",
+      cholesterol: "95mg",
+      sodium: "210mg",
+      sugar: "28g"
     },
-    tags: ["Cake", "Lemon Ricotta", "Lemony Flavor", "Easy", "Family Favorite"],
-    video: "https://www.youtube.com/embed/chym-6Nr2tM?si=qjPdamWF0vXTW2jb"
-  },
+    tags: ["Dessert", "Cake", "Italian", "Ricotta", "Lemon", "Cheesecake"],
+    video: "https://www.youtube.com/embed/chym-6Nr2tM?si=FbDKIGUPSnuW4Ncw"
+  }
+];
+
+export const pastryRecipes = [
   {
-    id: "limoncello-tiramisu",
-    name: "Limoncello Tiramisu",
-    prepTime: "25 mins",
-    coolingTime: "4 hrs",
-    totalTime: "4 hrs 25 mins",
-    difficulty: "Medium",
-    rating: 3.5,
-    reviews: 198,
-    image: "../../assets/desserts/Limoncello Tiramisu.jpg",
-    description: "Limoncello Tiramisu is a simple make-ahead Italian dessert made with Limoncello liqueur, mascarpone cheese, and ladyfinger cookies. This is a deliciously lemony version of classic Italian tiramisu and can be made up to two days in advance.",
-    ingredients: [
-      "2 cups mascarpone cheese",
-      "1/4 cup Lemon Curd",
-      "1/4 cup Limoncello",
-      "1 lemon, zested and juiced",
-      "2 cups heavy whipping cream",
-      "1/3 cup powdered sugar",
-      "3/4 cup sugar",
-      "4 lemons, zested and juiced",
-      "1/2 cup Lemon Curd",
-      "1 tablespoon Limoncello (optional)"
-    ],
-    instructions: [
-      { step: "", details: ["In a large bowl using a handheld mixer, beat together the mascarpone, 1/4 cup lemon curd, 1/4 cup Limoncello, and the juice and zest of one lemon. Set aside.", "In another bowl using a handheld mixer, beat together the heavy whipping cream and powdered sugar until mixture thickens into peaks.", "Use a rubber spatula to gently fold the whipped cream mixture into the mascarpone mixture, set aside.", "To make the soak, bring sugar and the juice and zest of four lemons to a boil. Reduce to a simmer and cook for 2 minutes. Turn off the heat and pour in 1/2 cup Limoncello.", "To assemble, take the ladyfingers and quickly dip them in the soak mixture, allowing them to soak up some the liquid. Repeat with half of the ladyfingers laying them to fit in the bottom of the baking pan, cutting to fit if necessary. (You will have leftover soak).", "Gently scoop on half of the mascarpone mixture and spread over the ladyfingers. Repeat the layers with the remaining soaked ladyfingers, ending with the other half of the mascarpone filling.", "To make the drizzle, thin out 1/4 cup of lemon curd with either a tablespoon of Limoncello, or remaining soak. Whisk and then carefully drizzle over top of the tiramisu.", "Cover and refrigerate for at least 4 hours or up to two days before serving."] }
-    ],
-    nutrition: {
-      calories: 438,
-      carbs: "40g",
-      protein: "6g",
-      fat: "26g",
-      saturatedFat: "16g",
-      transFat: "0.01g",
-      sodium: "82mg",
-      potassium: "103mg",
-      fiber: "1g",
-      sugars: "22g",
-      vitaminA: "976IU",
-      vitaminC: "18mg",
-      calcium: "80mg"
+    id: "palmiers",
+    title: "Palmiers",
+    image: "/assets/desserts/Pastry/Palmiers.jpeg",
+    description: "Classic French puff pastry cookies shaped like palm leaves, with caramelized sugar coating.",
+    meta: {
+      prepTime: "20 mins",
+      cookTime: "15 mins",
+      totalTime: "35 mins",
+      difficulty: "Medium",
+      rating: 4.5,
+      reviews: 145
     },
-    tags: ["Dessert", "Limoncello", "Tiramisu", "Easy", "Perfect for Party"],
-    video: "https://www.youtube.com/embed/79fHqGywovs?si=s_lJ1NmY_4SUCKwp"
-  },
-  {
-    id: "strawberry-tiramisu",
-    name: "Strawberry Tiramisu",
-    prepTime: "15 mins",
-    chillTime: "12 hrs",
-    totalTime: "12 hrs 15 mins",
-    difficulty: "Easy",
-    rating: 4.5,
-    reviews: 53,
-    image: "../../assets/desserts/Strawberry Tiramisu.jpg",
-    description: "Strawberry Tiramisu is a delicious twist on the classic dessert. Made with no raw eggs, this is a simple and delicious treat to have on hand for any occasion.",
     ingredients: [
-      "1 cup heavy whipping cream",
-      "1/2 cup powdered sugar",
-      "1 teaspoon vanilla",
-      "8 ounces mascarpone cheese, softened",
-      "1/2 cup strawberry jam, seedless",
-      "1/4 cup Grand Marnier",
-      "1/4 cup water",
-      "1 package ladyfingers",
-      "1 pound strawberries, sliced",
-      "Powdered sugar for sprinkling"
+      "1 sheet puff pastry, thawed",
+      "1/2 cup granulated sugar",
+      "1/4 cup brown sugar",
+      "1 tsp cinnamon",
+      "1 egg white, lightly beaten"
     ],
     instructions: [
-      { step: "", details: ["In a large bowl, use a handheld mixer to beat the heavy cream, powdered sugar, and vanilla until stiff peaks form. Fold in the mascarpone and mix until well combined.", "In a separate bowl, whisk together the strawberry jam, Grand Marnier (if using), and water. Dip half of the ladyfingers in the mixture and arrange them in a single layer in the bottom of a 9 x 9 inch baking dish.", "Spoon half of the mascarpone mixture over the ladyfingers, spreading it evenly. Arrange half of the sliced strawberries on top of the mascarpone mixture.", "Repeat the layering process with another layer of dipped ladyfingers and finish with the mascarpone mixture. (Don't add the final layer of strawberries at this point). Cover dish with plastic wrap and refrigerate for at least 12 hours or up to 48 hours.", "Before serving, arrange the remaining half of the sliced strawberries on top of the tiramisu. Dust with powdered sugar."] }
+      {
+        section: "Preparation",
+        steps: [
+          "Preheat oven to 400°F (200°C). Line baking sheets with parchment paper.",
+          "Mix sugars and cinnamon in a shallow dish.",
+          "Sprinkle half the sugar mixture on a clean work surface."
+        ]
+      },
+      {
+        section: "Shaping",
+        steps: [
+          "Place puff pastry on sugared surface and sprinkle with remaining sugar.",
+          "Roll out pastry slightly to press sugar into both sides.",
+          "Fold both long sides toward the center, then fold again to meet in the middle."
+        ]
+      },
+      {
+        section: "Baking",
+        steps: [
+          "Slice into 1/2-inch thick pieces and place on baking sheets.",
+          "Brush with egg white and sprinkle with extra sugar if desired.",
+          "Bake for 12-15 minutes until golden and caramelized."
+        ]
+      }
     ],
     nutrition: {
-      calories: 394,
-      carbs: "55.2g",
-      protein: "7.9g",
-      fat: "7.9g",
-      saturatedFat: "9.5g",
-      transFat: "0g",
-      cholesterol: "79mg",
-      sodium: "237mg",
-      potassium: "315mg",
-      fiber: "3.2g",
-      sugar: "31.5g",
-      vitaminD: "0.0mcg",
-      calcium: "158mg"
-    },
-    tags: ["Strawberry", "Tiramisu", "Sweet", "Easy", "Family Favorite"],
-    video: "https://www.youtube.com/embed/je_e4ypcNYs?si=O4eQ70_ykCcvePat"
-  },
-  {
-    id: "oreo-tiramisu-trifle",
-    name: "Oreo Tiramisu Trifle",
-    prepTime: "15 mins",
-    cookTime: "0 mins",
-    totalTime: "15 mins",
-    difficulty: "Easy",
-    rating: 4.5,
-    reviews: 210,
-    image: "../../assets/desserts/Oreo Tiramisu Trifle.webp",
-    description: "This dreamy, no-bake Oreo Tiramisu Trifle combines rich flavors with a delightful crunch, making it the perfect dessert for any occasion.",
-    ingredients: [
-      "20 cookies Oreo cookies, crushed",
-      "1 cup heavy cream",
-      "1/2 cup mascarpone cheese",
-      "1/4 cup powdered sugar",
-      "1 tablespoon vanilla extract",
-      "1/2 cup brewed coffee, cooled",
-      "1 tablespoon cocoa powder (for dusting)",
-      "1/4 cup chocolate shavings (for garnish)"
-    ],
-    instructions: [
-      { step: "", details: ["Whip the heavy cream in a mixing bowl until soft peaks form.", "Gently fold in the mascarpone cheese, powdered sugar, and vanilla extract until smooth and fluffy.", "Dip half of the crushed Oreos into the cooled coffee and layer them at the bottom of serving glasses.", "Spread a layer of the mascarpone mixture over the Oreos.", "Repeat the layering process, finishing with a layer of the cream mixture.", "Dust the top with cocoa powder and garnish with chocolate shavings.", "Refrigerate for at least 2 hours before serving."] }
-    ],
-    nutrition: {
-      calories: 140,
-      carbs: "21g",
+      calories: "85",
+      carbs: "12g",
       protein: "1g",
-      fat: "6g",
-      saturatedFat: "2g",
-      transFat: "0g",
+      fat: "4g",
+      saturatedFat: "1g",
       cholesterol: "0mg",
-      sodium: "95mg",
-      potassium: "40mg",
-      fiber: "0.2g",
-      sugar: "22g",
-      calcium: "0mg",
-      iron: "1.2mg"
+      sodium: "45mg",
+      sugar: "8g"
     },
-    tags: ["Dessert", "Oreo", "Easy", "Snack"],
-    video: "https://www.youtube.com/embed/60P_1aKONZQ?si=bESOaEtx7QR3wnPp"
+    tags: ["Dessert", "Pastry", "French", "Cookies", "Puff Pastry"],
+    video: "https://www.youtube.com/embed/WPDZc_ntmqI?si=GVYc7g6L2I7BFm4A"
   },
   {
-    id: "pumpkin-tiramisu",
-    name: "Pumpkin Chai Tiramisu",
-    prepTime: "20 mins",
-    coolingTime: "3 hrs",
-    totalTime: "3 hrs 20 mins",
-    difficulty: "Easy",
-    rating: 5,
-    reviews: 201,
-    image: "../../assets/desserts/Pumpkin Chai Tiramisu.webp",
-    description: "This Pumpkin Chai Tiramisu is a festive fall twist on a classic! Pumpkin pure is whipped into the cream mixture, with chai concentrate used instead of traditional espresso to dip the ladyfingers into. Optionally, you can add a little bit of spiced rum to the chai mixture for a boozy oomph of flavor. This is a great dessert to make for Thanksgiving or other holiday celebrations!",
+    id: "peanut-butter-cup-napoleons",
+    title: "Peanut Butter Cup Napoleons",
+    image: "/assets/desserts/Pastry/Peanut Butter Cup Napoleons.jpg",
+    description: "Decadent dessert with layers of puff pastry, peanut butter mousse, and chocolate ganache.",
+    meta: {
+      prepTime: "30 mins",
+      cookTime: "20 mins",
+      totalTime: "1 hr",
+      difficulty: "Hard",
+      rating: 4.8,
+      reviews: 98
+    },
     ingredients: [
-      "1 cup heavy whipping cream",
-      "1 cup pumpkin pure",
-      "1/3 cup sugar",
-      "2 tablespoons maple syrup",
-      "8 oz mascarpone cheese",
-      "81 cup chai concentrate",
-      "2-4 tablespoons spiced rum",
-      "2 tablespoons cocoa powder",
-      "1 teaspoon pumpkin pie spice",
-      "24 ladyfingers",
-      "Bittersweet chocolate"
+      "2 sheets puff pastry",
+      "1 cup creamy peanut butter",
+      "8 oz cream cheese, softened",
+      "1 cup powdered sugar",
+      "1 cup heavy cream",
+      "1 cup semi-sweet chocolate chips",
+      "1/2 cup chopped peanuts",
+      "Mini peanut butter cups for garnish"
     ],
     instructions: [
-      { step: "", details: ["In a medium bowl, whip the 1 cup heavy whipping cream until soft peaks form. In another bowl, beat together the 1 cup pumpkin pure, 1/3 cup sugar, 2 tablespoons maple syrup, and 8 oz. mascarpone cheese until smooth and well combined. Fold the two mixtures together gently until combined.", "In a shallow bowl, mix together the 1 cup chai concentrate and 2-4 tablespoons spiced rum, if using. In a small bowl, mix together the 2 tablespoons cocoa powder and the 1 teaspoon pumpkin pie spice.", "Sift half of the cocoa powder the pumpkin pie spice mix onto the bottom of an 8×8-inch baking dish.", "Dip half of the 24 ladyfingers into the chai concentrate briefly (soaking for too long will result in a soggy texture). Place in a single layer, rounded-side-up, on top of the dusted baking dish. Feel free to break them in half to fit, if needed. Spread half of the pumpkin cream mixture on top. Repeat with the remaining ladyfingers, and the rest of the pumpkin cream mixture.", "Dust the top layer by sifting the remaining half of the cocoa powder and pumpkin pie spice mixture.", "For best results, cover with plastic wrap (or alternative) and refrigerate for at least 3-4 hours, but preferably overnight, or up to 48 hours. Before serving, dust with bittersweet chocolate shavings if desired. Cut into 9 slices (3 slices x3 slices in a square pan) and serve."] }
+      {
+        section: "Pastry",
+        steps: [
+          "Preheat oven to 400°F (200°C).",
+          "Cut puff pastry into rectangles and bake until golden and puffed.",
+          "Let cool completely."
+        ]
+      },
+      {
+        section: "Peanut Butter Mousse",
+        steps: [
+          "Beat cream cheese and peanut butter until smooth.",
+          "Add powdered sugar and mix well.",
+          "In a separate bowl, whip heavy cream to stiff peaks.",
+          "Fold whipped cream into peanut butter mixture."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Melt chocolate chips with 1/4 cup cream to make ganache.",
+          "Layer pastry, peanut butter mousse, and ganache.",
+          "Repeat layers and top with chopped peanuts and mini peanut butter cups."
+        ]
+      }
     ],
     nutrition: {
-      calories: 371,
-      carbs: "32g",
-      protein: "6g",
-      fat: "24g",
-      saturatedFat: "14g",
-      transFat: "0g",
-      cholesterol: "120mg",
-      sodium: "67mg",
-      potassium: "153mg",
-      fiber: "2g",
-      sugar: "12g",
-      vitaminC: "1mg",
-      vitaminA: "5142IU",
-      calcium: "81mg"
+      calories: "520",
+      carbs: "38g",
+      protein: "11g",
+      fat: "38g",
+      saturatedFat: "16g",
+      cholesterol: "45mg",
+      sodium: "280mg",
+      sugar: "24g"
     },
-    tags: ["Dessert", "Pumpkin", "Easy", "Everbody's Favorite"]
-  },
-  {
-    id: "panacotta",
-    name: "Panacotta",
-    prepTime: "15 mins",
-    additionalTime: "4 hrs 20 mins",
-    totalTime: "4 hrs 35 mins",
-    difficulty: "Easy",
-    rating: 5,
-    reviews: 32,
-    image: "../../assets/desserts/Panacotta.png",
-    description: "Panna Cotta is that wonderful Italian milk custard, quivering and wobbly with the promise of melting into a flood of creamy goodness in your mouth. Simple yet elegant, perfect for dinner parties.",
-    ingredients: [
-      "2 1/2 teaspoon gelatine powder",
-      "1 1/2 cup milk",
-      "1 1/2 teaspoon vanilla bean paste with seeds",
-      "1/4 cup caster sugar",
-      "1 pinch cooking salt/kosher salt",
-      "Oil spray"
-    ],
-    instructions: [
-      { step: "", details: ["Pour the 1/2 cup of milk in a small saucepan, sprinkle the gelatine across the surface then whisk in. Leave for 5 minutes – the gelatine will swell and look curdled.", "Gently warm the gelatine mixture on medium low heat and stir until it melts and looks like lump-free milk again. Don't let it simmer.", "Add the milk, sugar, vanilla bean paste and pinch of salt. Heat just to let the milk warm and stir gently to dissolve the sugar. Don't let the milk simmer or even get steamy or frothy, just gently warm.Once the sugar is dissolved, remove from the heat and leave for 10 minutes to let the vanilla flavour to infuse.", "Stir in cream. Pour into a large jug or bowl, clear glass is best (so you can check for seed sinking later).", "Refrigerate uncovered for 1 hour, stirring at the 30 minute and 45 minute mark, scraping along the sides (in case it starts to set).", "After 1 hour, the mixture should be a pouring cream consistency. Stir, leave for 15 seconds then check the underside to ensure the vanilla beans aren't settling back on the base.", "Lightly oil spray 6 moulds (about 2/3 cup / 160ml each), then lightly wipe out excess. Divide mixture between moulds (if you spy lumps, strain).", "Refrigerate at least 6 hours, preferably overnight. (If not un-moulding, 4 hours is enough)."] },
-      { step: "Turning Out Pannacotta", details: ["Remove the Panna Cotta from the fridge. Run the tip of a small knife around the edge of the surface.", "Invert mould onto a plate. Grip the plate and mould with both hands and give it an assertive shake to loosen the Panna Cotta (it might take a few goes).", "Serve the Panna Cotta with additional few berries for color on top."] }
-    ],
-    nutrition: {
-      calories: 253,
-      carbs: "13g",
-      protein: "5g",
-      fat: "21g",
-      saturatedFat: "13g",
-      transFat: "0g",
-      cholesterol: "63mg",
-      sodium: "46mg",
-      potassium: "139mg",
-      fiber: "0g",
-      sugar: "13g",
-      vitaminC: "0.3mg",
-      calcium: "109mg"
-    },
-    tags: ["Dessert", "Pudding", "Easy", "Everbody's Favorite"],
-    video: "https://www.youtube.com/embed/p5mSdmO6kEc?si=HsaszEYKQ9HvQ1ng"
+    tags: ["Dessert", "Pastry", "Peanut Butter", "Chocolate", "Decadent"],
+    video: "https://www.youtube.com/embed/OqZNe-gfzGg?si=PJH0VdFod3hcOuTd"
   },
   {
     id: "profiteroles",
-    name: "Profiteroles",
-    prepTime: "30 mins",
-    cookTime: "40 mins",
-    totalTime: "1 hr 10 mins",
-    difficulty: "Easy",
-    rating: 5,
-    reviews: 220,
-    image: "../../assets/desserts/Profiteroles.png",
-    description: "Crispy light-as-air pastry balls filled with custard or cream and topped with chocolate. There are few things in life as delightful as biting into one of these! Terrific lighter / finger food option for dessert.",
+    title: "Profiteroles",
+    image: "/assets/desserts/Pastry/Profiteroles.png",
+    description: "Classic French choux pastry puffs filled with vanilla pastry cream and drizzled with chocolate sauce.",
+    meta: {
+      prepTime: "40 mins",
+      cookTime: "30 mins",
+      totalTime: "1 hr 10 mins",
+      difficulty: "Medium",
+      rating: 4.7,
+      reviews: 167
+    },
     ingredients: [
-      "100g / 7 tablespoons unsalted butter",
       "1 cup water",
-      "1 cup flour",
+      "1/2 cup unsalted butter",
+      "1 cup all-purpose flour",
       "4 large eggs",
-      "Pinch of salt",
-      "Vanilla custard (Creme Patissiere)",
-      "Ice cream",
+      "2 cups milk",
+      "1/2 cup granulated sugar",
       "4 egg yolks",
-      "1/4 cup white sugar",
-      "3 1/2 tablespoons cornflour/cornstarch",
-      "2 1/3 cups milk",
-      "1/4 cup extra white sugar",
-      "1 teaspoon vanilla bean paste",
-      "250g/8oz dark chocolate",
-      "1 cup cream"
+      "1/4 cup cornstarch",
+      "1 tsp vanilla extract",
+      "8 oz dark chocolate",
+      "1/2 cup heavy cream"
     ],
     instructions: [
-      { step: "", details: ["Place butter in a saucepan over medium heat. When mostly melted, add water then bring to a rapid simmer.", "While liquid is simmering, add flour and pinch of salt, and stir vigorously with a wooden spoon (still on stove) until the dough forms sort of a ball and pulls away from the sides of the saucepan. About 1 minute.", "Remove from heat and let mixture cool for 10 minutes.", "Preheat oven to 220°C/420°F (200°C fan).", "Lightly grease 2 large or 3 standard baking trays with butter, then line with paper. (Grease stops paper sliding)", "Add 1 egg into batter, beat until combined. Add remaining eggs one at a time making sure each is combined before adding the next. Dough should be like a thick paste.", "Place dough into a piping bag fitted with a 13 – 15mm round tip (1/2 – 3/5\").", "Pipe 2 tsp blobs 5cm/2\" apart (I do 16 on each tray). Makes 40 – 50 blobs.", "Wet your finger with water and pat down any peaks to form domes (for nice round balls).", "Bake 2 trays at a time for 15 minutes, switching the trays halfway.", "Remove from oven, reduce heat to 180°C/35°0F (160°C fan). They should be crispy enough that when pierced, they will not collapse – if not, return to oven for 3 minutes.", "Pierce balls with knife then return to oven for 5 – 7 minutes until golden and crispy.", " Transfer to rack, cool fully before filling with custard, cream or split then fill with ice cream. Drizzle with chocolate and serve!"] },
-      { step: "Chocolate Topping", details: ["Place cream and chocolate in a heatproof bowl. Microwave 4 x 30 seconds, stirring in between, until incorporated. Cool to warm, then use for drizzling or dipping."] },
-      { step: "Custard Topping", details: ["Whisk yolks and sugar, then whisk in cornflour.", "Place milk, vanilla and extra sugar in a saucepan over medium high. Heat until just before simmering.", "Whisk in 1/4 cup hot milk into egg mixture. Whisk in another 1/4 cup. Then add remaining milk mixture and whisk.", "Pour back into saucepan. Return to stove on medium low (low for strong stoves). Whisk constantly 2 to 3 minutes until the mixture thicks to a thick dolloping custard consistency.", "Remove from heat immediately, pour into bowl. Press cling wrap onto surface (stops skin forming) then refrigerate for 4 to 5 hours until set. Do not whisk again once set (loses thickness).", "Spoon into piping bag fitting with a very fine nozzle. Then pipe into profiteroles (use the hole pierced during bake, or make a new hole)."] }
+      {
+        section: "Choux Pastry",
+        steps: [
+          "Preheat oven to 425°F (220°C). Line baking sheets with parchment.",
+          "Bring water and butter to a boil in a saucepan.",
+          "Remove from heat and add flour all at once. Stir vigorously."
+        ]
+      },
+      {
+        section: "Baking",
+        steps: [
+          "Return to heat and cook for 1-2 minutes until dough forms a ball.",
+          "Transfer to mixing bowl and beat in eggs one at a time.",
+          "Pipe small mounds onto baking sheets and bake for 20-25 minutes."
+        ]
+      },
+      {
+        section: "Filling and Assembly",
+        steps: [
+          "Make pastry cream by heating milk, then tempering egg yolk mixture.",
+          "Cook until thickened, add vanilla, and chill.",
+          "Fill cooled puffs with pastry cream.",
+          "Melt chocolate with cream for sauce and drizzle over profiteroles."
+        ]
+      }
     ],
     nutrition: {
-      calories: 101,
-      carbs: "8g",
-      protein: "1g",
-      fat: "6g",
-      saturatedFat: "3g",
-      transFat: "0g",
-      cholesterol: "42mg",
-      sodium: "29mg",
-      potassium: "60mg",
-      fiber: "0g",
-      sugar: "4g",
-      vitaminC: "0.1mg",
-      calcium: "26mg"
+      calories: "280",
+      carbs: "24g",
+      protein: "6g",
+      fat: "18g",
+      saturatedFat: "11g",
+      cholesterol: "135mg",
+      sodium: "55mg",
+      sugar: "14g"
     },
-    tags: ["Dessert", "Profiteroles", "Pastry", "Easy", "Everbody's Favorite"],
-    video: "https://www.youtube.com/embed/63wM3_3J6EM?si=2qTuCtA0PXQmu-_3"
+    tags: ["Dessert", "Pastry", "French", "Choux", "Cream Puffs"],
+    video: "https://www.youtube.com/embed/63wM3_3J6EM?si=79tVOEM44Qfssrlu"
+  },
+  {
+    id: "raspberry-chocolate-puffs",
+    title: "Raspberry Chocolate Puffs",
+    image: "/assets/desserts/Pastry/Raspberry Chocolate Puffs.jpg",
+    description: "Light puff pastry shells filled with raspberry cream and drizzled with dark chocolate.",
+    meta: {
+      prepTime: "25 mins",
+      cookTime: "20 mins",
+      totalTime: "45 mins",
+      difficulty: "Easy",
+      rating: 4.6,
+      reviews: 123
+    },
+    ingredients: [
+      "1 package puff pastry shells",
+      "1 cup fresh raspberries",
+      "1 cup heavy cream",
+      "1/4 cup powdered sugar",
+      "4 oz dark chocolate",
+      "1 tsp raspberry extract",
+      "Fresh mint for garnish"
+    ],
+    instructions: [
+      {
+        section: "Preparation",
+        steps: [
+          "Bake puff pastry shells according to package directions.",
+          "Let cool completely, then remove center tops to create shells."
+        ]
+      },
+      {
+        section: "Raspberry Cream",
+        steps: [
+          "Mash 1/2 cup raspberries with a fork.",
+          "Whip heavy cream with powdered sugar until stiff peaks form.",
+          "Fold in mashed raspberries and raspberry extract."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Fill pastry shells with raspberry cream.",
+          "Melt dark chocolate and drizzle over filled shells.",
+          "Garnish with fresh raspberries and mint leaves."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "310",
+      carbs: "26g",
+      protein: "4g",
+      fat: "22g",
+      saturatedFat: "12g",
+      cholesterol: "45mg",
+      sodium: "120mg",
+      sugar: "12g"
+    },
+    tags: ["Dessert", "Pastry", "Raspberry", "Chocolate", "Easy"],
+    video: "https://www.youtube.com/embed/kkxISB7bTFI?si=8NhPjJ7csD_fl4ka"
+  }
+];
+
+export const puddingRecipes = [
+  {
+    id: "lemon-pudding-parfait",
+    title: "Lemon Pudding Parfait",
+    image: "/assets/desserts/Pudding/Lemon Pudding Parfait.jpg",
+    description: "Layers of tangy lemon pudding, vanilla wafers, and whipped cream in a beautiful parfait glass.",
+    meta: {
+      prepTime: "15 mins",
+      cookTime: "10 mins",
+      totalTime: "25 mins",
+      difficulty: "Easy",
+      rating: 4.4,
+      reviews: 178
+    },
+    ingredients: [
+      "1 package instant lemon pudding mix",
+      "2 cups cold milk",
+      "1 cup heavy cream",
+      "2 tbsp powdered sugar",
+      "1 cup crushed vanilla wafers",
+      "Fresh lemon zest for garnish",
+      "Lemon slices for decoration"
+    ],
+    instructions: [
+      {
+        section: "Pudding Preparation",
+        steps: [
+          "Whisk pudding mix with cold milk for 2 minutes until thickened.",
+          "Refrigerate for 5 minutes to set."
+        ]
+      },
+      {
+        section: "Whipped Cream",
+        steps: [
+          "Whip heavy cream with powdered sugar until stiff peaks form.",
+          "Set aside 1/2 cup for garnish."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Layer crushed wafers, lemon pudding, and whipped cream in glasses.",
+          "Repeat layers, ending with whipped cream.",
+          "Garnish with lemon zest and lemon slices.",
+          "Chill for 1 hour before serving."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "280",
+      carbs: "32g",
+      protein: "4g",
+      fat: "16g",
+      saturatedFat: "9g",
+      cholesterol: "50mg",
+      sodium: "220mg",
+      sugar: "22g"
+    },
+    tags: ["Dessert", "Pudding", "Lemon", "Parfait", "No-Bake"],
+    video: "https://www.youtube.com/embed/gi53O1tcVEg?si=3tawe60FNJBBDxmw"
+  },
+  {
+    id: "matcha-green-tea-pudding",
+    title: "Matcha Green Tea Pudding",
+    image: "/assets/desserts/Pudding/Matcha Green Tea Pudding.jpg",
+    description: "Smooth and creamy Japanese-style green tea pudding with delicate matcha flavor.",
+    meta: {
+      prepTime: "20 mins",
+      cookTime: "15 mins",
+      totalTime: "3 hrs 35 mins",
+      difficulty: "Medium",
+      rating: 4.8,
+      reviews: 89
+    },
+    ingredients: [
+      "2 tsp high-quality matcha powder",
+      "2 cups milk",
+      "1/2 cup granulated sugar",
+      "3 egg yolks",
+      "1 tbsp gelatin powder",
+      "1/4 cup cold water",
+      "Whipped cream for serving",
+      "Matcha powder for dusting"
+    ],
+    instructions: [
+      {
+        section: "Preparation",
+        steps: [
+          "Bloom gelatin in cold water and set aside.",
+          "Sift matcha powder into a bowl to remove lumps.",
+          "Heat milk in a saucepan until steaming but not boiling."
+        ]
+      },
+      {
+        section: "Tempering",
+        steps: [
+          "Whisk egg yolks with sugar until pale.",
+          "Slowly pour hot milk into egg mixture while whisking constantly.",
+          "Return mixture to saucepan and cook over low heat until thickened."
+        ]
+      },
+      {
+        section: "Setting",
+        steps: [
+          "Remove from heat and stir in bloomed gelatin until dissolved.",
+          "Strain mixture through a fine sieve.",
+          "Pour into serving dishes and refrigerate for 3-4 hours.",
+          "Serve with whipped cream and dust with matcha powder."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "210",
+      carbs: "28g",
+      protein: "6g",
+      fat: "8g",
+      saturatedFat: "4g",
+      cholesterol: "130mg",
+      sodium: "65mg",
+      sugar: "26g"
+    },
+    tags: ["Dessert", "Pudding", "Matcha", "Japanese", "Green Tea"],
+    video: "https://www.youtube.com/embed/F9FFTtZimcY?si=K7D7xt54iCBiSYpU"
+  },
+  {
+    id: "panacotta",
+    title: "Panacotta",
+    image: "/assets/desserts/Pudding/Panacotta.png",
+    description: "Classic Italian cooked cream dessert with vanilla bean, served with berry compote.",
+    meta: {
+      prepTime: "15 mins",
+      cookTime: "5 mins",
+      totalTime: "4 hrs 20 mins",
+      difficulty: "Easy",
+      rating: 4.9,
+      reviews: 245
+    },
+    ingredients: [
+      "2 cups heavy cream",
+      "1/2 cup granulated sugar",
+      "1 vanilla bean, split and scraped",
+      "2 tsp gelatin powder",
+      "3 tbsp cold water",
+      "1 cup mixed berries",
+      "2 tbsp honey",
+      "Fresh mint for garnish"
+    ],
+    instructions: [
+      {
+        section: "Gelatin Preparation",
+        steps: [
+          "Bloom gelatin in cold water for 5 minutes.",
+          "Lightly oil 4 ramekins or molds."
+        ]
+      },
+      {
+        section: "Cream Mixture",
+        steps: [
+          "Combine cream, sugar, and vanilla bean in a saucepan.",
+          "Heat over medium until steaming, stirring to dissolve sugar.",
+          "Remove from heat and stir in bloomed gelatin until dissolved."
+        ]
+      },
+      {
+        section: "Setting and Serving",
+        steps: [
+          "Strain mixture through fine sieve into prepared molds.",
+          "Refrigerate for at least 4 hours, preferably overnight.",
+          "To serve, dip molds in hot water for 10 seconds and invert onto plates.",
+          "Serve with berry compote and fresh mint."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "380",
+      carbs: "24g",
+      protein: "4g",
+      fat: "32g",
+      saturatedFat: "20g",
+      cholesterol: "120mg",
+      sodium: "40mg",
+      sugar: "22g"
+    },
+    tags: ["Dessert", "Pudding", "Italian", "Vanilla", "Cream"],
+    video: "https://www.youtube.com/embed/p5mSdmO6kEc?si=2aAny7zgY7mgLHwY"
+  },
+  {
+    id: "pumpkin-spice-cup",
+    title: "Pumpkin Spice Cup",
+    image: "/assets/desserts/Pudding/Pumpkin Spice Cup.jpg",
+    description: "Seasonal pumpkin spice pudding in individual cups topped with whipped cream and cinnamon.",
+    meta: {
+      prepTime: "20 mins",
+      cookTime: "15 mins",
+      totalTime: "2 hrs 35 mins",
+      difficulty: "Easy",
+      rating: 4.7,
+      reviews: 134
+    },
+    ingredients: [
+      "1 cup pumpkin puree",
+      "1 1/2 cups milk",
+      "1/2 cup brown sugar",
+      "3 tbsp cornstarch",
+      "2 eggs",
+      "1 tsp cinnamon",
+      "1/2 tsp nutmeg",
+      "1/4 tsp ginger",
+      "1/4 tsp cloves",
+      "Whipped cream for topping",
+      "Graham cracker crumbs"
+    ],
+    instructions: [
+      {
+        section: "Pudding Base",
+        steps: [
+          "Whisk together pumpkin puree, eggs, and spices in a bowl.",
+          "In a saucepan, combine milk, brown sugar, and cornstarch.",
+          "Cook over medium heat, whisking constantly until thickened."
+        ]
+      },
+      {
+        section: "Tempering",
+        steps: [
+          "Slowly whisk hot milk mixture into pumpkin mixture.",
+          "Return everything to saucepan and cook for 2 more minutes.",
+          "Remove from heat and stir in vanilla extract."
+        ]
+      },
+      {
+        section: "Serving",
+        steps: [
+          "Pour into serving cups and cover with plastic wrap directly on surface.",
+          "Refrigerate for at least 2 hours.",
+          "Top with whipped cream, graham cracker crumbs, and a sprinkle of cinnamon."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "240",
+      carbs: "38g",
+      protein: "5g",
+      fat: "8g",
+      saturatedFat: "4g",
+      cholesterol: "75mg",
+      sodium: "85mg",
+      sugar: "28g"
+    },
+    tags: ["Dessert", "Pudding", "Pumpkin", "Spice", "Fall", "Seasonal"],
+    video: "https://www.youtube.com/embed/vt6chv4bEv0?si=1bJtjZD_0GuK4zso"
+  }
+];
+
+export const tiramisuRecipes = [
+  {
+    id: "limoncello-tiramisu",
+    title: "Limoncello Tiramisu",
+    image: "/assets/desserts/Tiramisu/Limoncello Tiramisu.jpg",
+    description: "Italian dessert with a citrus twist - ladyfingers soaked in limoncello and layered with lemon mascarpone cream.",
+    meta: {
+      prepTime: "30 mins",
+      waitTime: "6 hrs",
+      totalTime: "6 hrs 30 mins",
+      difficulty: "Medium",
+      rating: 4.9,
+      reviews: 198
+    },
+    ingredients: [
+      "24 ladyfinger cookies",
+      "1/2 cup limoncello liqueur",
+      "1/4 cup fresh lemon juice",
+      "16 oz mascarpone cheese",
+      "4 egg yolks",
+      "1/2 cup granulated sugar",
+      "1 cup heavy cream",
+      "Zest of 2 lemons",
+      "White chocolate curls for garnish"
+    ],
+    instructions: [
+      {
+        section: "Cream Preparation",
+        steps: [
+          "Whisk egg yolks and sugar over double boiler until pale and thick.",
+          "Remove from heat and whisk until cooled.",
+          "Beat mascarpone until smooth, then fold into egg mixture."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Whip heavy cream to stiff peaks and fold into mascarpone mixture.",
+          "Mix limoncello with lemon juice in shallow dish.",
+          "Quickly dip ladyfingers in limoncello mixture (don't soak).",
+          "Layer ladyfingers, mascarpone cream, and lemon zest in dish."
+        ]
+      },
+      {
+        section: "Finishing",
+        steps: [
+          "Repeat layers, ending with cream.",
+          "Cover and refrigerate for at least 6 hours, preferably overnight.",
+          "Garnish with lemon zest and white chocolate curls before serving."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "420",
+      carbs: "32g",
+      protein: "8g",
+      fat: "28g",
+      saturatedFat: "16g",
+      cholesterol: "185mg",
+      sodium: "120mg",
+      sugar: "20g"
+    },
+    tags: ["Dessert", "Tiramisu", "Italian", "Lemon", "Limoncello"],
+    video: "https://www.youtube.com/embed/79fHqGywovs?si=MLkTkBCdn_KzaavA"
+  },
+  {
+    id: "oreo-tiramisu-trifle",
+    title: "Oreo Tiramisu Trifle",
+    image: "/assets/desserts/Tiramisu/Oreo Tiramisu Trifle.webp",
+    description: "A fun twist on classic tiramisu using Oreo cookies and chocolate layers in a beautiful trifle presentation.",
+    meta: {
+      prepTime: "25 mins",
+      waitTime: "4 hrs",
+      totalTime: "4 hrs 25 mins",
+      difficulty: "Easy",
+      rating: 4.8,
+      reviews: 167
+    },
+    ingredients: [
+      "24 Oreo cookies",
+      "1/4 cup coffee liqueur or strong coffee",
+      "16 oz mascarpone cheese",
+      "1 cup heavy cream",
+      "1/2 cup powdered sugar",
+      "1 tsp vanilla extract",
+      "Chocolate syrup",
+      "Crushed Oreos for garnish",
+      "Chocolate shavings"
+    ],
+    instructions: [
+      {
+        section: "Cream Layers",
+        steps: [
+          "Beat mascarpone until smooth and creamy.",
+          "In separate bowl, whip heavy cream with powdered sugar and vanilla.",
+          "Fold whipped cream into mascarpone until well combined."
+        ]
+      },
+      {
+        section: "Cookie Preparation",
+        steps: [
+          "Separate Oreo cookies, scraping out cream filling if desired.",
+          "Dip cookie halves briefly in coffee liqueur or coffee."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "In trifle dish, layer dipped cookies, mascarpone cream, and chocolate syrup.",
+          "Repeat layers until dish is full, ending with cream layer.",
+          "Top with crushed Oreos and chocolate shavings.",
+          "Refrigerate for at least 4 hours before serving."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "380",
+      carbs: "34g",
+      protein: "6g",
+      fat: "26g",
+      saturatedFat: "14g",
+      cholesterol: "75mg",
+      sodium: "180mg",
+      sugar: "24g"
+    },
+    tags: ["Dessert", "Tiramisu", "Oreo", "Chocolate", "Trifle", "No-Bake"],
+    video: "https://www.youtube.com/embed/mFfix0hFXmY?si=n0Dl-oMPVWu2WZBw"
+  },
+  {
+    id: "pumpkin-chai-tiramisu",
+    title: "Pumpkin Chai Tiramisu",
+    image: "/assets/desserts/Tiramisu/Pumpkin Chai Tiramisu.webp",
+    description: "Fall-inspired tiramisu with pumpkin spice and chai tea flavors, perfect for autumn gatherings.",
+    meta: {
+      prepTime: "35 mins",
+      cookTime: "10 mins",
+      totalTime: "6 hrs 45 mins",
+      difficulty: "Medium",
+      rating: 4.7,
+      reviews: 145
+    },
+    ingredients: [
+      "24 ladyfinger cookies",
+      "1 cup strong chai tea, cooled",
+      "1 cup pumpkin puree",
+      "16 oz mascarpone cheese",
+      "1/2 cup brown sugar",
+      "1 cup heavy cream",
+      "2 tsp pumpkin pie spice",
+      "1 tsp vanilla extract",
+      "Candied pecans for garnish",
+      "Cinnamon for dusting"
+    ],
+    instructions: [
+      {
+        section: "Pumpkin Cream",
+        steps: [
+          "Beat mascarpone with brown sugar until smooth.",
+          "Mix in pumpkin puree and pumpkin pie spice.",
+          "In separate bowl, whip heavy cream with vanilla to stiff peaks.",
+          "Fold whipped cream into pumpkin mixture."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Dip ladyfingers briefly in cooled chai tea.",
+          "Layer in baking dish: cookies, then pumpkin cream.",
+          "Repeat layers, ending with cream.",
+          "Cover and refrigerate for at least 6 hours."
+        ]
+      },
+      {
+        section: "Serving",
+        steps: [
+          "Before serving, garnish with candied pecans.",
+          "Dust with cinnamon and pumpkin pie spice.",
+          "Serve chilled."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "350",
+      carbs: "28g",
+      protein: "7g",
+      fat: "24g",
+      saturatedFat: "13g",
+      cholesterol: "95mg",
+      sodium: "110mg",
+      sugar: "18g"
+    },
+    tags: ["Dessert", "Tiramisu", "Pumpkin", "Chai", "Fall", "Seasonal"],
+    video: "https://www.youtube.com/embed/yxEsOPeOKnU?si=tm6Av7k7uomYeUUb"
+  },
+  {
+    id: "strawberry-tiramisu",
+    title: "Strawberry Tiramisu",
+    image: "/assets/desserts/Tiramisu/Strawberry Tiramisu.jpg",
+    description: "Fresh strawberry version of classic tiramisu with layers of strawberry-soaked ladyfingers and creamy filling.",
+    meta: {
+      prepTime: "30 mins",
+      waitTime: "5 hrs",
+      totalTime: "5 hrs 30 mins",
+      difficulty: "Easy",
+      rating: 4.6,
+      reviews: 123
+    },
+    ingredients: [
+      "24 ladyfinger cookies",
+      "2 cups fresh strawberries, sliced",
+      "1/4 cup strawberry liqueur or juice",
+      "16 oz mascarpone cheese",
+      "1/2 cup granulated sugar",
+      "1 cup heavy cream",
+      "1 tsp vanilla extract",
+      "Fresh strawberries for garnish",
+      "Mint leaves for decoration"
+    ],
+    instructions: [
+      {
+        section: "Strawberry Preparation",
+        steps: [
+          "Mash 1 cup strawberries with sugar to make a sauce.",
+          "Mix with strawberry liqueur or juice.",
+          "Slice remaining strawberries for layers."
+        ]
+      },
+      {
+        section: "Cream Filling",
+        steps: [
+          "Beat mascarpone until smooth.",
+          "Whip heavy cream with vanilla to stiff peaks.",
+          "Fold whipped cream into mascarpone."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Dip ladyfingers in strawberry sauce briefly.",
+          "Layer in dish: cookies, sliced strawberries, cream.",
+          "Repeat layers, ending with cream.",
+          "Refrigerate for at least 5 hours.",
+          "Garnish with fresh strawberries and mint before serving."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "310",
+      carbs: "26g",
+      protein: "6g",
+      fat: "20g",
+      saturatedFat: "12g",
+      cholesterol: "85mg",
+      sodium: "95mg",
+      sugar: "16g"
+    },
+    tags: ["Dessert", "Tiramisu", "Strawberry", "Fruit", "Summer", "No-Bake"],
+    video: "https://www.youtube.com/embed/je_e4ypcNYs?si=4UmEpxQP1CVWmIKt"
   }
 ];

@@ -8,7 +8,7 @@ import TopPicks from "./TopPicks";
 import { FaCanadianMapleLeaf, FaChevronLeft, FaChevronRight, FaHeart, FaRegHeart, FaSnowflake, FaLeaf, FaSun, FaGift } from "react-icons/fa";
 import { PiRabbit } from "react-icons/pi";
 import { GiChickenOven, GiPumpkinLantern } from "react-icons/gi";
-import { lettuce_based, mixed_vegetable, specialty, allSaladRecipes } from './SaladData';
+import { lettuceBased, mixedVegetable, specialty, allSaladRecipes } from './SaladData';
 import Search from "./Search";
 
 export default class Salad extends React.Component {
@@ -86,8 +86,8 @@ export default class Salad extends React.Component {
   renderCategoryRecipes() {
     return (
       <Fragment>
-        <RecipeCard recipes={lettuce_based} title="Lettuce Based" />
-        <RecipeCard recipes={mixed_vegetable} title="Mixed Vegetable" />
+        <RecipeCard recipes={lettuceBased} title="Lettuce Based" />
+        <RecipeCard recipes={mixedVegetable} title="Mixed Vegetable" />
         <RecipeCard recipes={specialty} title="Specialty" />
       </Fragment>
     )

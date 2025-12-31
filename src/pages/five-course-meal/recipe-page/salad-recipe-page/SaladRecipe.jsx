@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import RecipeSection from '../RecipeSection';
-import { saladRecipes } from './SaladRecipeData';
+import { lettuceBasedRecipes, mixedVegetableRecipes, specialtySaladRecipes } from './SaladRecipeData';
 import RecipeNavbar from '../../RecipesNavBar';
 import '../../styles/recipe.css';
 import Footer from "../../../home/Footer";
@@ -29,24 +29,6 @@ export default class SaladRecipe extends React.Component {
   }
 
     render() {
-        // Categorize salads by type based on tags or recipe characteristics
-        const lettuceRecipes = saladRecipes.filter(recipe => 
-            recipe.tags?.some(tag => tag.toLowerCase().includes('lettuce') || tag.toLowerCase().includes('romaine')) || 
-            recipe.name.toLowerCase().includes('lettuce') ||
-            recipe.name.toLowerCase().includes('caesar')
-        );
-        
-        const mixedVegetableRecipes = saladRecipes.filter(recipe => 
-            recipe.tags?.some(tag => tag.toLowerCase().includes('mixed') || tag.toLowerCase().includes('vegetable')) || 
-            recipe.name.toLowerCase().includes('greek') ||
-            recipe.name.toLowerCase().includes('garden') ||
-            recipe.name.toLowerCase().includes('mediterranean')
-        );
-        
-        const specialtyRecipes = saladRecipes.filter(recipe => 
-            !lettuceRecipes.includes(recipe) && !mixedVegetableRecipes.includes(recipe)
-        );
-
         return (
             <Fragment>
                 <RecipeNavbar />
@@ -54,7 +36,7 @@ export default class SaladRecipe extends React.Component {
                 <main>
                     <section className='lettuce-based'>
                         <h1 className="head-recipe">Lettuce-Based</h1>
-                        {lettuceRecipes.map(recipe => (
+                        {lettuceBasedRecipes.map(recipe => (
                             <RecipeSection key={recipe.id} recipe={recipe} />
                         ))}
                     </section>
@@ -66,7 +48,7 @@ export default class SaladRecipe extends React.Component {
                     </section>
                     <section className='specialty'>
                         <h1 className="head-recipe">Specialty</h1>
-                        {specialtyRecipes.map(recipe => (
+                        {specialtySaladRecipes.map(recipe => (
                             <RecipeSection key={recipe.id} recipe={recipe} />
                         ))}
                     </section>

@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import RecipeSection from '../RecipeSection';
-import { dessertRecipes } from './DessertRecipeData';
+import { cakeRecipes, pastryRecipes, puddingRecipes, tiramisuRecipes } from './DessertRecipeData';
 import RecipeNavbar from '../../RecipesNavBar';
 import '../../styles/recipe.css';
 import Footer from "../../../home/Footer";
@@ -29,29 +29,6 @@ export default class DessertRecipe extends React.Component {
   }
 
     render() {
-        // Categorize desserts by type based on tags or recipe characteristics
-        const cakeRecipes = dessertRecipes.filter(recipe => 
-            recipe.tags?.some(tag => tag.toLowerCase().includes('cake')) || 
-            recipe.name.toLowerCase().includes('cake')
-        );
-        
-        const pastryRecipes = dessertRecipes.filter(recipe => 
-            recipe.tags?.some(tag => tag.toLowerCase().includes('pastry')) || 
-            recipe.name.toLowerCase().includes('pastry') ||
-            recipe.name.toLowerCase().includes('croissant') ||
-            recipe.name.toLowerCase().includes('profiterole')
-        );
-        
-        const puddingRecipes = dessertRecipes.filter(recipe => 
-            recipe.tags?.some(tag => tag.toLowerCase().includes('pudding')) || 
-            recipe.name.toLowerCase().includes('pudding')
-        );
-        
-        const tiramisuRecipes = dessertRecipes.filter(recipe => 
-            recipe.tags?.some(tag => tag.toLowerCase().includes('tiramisu')) || 
-            recipe.name.toLowerCase().includes('tiramisu')
-        );
-
         return (
             <Fragment>
                 <RecipeNavbar />

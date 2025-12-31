@@ -1,375 +1,813 @@
-export const saladRecipes = [
-  {
-    id: "apple-salad",
-    name: "Apple Salad",
-    prepTime: "20 mins",
-    cookTime: "0 mins",
-    totalTime: "20 mins",
-    difficulty: "Easy",
-    rating: 4.5,
-    reviews: 350,
-    image: "../../assets/salad/Apple Salad.png",
-    description: "This apple salad combines sweet tart apples, crunchy pecans, creamy feta, and a zingy maple vinaigrette for the perfect fall side dish. It's ready in just 20 minutes and great for easy weeknight meals or parties!.",
-    ingredients: [
-      "1 crisp tart apple",
-      "8 cups mixed greens or tender lettuces",
-      "1/4 cup candied pecanse",
-      "1/4 cup feta or goat cheese crumbles",
-      "1/4 cup pomegranate seeds or dried cranberries",
-      "2 tablespoons maple syrup",
-      "2 tablespoons apple cider or white wine vinegar",
-      "1 tablespoon Dijon mustard",
-      "1/4 teaspoon kosher salt",
-      "6 tablespoons olive oil",
-      "Fresh ground black pepper"
-    ],
-    instructions: [
-      { step: "", details: ["If using, prepare the candied pecans in advance (or use purchased).", "In a medium bowl, whisk the maple syrup, vinegar, Dijon mustard, salt, and black pepper. Whisk in the olive oil 1 tablespoon at a time until a creamy dressing forms. (If desired, make in advance and refrigerate up to 2 weeks; bring to room temperature prior to serving).", "Thinly slice the apple.", "Place the greens on a large platter or individual plates. Top with apple slices, candied pecans, goat cheese or feta crumbles, and pomegranate seeds or dried cranberries. Top with about 6 tablespoons of the dressing (or more as desired) and serve immediately. (To make ahead, keep all components separate with fresh ingredients and dressing refrigerated. Toss the apples with lemon juice to prevent browning. Bring dressing to room temperature and add all ingredients together directly before serving.)."] }
-    ],
-    nutrition: {
-      calories: 281,
-      carbs: "17.9g",
-      protein: "2.7g",
-      fat: "23.3g",
-      saturatedFat: "4.5g",
-      transFat: "0g",
-      vitaminB6: "0.1mg",
-      potassium: "252.8mg",
-      fiber: "2.6g"
-    },
-    tags: ["Salad", "Fruit", "Tart", "Easy", "Vegetarian", "Favorite"],
-    video: "https://www.youtube.com/embed/ToFW9CIHaiE?si=P0o1ZEy3LV0p8Wi4"
-  },
+export const lettuceBasedRecipes = [
   {
     id: "butter-lettuce-salad",
-    name: "Butter Lettuce Salad",
-    prepTime: "5 mins",
-    cookTime: "10 mins",
-    totalTime: "15 mins",
-    difficulty: "Easy",
-    rating: 5,
-    reviews: 20,
-    image: "../../assets/salad/Butter Lettuce Salad.jpg",
-    description: "Composed of tender butter lettuce leaves, briny green olives and salty slivers of aged manchego, our butter lettuce salad is a feast for the eyes and the palate.",
-    ingredients: [
-      "2 tablespoons of salted butter",
-      "1/2 cup panko breadcrumbs",
-      "2 heads butter lettuce, leaves separated and roughly torn",
-      "2 ounces of Manchego cheese, grated",
-      "1 cup pitted Castelvetrano olives, halved",
-      "1/4 minced chives",
-      "Freshly craked black pepper, to taste",
-      "1/4 cup unfiltered apple cider vinegar",
-      "2 table spoons of honey",
-      "2 table spoons of extra-virgin olive oil",
-      "1/4 teaspoon of fine sea salt",
-      "1/4 teaspoon of freshly craked black pepper"
-    ],
-    instructions: [
-      { step: "", details: ["Make the vinaigrette. In a small bowl, whisk together the vinegar, honey, olive oil, salt, and pepper until smooth. Set aside.", " Toast the breadcrumbs. Melt the butter in a small skillet over medium heat. Once the butter is bubbling, add the panko and cook, stirring frequently, until golden brown and crispy, 3 to 4 minutes. Transfer to a plate and let cool slightly.", "Arrange the lettuce leaves on a large serving platter. Scatter the Manchego, olives, and chives over the top. Season with freshly cracked black pepper.", "Just before serving, drizzle the vinaigrette over the salad and immediately top with the toasted breadcrumbs.", "Serve family-style."] }
-    ],
-    nutrition: {
-      calories: 211,
-      carbs: "12g",
-      protein: "3g",
-      fat: "19g",
-      saturatedFat: "0g",
-      transFat: "0g",
-      cholesterol: "39mg",
-      sodium: "268mg",
-      potassium: "387.9mg",
-      fiber: "1.8g",
-      sugar: "1.5g",
-      vitaminC: "13mg",
-      calcium: "57mg",
-      iron: "2mg"
+    title: "Butter Lettuce Salad",
+    image: "/assets/salad/Lettuce-Based/Butter Lettuce Salad.jpg",
+    description: "A delicate and tender butter lettuce salad with a light vinaigrette that highlights the lettuce's natural sweetness.",
+    meta: {
+      prepTime: "10 mins",
+      cookTime: "0 mins",
+      totalTime: "10 mins",
+      difficulty: "Easy",
+      rating: 4.5,
+      reviews: 128
     },
-    tags: ["Salad", "Butter", "Breadcrumbs", "Vegetarian"],
-    video: "https://www.youtube.com/embed/0PcLfohG4s8?si=uR94TRzLlEExlLz4"
-  },
-  {
-    id: "frisse-salad",
-    name: "Frisse Salad",
-    prepTime: "20 mins",
-    cookTime: "50 mins",
-    totalTime: "1 hr 10 mins",
-    difficulty: "Easy",
-    rating: 4,
-    reviews: 19,
-    image: "../../assets/salad/Frisee Salad.webp",
-    description: "Frisée is a member of the chicory family, along with endive and radicchio. It has curly, frizzy looking leaves with a slightly bitter taste, similar to other chicories. If you can't find frisée but still want to make this salad, you can swap in another chicory, or substitute romaine lettuce or even arugula.",
     ingredients: [
-      "2 heads frisée lettuce",
-      "1/2 pound slab of bacon",
-      "4 eggs",
-      "1 tablespoon white wine vinegar",
-      "1/4 cup white wine vinegar",
-      "1 tablespoon raw honey (or 2 tablespoons brown sugar)",
-      "1 tablespoon whole-grain mustard",
-      "1/2 cup rendered bacon fat"
+      "1 large head butter lettuce",
+      "3 tablespoons extra virgin olive oil",
+      "1 tablespoon fresh lemon juice",
+      "1 teaspoon Dijon mustard",
+      "1 teaspoon honey",
+      "Salt and freshly ground black pepper to taste",
+      "2 tablespoons chopped fresh chives"
     ],
     instructions: [
-      { step: "Preparing", details: ["Gather the tools and ingredients for the recipe.", "Place a small pot of water over medium-high heat for the poached eggs. Add the vinegar and let it come to a boil while you are making all the other items. If you have experience making poached eggs, use a larger pot to cook more than 1 at a time. If you have not made them before, start with a small pot. It is much easier.", "Next, wash the lettuce in cold water and either spin it dry with a salad spinner, or pat dry with paper towels or a clean dish towel. When dry, tear it into bite-sized pieces with your hands. Set aside."] },
-      { step: "For the Bacon Croutons", details: ["Use a heavy-bottomed pan (preferably cast iron) and heat over medium-high heat. Add the bacon pieces so the broad side is flat against the bottom. When the fat starts to render, lower the heat to medium-low.", "Continue to cook for about 20 minutes, then use tongs to flip the bacon pieces over and cook for another 15 to 20 minutes.", "Use the tongs to remove the crispy bacon bits to a bowl. Leave the fat in the pan."] },
-      { step: "Making the Bacon Fat Dressing", details: ["In a small sauté pan, make the gastrique by adding the vinegar and either the honey or brown sugar. Turn the heat to high. Mix well and continue to mix until the vinegar has reduced by about half. Turn the heat to low.", "Add the mustard and mix well.", "Add in about 1/2 cup of the liquid bacon fat. Turn the heat to medium and mix the bacon vinaigrette well. Allow to thicken to your desired consistency. Turn off the heat and make some poached eggs!"] },
-      { step: "Making the Poached Eggs", details: ["The water should be nice and hot by now. We are looking for a lazy boil, not a rolling boil. If your water is going crazy, reduce the heat and allow it to calm down. Then, using your slotted spoon, make a slight current in the water with a clockwise motion. Just slight- it should not be crazy. Crack the egg right into the center of the pot. You will see all the wisps rotate around the egg. This is why we created a slight current.", "Allow to cook for 2 minutes for a really runny egg. For a more firm egg, go 2 and a half minutes, or for an even more firm egg, go to 3 minutes. Remove with a slotted spoon and place on a paper towel. Cover with tented foil.", "Cook the remaining eggs in the same manner."] },
-      { step: "Plating and Serving", details: ["Add enough dressing to the bottom of a large bowl. Toss in the lettuce and coat using some tongs.", "Place the cooked bacon croutons evenly on the bottom of 4 plates. Top with the dressed frisée and poached egg.", "Serve immediately and enjoy."] }
+      {
+        section: "Preparation",
+        steps: [
+          "Gently wash and dry the butter lettuce leaves. Tear larger leaves into bite-sized pieces.",
+          "Place the lettuce in a large salad bowl."
+        ]
+      },
+      {
+        section: "Dressing",
+        steps: [
+          "In a small bowl, whisk together olive oil, lemon juice, Dijon mustard, and honey until emulsified.",
+          "Season with salt and pepper to taste."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Drizzle the dressing over the lettuce and toss gently to coat.",
+          "Sprinkle with fresh chives and serve immediately."
+        ]
+      }
     ],
     nutrition: {
-      calories: 612,
-      carbs: "11g",
-      protein: "15g",
-      fat: "57g",
-      saturatedFat: "21g",
-      transFat: "0.1g",
-      cholesterol: "229mg",
-      sodium: "576mg",
-      potassium: "663mg",
-      fiber: "5g",
-      sugar: "5g",
-      vitaminA: "6721IU",
-      vitaminC: "27mg",
-      calcium: "144mg",
-      iron: "2mg"
-    },
-    tags: ["Salad", "Frisee", "Bacon Dressing", "Easy", "Family Favorite"],
-    video: "https://www.youtube.com/embed/0K4V1Dkxd7U?si=zyLAfVYHT8JnB7v6"
-  },
-  {
-    id: "italian-salad",
-    name: "Italian Salad",
-    prepTime: "10 mins",
-    cookTime: "5 mins",
-    totalTime: "15 mins",
-    difficulty: "Easy",
-    rating: 4.5,
-    reviews: 100,
-    image: "../../assets/salad/Italian Salad.png",
-    description: "With crisp lettuce, pepperoncini, olives, cherry tomatoes and a zesty homemade dressing, this simple Italian salad recipe is always a crowd-pleaser.",
-    ingredients: [
-      "2 romaine hearts, roughly chopped",
-      "1/2 medium hot onion, thinly sliced",
-      "1/2 cup freshly grated, Parmesan chhese, plus more for serving",
-      "1 cup peperoncini (whole or sliced, drained)",
-      "1/2 cup black olives, whole or sliced",
-      "1 pint cherry tomatoes",
-      "Freshly cracked black pepper, to taste",
-      "2 cups croutons",
-      "1 teaspoon garlic powder",
-      "1 teaspoon dried oregano",
-      "1 teaspoon dried basil",
-      "1/2 teaspoon sea salt",
-      "1/2 cup extra-virgin olive oil",
-      "2 tablespoons red wine vinegar"
-    ],
-    instructions: [
-      { step: "", details: ["Make the dressing. In a jar with a tight fitting lid, combine the garlic powder, oregano, basil, salt, olive oil and red wine vinegar. Shake vigorously until emulsified. ", "Make the salad. In a large salad bowl, combine the Romaine, red onion, Parmesan, peperoncini, olives and tomatoes.", "Season to taste with pepper. Drizzle with the dressing and toss until fully coated. Top with additional parmesan cheese if desired."] }
-    ],
-    nutrition: {
-      calories: 248,
-      carbs: "10g",
-      protein: "5g",
-      fat: "23g",
-      saturatedFat: "1g",
-      transFat: "0.8g",
-      cholesterol: "6mg",
-      sodium: "505mg",
-      fiber: "3g",
-      sugar: "3g",
-      iron: "0.02g",
-      vitaminC: "1mg"
-    },
-    tags: ["Salad", "Italian", "Sweet", "Vegetarian", "Easy", "Family Favorite"],
-    video: "https://www.youtube.com/embed/OvOyu0VBEiY?si=Zn42ruBnu5bfFabu"
-  },
-  {
-    id: "mediterranean-salad",
-    name: "Mediterranean Salad",
-    prepTime: "10 mins",
-    cookTime: "0 mins",
-    totalTime: "10 mins",
-    difficulty: "Easy",
-    rating: 3.5,
-    reviews: 35,
-    image: "../../assets//salad/Mediterranean Salad.jpg",
-    description: "This Mediterranean salad recipe is as traditional as they come. It's very representative of the regions' agricultural roots and the fresh flavors we continue to love to this day. You can dress it up by adding red onion or toss in feta cheese for a little salty goodness.",
-    ingredients: [
-      "6 Roma tomatoes, diced",
-      "1 large English or hot-house cucumber, diced",
-      "1/2 small red onion, thinly sliced, optional",
-      "3/4 bunch parsley, leaves and tender stems chopped (about 1/2-3/4 cup chopped leaves)",
-      "Kosher salt, to taste",
-      "1/2 teaspoon black pepper",
-      "1 teaspoon ground Sumac",
-      "2 tablespoons extra-virgin olive oil",
-      "2 teaspoons freshly squeezed lemon juice, plus more to taste"
-    ],
-    instructions: [
-      { step: "", details: ["In a very large salad bowl, combine the lettuce, cucumber, tomatoes, and parsley. Set aside for 5 minutes or so.", "Pour the olive oil, sumac and lemon juice into a small bowl. Whisk to combine. Drizzle the dressing over the salad, then toss well to coat.", "Add freshly ground black pepper over the salad as a finishing touch."] }
-    ],
-    nutrition: {
-      calories: 66.9,
-      carbs: "5.8g",
-      protein: "1.2g",
-      fat: "4.9g",
-      saturatedFat: "0.6g",
-      transFat: "0g",
-      sodium: "8.6g",
-      fiber: "1.4g",
-      sugars: "3g"
-    },
-    tags: ["Salad", "Meditteranian", "Vegetarian", "Easy"],
-    video: "https://www.youtube.com/embed/xK8NLldQJDg?si=_UO2qZTsbAtLYOax"
-  },
-  {
-    id: "mexican-salad",
-    name: "Mexican Chopped Salad",
-    prepTime: "25 mins",
-    cookTime: "25 mins",
-    totalTime: "50 mins",
-    difficulty: "Easy",
-    rating: 4,
-    reviews: 55,
-    image: "../../assets/salad/Mexican Chopped Salad.jpeg",
-    description: "This Mexican Chopped Salad might just be the freshest, healthiest, most delicious salad you've ever had the pleasure of meeting. And it's loaded with fabulous Southwestern flavor!",
-    ingredients: [
-      "1/4 cup fresh lime juice",
-      "2 tablespoons honey",
-      "1/2 teaspoon cumin",
-      "1 clove garlic, finely minced",
-      "1/2 teaspoon salt",
-      "2 tablespoons canola oil",
-      "2 tablespoons extra-virgin olive oil",
-      "Freshly ground black pepper",
-      "6 6-inch corn tortillas",
-      "1 1/2 tablespoons canola oil",
-      "1/2 teaspoon sea salt",
-      "1 medium head romaine lettuce",
-      "1 medium bell pepper",
-      "1 medium red onion",
-      "1 medium jicama",
-      "1 medium zucchini",
-      "4 ears corn",
-      "1 1/2 cups canned black beans",
-      "1/2 cup finely chopped cilantro"
-    ],
-    instructions: [
-      { step: "", details: ["For the dressing, combine lime juice, honey, cumin garlic and salt.", "In a slow, steady stream, add the oils, stirring continuously with a fork or small whisk.", "Taste and add more salt and pepper, if needed. Set aside.", "For the corn tortilla strips, preheat oven to 400˚F.", "Stack corn tortillas on a cutting board. Cut in half. Cut each stack of halves into thin strips, widthwise, about ¼-inch thick.", "Transfer tortilla strips to a sheet pan. Drizzle with oil. Sprinkle with salt and toss to coat.", "Bake for 15-20 minutes, stirring every 5 minutes, or until light golden brown and crisp. Set aside to cool.", "For the salad, place corn, two ears at a time, in the microwave and cook for 3 1/2 minutes.", "Remove from microwave with a hot pad and allow to cool for 5 minutes.", "After cooling, cut bottom end of corn off, about 1 ½ inches from end. Pull back husk and silks (almost all of the silk should easily pull away). Cut kernels from husks and set aside.", "Combine corn and other salad ingredients in a large bowl. Stir to combine. Add dressing and stir to coat all ingredients. Garnish with cilantro leaves, if desired.", "Serve with tortilla strips on top or place a bowl on the side and let guests help themselves."] }
-    ],
-    nutrition: {
-      calories: 228,
-      carbs: "35g",
-      protein: "5g",
+      calories: "85",
+      carbs: "3g",
+      protein: "1g",
       fat: "8g",
       saturatedFat: "1g",
       transFat: "0g",
-      cholesterol: "35g",
-      sodium: "438mg",
-      potassium: "558mg",
-      fiber: "7g",
-      sugar: "10g",
-      vitaminC: "28.1mg",
-      vitaminA: "960IU",
-      calcium: "45mg"
+      cholesterol: "0mg",
+      sodium: "75mg",
+      potassium: "150mg",
+      fiber: "1g",
+      sugar: "2g",
+      vitaminA: "1500IU",
+      vitaminC: "10mg",
+      calcium: "20mg",
+      iron: "0.5mg"
     },
-    tags: ["Salad", "Mexican", "Tortilla", "Easy", "Vegetarian"],
-    video: "https://www.youtube.com/embed/915psklAwGM?si=tolMip7ItQgtyVj_"
+    tags: ["Salad", "Lettuce", "Vegetarian", "Easy", "Healthy", "Light"],
+    video: "https://www.youtube.com/embed/0PcLfohG4s8?si=Nt9IMyvUxE8o5EHY"
+  },
+  {
+    id: "maroulosalata",
+    title: "Maroulosalata",
+    image: "/assets/salad/Lettuce-Based/Maroulosalata.jpg",
+    description: "Traditional Greek lettuce salad with crisp romaine, fresh herbs, and a simple lemon-olive oil dressing.",
+    meta: {
+      prepTime: "15 mins",
+      cookTime: "0 mins",
+      totalTime: "15 mins",
+      difficulty: "Easy",
+      rating: 4.7,
+      reviews: 95
+    },
+    ingredients: [
+      "1 large head romaine lettuce",
+      "4 green onions, finely chopped",
+      "1/2 cup fresh dill, chopped",
+      "1/2 cup fresh mint, chopped",
+      "1/3 cup extra virgin olive oil",
+      "3 tablespoons fresh lemon juice",
+      "1 teaspoon dried oregano",
+      "Salt and pepper to taste"
+    ],
+    instructions: [
+      {
+        section: "Preparation",
+        steps: [
+          "Wash and dry romaine lettuce. Chop into thin strips.",
+          "Finely chop green onions, dill, and mint."
+        ]
+      },
+      {
+        section: "Dressing",
+        steps: [
+          "In a small bowl, whisk together olive oil, lemon juice, oregano, salt, and pepper."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Combine lettuce, green onions, and herbs in a large bowl.",
+          "Pour dressing over and toss well to combine.",
+          "Serve immediately or chill for 30 minutes before serving."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "120",
+      carbs: "5g",
+      protein: "2g",
+      fat: "11g",
+      saturatedFat: "1.5g",
+      cholesterol: "0mg",
+      sodium: "85mg",
+      fiber: "2g",
+      sugar: "2g",
+      vitaminC: "25mg",
+      calcium: "40mg",
+      iron: "1mg"
+    },
+    tags: ["Salad", "Greek", "Mediterranean", "Vegetarian", "Fresh Herbs", "Healthy"],
+    video: "https://www.youtube.com/embed/aDmOksR0_bg?si=o0zUI0qjD-z55a4g"
   },
   {
     id: "radicchio-salad",
-    name: "Radicchio Salad",
-    prepTime: "20 mins",
-    cookTime: "0 mins",
-    totalTime: "20 mins",
-    difficulty: "Easy",
-    rating: 4.5,
-    reviews: 220,
-    image: "../../assets/salad/Radicchio Salad.jpg",
-    description: "The amazing combination of bitter, sweet and peppery flavors in this radicchio salad recipe will take your idea of a traditional salad to a whole new level. Bright citrus, juicy pears, creamy feta and walnuts plus a simple dressing to pull it all together.",
+    title: "Radicchio Salad",
+    image: "/assets/salad/Lettuce-Based/Radicchio Salad.jpg",
+    description: "Italian-inspired salad featuring bitter radicchio balanced with sweet balsamic dressing and crunchy walnuts.",
+    meta: {
+      prepTime: "10 mins",
+      cookTime: "5 mins",
+      totalTime: "15 mins",
+      difficulty: "Easy",
+      rating: 4.3,
+      reviews: 80
+    },
     ingredients: [
-      "1 head radicchio",
-      "1 pear, halved and thinly sliced",
-      "1 navel orange, peeled and segmented",
-      "1 shallot, thinly sliced",
-      "1/2 cup walnuts, roughly chopped",
-      "1/4 cup feta cheese, crumbled",
-      "1 garlic clove, minced",
-      "1 lemon, juiced",
-      "Kosher salt and black pepper",
-      "1 teaspoon sumac",
-      "2 tablespoons honey",
-      "1/4 cup extra-virgin olive oil"
+      "1 large head radicchio",
+      "2 tablespoons balsamic vinegar",
+      "1 tablespoon honey",
+      "1/4 cup extra virgin olive oil",
+      "1/4 cup walnuts, toasted",
+      "1/4 cup parmesan cheese, shaved",
+      "Salt and freshly ground black pepper to taste"
     ],
     instructions: [
-      { step: "", details: ["Core the radicchio and separate the leaves. If you want to make them slightly less bitter you can soak the leaves in cold water for 30 minutes, before drying and assembling the salad.", "Arrange the radicchio leaves on a large platter, then top with orange segments and pear slices. Add the shallots, walnuts, and feta.", "In a small bowl, add the garlic and lemon juice. Season with kosher salt, black pepper, and sumac. Add the honey and whisk. While whisking, drizzle the extra virgin olive oil and continue to whisk until the dressing is well combined.", "Pour the dressing over the radicchio salad and serve."] }
+      {
+        section: "Preparation",
+        steps: [
+          "Remove outer leaves from radicchio and slice into thin strips.",
+          "Toast walnuts in a dry pan over medium heat until fragrant, about 3-4 minutes."
+        ]
+      },
+      {
+        section: "Dressing",
+        steps: [
+          "In a small bowl, whisk together balsamic vinegar and honey.",
+          "Slowly drizzle in olive oil while whisking continuously.",
+          "Season with salt and pepper."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Place radicchio in a serving bowl.",
+          "Drizzle with dressing and toss to coat.",
+          "Top with toasted walnuts and shaved parmesan.",
+          "Serve immediately."
+        ]
+      }
     ],
     nutrition: {
-      calories: 343.8,
-      carbs: "29.1g",
-      protein: "5.6g",
-      fat: "25.4g",
-      saturatedFat: "8.5g",
-      transFat: "0g",
-      cholesterol: "8.3mg",
-      sodium: "270.8mg",
-      fiber: "4.8g",
-      sugar: "17.9g",
-      calcium: "104.5mg",
-      iron: "1.4mg",
-      vitaminA: "165.2IU"
+      calories: "185",
+      carbs: "8g",
+      protein: "4g",
+      fat: "16g",
+      saturatedFat: "3g",
+      cholesterol: "5mg",
+      sodium: "150mg",
+      fiber: "2g",
+      sugar: "5g",
+      calcium: "100mg",
+      iron: "0.8mg"
     },
-    tags: ["Salad", "Radicchio", "Easy", "Vegetarian"],
-    video: "https://www.youtube.com/embed/Ok7gmHS_U9s?si=Mfw-ewNSsRudj_pr"
+    tags: ["Salad", "Italian", "Bitter Greens", "Vegetarian", "Walnuts", "Parmesan"],
+    video: "https://www.youtube.com/embed/AZ6Q3uQa2oo?si=SZJSmHtWAMsfaPps"
   },
   {
-    id: "romaine-salad",
-    name: "Romaine Salad with Green Goddess",
-    prepTime: "20 mins",
-    cookTime: "0 mins",
-    totalTime: "20 mins",
-    difficulty: "Easy",
-    rating: 5,
-    reviews: 232,
-    image: "../../assets/salad/Romaine Salad with Green Goddess.jpg",
-    description: "A simple romaine salad topped with classic green goddess dressing made with mayonnaise, parsley, spinach, basil, tarragon, and lemon juice.",
+    id: "romaine-salad-green-goddess",
+    title: "Romaine Salad with Green Goddess",
+    image: "/assets/salad/Lettuce-Based/Romaine Salad with Green Goddess.jpg",
+    description: "Crisp romaine lettuce topped with creamy green goddess dressing made from fresh herbs and avocado.",
+    meta: {
+      prepTime: "15 mins",
+      cookTime: "0 mins",
+      totalTime: "15 mins",
+      difficulty: "Easy",
+      rating: 4.6,
+      reviews: 110
+    },
     ingredients: [
-      "1 cup baby spinach",
-      "1 cup coarsely chopped fresh flat-leaf parsley",
-      "1/3 cup loosely packed fresh basil leaves",
-      "3 tablespoons chopped fresh chives",
-      "2 tablespoons coarsely chopped tarragon leaves",
-      "1/2 medium shallot, peeled, coarsely chopped",
-      "1 small garlic clove, peeled and chopped",
-      "1/2 teaspoon anchovy paste",
-      "1/4 cup fresh lime juice (from 2 medium limes)",
-      "6 tablespoons olive oil",
-      "1/2 cup mayonnaise",
-      "3/4 teaspoon kosher salt",
-      "4 cups chopped green cabbage",
-      "4 cups chopped hearts of romaine",
-      "3 medium Persian cucumbers, sliced",
-      "1/2 cup thinly sliced green onions",
-      "1 medium ripe avocado, peeled and chopped",
-      "1/4 cup chopped roasted, salted pistachios"
+      "2 heads romaine lettuce",
+      "1 ripe avocado",
+      "1/2 cup Greek yogurt",
+      "1/4 cup mayonnaise",
+      "1/2 cup mixed fresh herbs (parsley, chives, tarragon)",
+      "2 tablespoons fresh lemon juice",
+      "1 garlic clove, minced",
+      "Salt and pepper to taste",
+      "Fresh herbs for garnish"
     ],
     instructions: [
-      { step: "", details: ["Combine spinach, parsley, basil, chives, tarragon, shallot, garlic, anchovy paste, and lime juice in a high-powered blender; blend and slowly add oil through top opening of blender until mixture is smooth, about 1 minute, scraping down sides if needed. Add mayonnaise and salt; blend until smooth. Cover and chill until ready to serve.", "Combine cabbage, romaine, cucumber, and scallions in a large bowl. Add 2/3 cup of the dressing and toss to evenly coat. Divide between 4 bowls and top each bowl with avocado and 1 tablespoon of the pistachios.", "Serve immediately with remaining dressing."] }
+      {
+        section: "Dressing",
+        steps: [
+          "In a blender or food processor, combine Greek yogurt, mayonnaise, fresh herbs, lemon juice, and garlic.",
+          "Blend until smooth and creamy.",
+          "Season with salt and pepper to taste."
+        ]
+      },
+      {
+        section: "Salad",
+        steps: [
+          "Wash and chop romaine lettuce into bite-sized pieces.",
+          "Slice avocado into thin slices."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Place romaine lettuce in a large bowl.",
+          "Drizzle with green goddess dressing and toss to coat.",
+          "Top with avocado slices and garnish with additional fresh herbs.",
+          "Serve immediately."
+        ]
+      }
     ],
     nutrition: {
-      calories: 535,
-      carbs: "15g",
-      protein: "5g",
-      fat: "53g",
-      saturatedFat: "8g",
-      transFat: "0g",
-      cholesterol: "11mg",
-      sodium: "648mg",
-      potassium: "677mg",
-      fiber: "7g",
-      sugar: "2.4g",
-      vitaminD: "0.0mg",
-      calcium: "59mg"
+      calories: "210",
+      carbs: "10g",
+      protein: "4g",
+      fat: "18g",
+      saturatedFat: "3g",
+      cholesterol: "10mg",
+      sodium: "180mg",
+      fiber: "6g",
+      sugar: "4g",
+      vitaminA: "2000IU",
+      vitaminC: "30mg"
     },
-    tags: ["Salad", "Romaine", "Vegetarian", "Easy", "Everbody's Favorite"]
+    tags: ["Salad", "Creamy Dressing", "Vegetarian", "Healthy", "Fresh Herbs", "Avocado"],
+    video: "https://www.youtube.com/embed/SVth9Zm74W4?si=-xLNvAvRtVC_W6Fu"
+  }
+];
+
+export const mixedVegetableRecipes = [
+  {
+    id: "italian-salad",
+    title: "Italian Salad",
+    image: "/assets/salad/Mixed Vegetable/Italian Salad.png",
+    description: "Classic Italian salad with crisp lettuce, tomatoes, olives, pepperoncini, and zesty Italian dressing.",
+    meta: {
+      prepTime: "15 mins",
+      cookTime: "0 mins",
+      totalTime: "15 mins",
+      difficulty: "Easy",
+      rating: 4.5,
+      reviews: 100
+    },
+    ingredients: [
+      "1 head iceberg lettuce, chopped",
+      "2 roma tomatoes, wedged",
+      "1/2 red onion, thinly sliced",
+      "1/2 cup black olives",
+      "1/2 cup green olives",
+      "1/4 cup pepperoncini",
+      "1/2 cup extra virgin olive oil",
+      "3 tablespoons red wine vinegar",
+      "1 teaspoon dried oregano",
+      "1 garlic clove, minced",
+      "Salt and freshly ground black pepper to taste"
+    ],
+    instructions: [
+      {
+        section: "Preparation",
+        steps: [
+          "Chop iceberg lettuce into bite-sized pieces.",
+          "Cut tomatoes into wedges and thinly slice red onion.",
+          "Drain olives and pepperoncini."
+        ]
+      },
+      {
+        section: "Dressing",
+        steps: [
+          "In a jar or small bowl, combine olive oil, red wine vinegar, oregano, garlic, salt, and pepper.",
+          "Shake or whisk vigorously until emulsified."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Combine lettuce, tomatoes, onion, olives, and pepperoncini in a large bowl.",
+          "Pour dressing over salad and toss to combine.",
+          "Let sit for 5 minutes to allow flavors to meld before serving."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "180",
+      carbs: "8g",
+      protein: "2g",
+      fat: "16g",
+      saturatedFat: "2g",
+      cholesterol: "0mg",
+      sodium: "450mg",
+      fiber: "3g",
+      sugar: "4g",
+      vitaminC: "20mg",
+      calcium: "50mg"
+    },
+    tags: ["Salad", "Italian", "Mediterranean", "Vegetarian", "Classic", "Party Food"],
+    video: "https://www.youtube.com/embed/OvOyu0VBEiY?si=RT_p6w6r9FUAZpOV"
+  },
+  {
+    id: "mediterranean-chickpea-salad",
+    title: "Mediterranean Chickpea Salad",
+    image: "/assets/salad/Mixed Vegetable/Mediterranean ChickPea Salad.jpg",
+    description: "Protein-packed salad with chickpeas, fresh vegetables, and Mediterranean flavors in a lemon-herb dressing.",
+    meta: {
+      prepTime: "15 mins",
+      cookTime: "0 mins",
+      totalTime: "15 mins",
+      difficulty: "Easy",
+      rating: 4.8,
+      reviews: 150
+    },
+    ingredients: [
+      "2 cans (15 oz each) chickpeas, rinsed and drained",
+      "1 English cucumber, diced",
+      "1 pint cherry tomatoes, halved",
+      "1/2 red onion, finely diced",
+      "1/2 cup Kalamata olives, pitted and halved",
+      "1/2 cup feta cheese, crumbled",
+      "1/4 cup extra virgin olive oil",
+      "3 tablespoons fresh lemon juice",
+      "2 tablespoons fresh parsley, chopped",
+      "1 teaspoon dried oregano",
+      "Salt and pepper to taste"
+    ],
+    instructions: [
+      {
+        section: "Preparation",
+        steps: [
+          "Rinse and drain chickpeas thoroughly.",
+          "Dice cucumber, halve cherry tomatoes, and finely dice red onion."
+        ]
+      },
+      {
+        section: "Dressing",
+        steps: [
+          "In a small bowl, whisk together olive oil, lemon juice, parsley, oregano, salt, and pepper."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "In a large bowl, combine chickpeas, cucumber, tomatoes, red onion, and olives.",
+          "Pour dressing over the salad and toss to combine.",
+          "Gently fold in crumbled feta cheese.",
+          "Refrigerate for at least 30 minutes before serving to allow flavors to develop."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "250",
+      carbs: "25g",
+      protein: "9g",
+      fat: "14g",
+      saturatedFat: "3g",
+      cholesterol: "10mg",
+      sodium: "480mg",
+      fiber: "7g",
+      sugar: "6g",
+      calcium: "120mg",
+      iron: "2mg"
+    },
+    tags: ["Salad", "Mediterranean", "Vegetarian", "High Protein", "Chickpeas", "Healthy"],
+    video: "https://www.youtube.com/embed/PrJH8QFmtFE?si=kf68SQZ2jWYe0cPH"
+  },
+  {
+    id: "mediterranean-salad",
+    title: "Mediterranean Salad",
+    image: "/assets/salad/Mixed Vegetable/Mediterranean Salad.jpg",
+    description: "Fresh and vibrant Mediterranean salad with crisp vegetables, feta cheese, and classic Greek flavors.",
+    meta: {
+      prepTime: "20 mins",
+      cookTime: "0 mins",
+      totalTime: "20 mins",
+      difficulty: "Easy",
+      rating: 4.7,
+      reviews: 125
+    },
+    ingredients: [
+      "1 head romaine lettuce, chopped",
+      "1 English cucumber, sliced",
+      "2 tomatoes, chopped",
+      "1 green bell pepper, sliced",
+      "1 red bell pepper, sliced",
+      "1/2 red onion, thinly sliced",
+      "1/2 cup Kalamata olives",
+      "200g feta cheese, cubed",
+      "1/4 cup extra virgin olive oil",
+      "3 tablespoons red wine vinegar",
+      "1 teaspoon dried oregano",
+      "Salt and pepper to taste"
+    ],
+    instructions: [
+      {
+        section: "Preparation",
+        steps: [
+          "Wash and chop all vegetables. Cube feta cheese.",
+          "Arrange lettuce on a large serving platter."
+        ]
+      },
+      {
+        section: "Dressing",
+        steps: [
+          "In a small bowl, whisk together olive oil, red wine vinegar, oregano, salt, and pepper."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Arrange cucumber, tomatoes, bell peppers, and red onion over the lettuce.",
+          "Scatter Kalamata olives and feta cheese over the vegetables.",
+          "Drizzle with dressing just before serving.",
+          "Serve immediately."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "220",
+      carbs: "12g",
+      protein: "7g",
+      fat: "17g",
+      saturatedFat: "6g",
+      cholesterol: "25mg",
+      sodium: "650mg",
+      fiber: "4g",
+      sugar: "6g",
+      vitaminC: "90mg",
+      calcium: "200mg"
+    },
+    tags: ["Salad", "Mediterranean", "Greek", "Vegetarian", "Fresh", "Colorful"],
+    video: "https://www.youtube.com/embed/-VDlsEIltho?si=iRbV1JK64faejvYV"
+  },
+  {
+    id: "mexican-chopped-salad",
+    title: "Mexican Chopped Salad",
+    image: "/assets/salad/Mixed Vegetable/Mexican Chopped Salad.jpeg",
+    description: "A fiesta of flavors with crisp vegetables, black beans, corn, and a tangy lime-cilantro dressing.",
+    meta: {
+      prepTime: "20 mins",
+      cookTime: "0 mins",
+      totalTime: "20 mins",
+      difficulty: "Easy",
+      rating: 4.6,
+      reviews: 115
+    },
+    ingredients: [
+      "1 head romaine lettuce, chopped",
+      "1 ripe avocado, diced",
+      "1 cup corn kernels (fresh or frozen)",
+      "1 can (15 oz) black beans, rinsed and drained",
+      "1 large tomato, diced",
+      "1/2 red onion, diced",
+      "1/4 cup fresh cilantro, chopped",
+      "1/4 cup extra virgin olive oil",
+      "3 tablespoons fresh lime juice",
+      "1 teaspoon ground cumin",
+      "1/2 teaspoon chili powder",
+      "Salt and pepper to taste",
+      "Lime wedges for serving"
+    ],
+    instructions: [
+      {
+        section: "Preparation",
+        steps: [
+          "Chop all vegetables into uniform bite-sized pieces.",
+          "Rinse and drain black beans. If using frozen corn, thaw completely."
+        ]
+      },
+      {
+        section: "Dressing",
+        steps: [
+          "In a small bowl, whisk together olive oil, lime juice, cumin, chili powder, salt, and pepper."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "In a large bowl, combine romaine lettuce, avocado, corn, black beans, tomato, and red onion.",
+          "Pour dressing over the salad and toss to combine.",
+          "Stir in fresh cilantro.",
+          "Serve immediately with lime wedges on the side."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "240",
+      carbs: "22g",
+      protein: "6g",
+      fat: "16g",
+      saturatedFat: "2g",
+      cholesterol: "0mg",
+      sodium: "180mg",
+      fiber: "8g",
+      sugar: "5g",
+      vitaminC: "40mg",
+      calcium: "60mg",
+      iron: "2mg"
+    },
+    tags: ["Salad", "Mexican", "Vegetarian", "Spicy", "Colorful", "Healthy", "Summer"],
+    video: "https://www.youtube.com/embed/eP0-6MYo4cI?si=QqVre1V70RTYIM41"
+  }
+];
+
+export const specialtySaladRecipes = [
+  {
+    id: "apple-salad",
+    title: "Apple Salad",
+    image: "/assets/salad/Specialty/Apple Salad.png",
+    description: "Sweet and crunchy salad featuring crisp apples, toasted nuts, and dried cranberries with a honey dressing.",
+    meta: {
+      prepTime: "15 mins",
+      cookTime: "5 mins",
+      totalTime: "20 mins",
+      difficulty: "Easy",
+      rating: 4.4,
+      reviews: 90
+    },
+    ingredients: [
+      "2 crisp apples (such as Honeycrisp or Fuji), sliced",
+      "4 cups mixed salad greens",
+      "1/2 cup walnuts, toasted",
+      "1/4 cup dried cranberries",
+      "1/4 cup blue cheese, crumbled",
+      "1/4 cup extra virgin olive oil",
+      "2 tablespoons apple cider vinegar",
+      "1 tablespoon honey",
+      "1 teaspoon Dijon mustard",
+      "Salt and pepper to taste"
+    ],
+    instructions: [
+      {
+        section: "Preparation",
+        steps: [
+          "Slice apples just before serving to prevent browning.",
+          "Toast walnuts in a dry pan over medium heat for 3-4 minutes until fragrant.",
+          "Wash and dry mixed salad greens."
+        ]
+      },
+      {
+        section: "Dressing",
+        steps: [
+          "In a small bowl, whisk together olive oil, apple cider vinegar, honey, Dijon mustard, salt, and pepper."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Combine mixed greens, apple slices, toasted walnuts, and dried cranberries in a large bowl.",
+          "Drizzle with dressing and toss gently to coat.",
+          "Top with crumbled blue cheese.",
+          "Serve immediately."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "210",
+      carbs: "18g",
+      protein: "3g",
+      fat: "15g",
+      saturatedFat: "3g",
+      cholesterol: "5mg",
+      sodium: "120mg",
+      fiber: "4g",
+      sugar: "13g",
+      vitaminC: "10mg",
+      calcium: "60mg"
+    },
+    tags: ["Salad", "Fruit", "Vegetarian", "Sweet", "Crunchy", "Fall", "Healthy"],
+    video: "https://www.youtube.com/embed/ToFW9CIHaiE?si=eIJkt1Vg9zDCods_"
+  },
+  {
+    id: "endive-salad-bites",
+    title: "Endive Salad Bites",
+    image: "/assets/salad/Specialty/Endive Salad Bites.jpg",
+    description: "Elegant appetizer featuring endive leaves filled with a creamy salad mixture, perfect for parties and gatherings.",
+    meta: {
+      prepTime: "20 mins",
+      cookTime: "0 mins",
+      totalTime: "20 mins",
+      difficulty: "Easy",
+      rating: 4.5,
+      reviews: 85
+    },
+    ingredients: [
+      "3 heads Belgian endive",
+      "1/2 cup cream cheese, softened",
+      "1/4 cup Greek yogurt",
+      "2 tablespoons fresh dill, chopped",
+      "1 tablespoon fresh lemon juice",
+      "1/4 cup walnuts, finely chopped",
+      "1/4 cup dried cherries, chopped",
+      "Salt and pepper to taste",
+      "Fresh dill for garnish"
+    ],
+    instructions: [
+      {
+        section: "Preparation",
+        steps: [
+          "Gently separate endive leaves and wash them. Pat dry with paper towels.",
+          "Finely chop walnuts and dried cherries.",
+          "Chop fresh dill."
+        ]
+      },
+      {
+        section: "Filling",
+        steps: [
+          "In a medium bowl, mix cream cheese and Greek yogurt until smooth.",
+          "Stir in fresh dill, lemon juice, walnuts, and dried cherries.",
+          "Season with salt and pepper to taste."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Spoon about 1 teaspoon of filling into the base of each endive leaf.",
+          "Arrange on a serving platter.",
+          "Garnish with additional fresh dill.",
+          "Chill for 15 minutes before serving."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "85",
+      carbs: "6g",
+      protein: "3g",
+      fat: "6g",
+      saturatedFat: "3g",
+      cholesterol: "15mg",
+      sodium: "95mg",
+      fiber: "2g",
+      sugar: "3g",
+      calcium: "40mg",
+      iron: "0.5mg"
+    },
+    tags: ["Salad", "Appetizer", "Vegetarian", "Elegant", "Party Food", "Healthy"],
+    video: "https://www.youtube.com/embed/wzecWCsUcpA?si=ZLO7mt2FsoVKQUjs"
+  },
+  {
+    id: "frisee-salad",
+    title: "Frisée Salad",
+    image: "/assets/salad/Specialty/Frisee Salad.webp",
+    description: "Classic French bistro salad featuring bitter frisée lettuce with crispy bacon, poached eggs, and warm vinaigrette.",
+    meta: {
+      prepTime: "15 mins",
+      cookTime: "10 mins",
+      totalTime: "25 mins",
+      difficulty: "Medium",
+      rating: 4.6,
+      reviews: 95
+    },
+    ingredients: [
+      "1 large head frisée lettuce",
+      "4 slices thick-cut bacon, chopped",
+      "2 large eggs",
+      "1 tablespoon white vinegar",
+      "2 tablespoons red wine vinegar",
+      "1 tablespoon Dijon mustard",
+      "1 shallot, finely minced",
+      "3 tablespoons extra virgin olive oil",
+      "Salt and freshly ground black pepper to taste",
+      "Fresh chives for garnish"
+    ],
+    instructions: [
+      {
+        section: "Preparation",
+        steps: [
+          "Wash and dry frisée lettuce. Tear into bite-sized pieces.",
+          "Chop bacon into small pieces."
+        ]
+      },
+      {
+        section: "Bacon and Dressing",
+        steps: [
+          "Cook bacon in a skillet over medium heat until crispy, about 5-7 minutes.",
+          "Remove bacon with a slotted spoon, leaving the fat in the pan.",
+          "Add shallot to the bacon fat and cook until softened, about 2 minutes.",
+          "Whisk in red wine vinegar and Dijon mustard, then slowly whisk in olive oil.",
+          "Season with salt and pepper. Keep warm."
+        ]
+      },
+      {
+        section: "Poached Eggs",
+        steps: [
+          "Fill a saucepan with water and add white vinegar. Bring to a gentle simmer.",
+          "Crack eggs into small cups and gently slide into the simmering water.",
+          "Poach for 3-4 minutes until whites are set but yolks are still runny.",
+          "Remove with a slotted spoon and drain on paper towels."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "Place frisée in a bowl and pour warm dressing over it. Toss to coat.",
+          "Divide salad between two plates.",
+          "Top each salad with crispy bacon and a poached egg.",
+          "Season with additional salt and pepper, and garnish with fresh chives."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "280",
+      carbs: "5g",
+      protein: "12g",
+      fat: "24g",
+      saturatedFat: "6g",
+      cholesterol: "215mg",
+      sodium: "480mg",
+      fiber: "2g",
+      sugar: "2g",
+      calcium: "50mg",
+      iron: "1.5mg"
+    },
+    tags: ["Salad", "French", "Bistro", "Bacon", "Poached Eggs", "Warm Dressing", "Brunch"],
+    video: "https://www.youtube.com/embed/I7j0lGAiJtM?si=nFaKsXhgvcnnvf3V"
+  },
+  {
+    id: "watermelon-cucumber-salad",
+    title: "Watermelon Cucumber Salad",
+    image: "/assets/salad/Specialty/Watermelon Cucumber Salad.webp",
+    description: "Refreshing summer salad combining sweet watermelon with crisp cucumber, tangy feta, and fresh mint.",
+    meta: {
+      prepTime: "15 mins",
+      cookTime: "0 mins",
+      totalTime: "15 mins",
+      difficulty: "Easy",
+      rating: 4.8,
+      reviews: 130
+    },
+    ingredients: [
+      "4 cups watermelon, cubed",
+      "1 English cucumber, sliced",
+      "1/2 red onion, thinly sliced",
+      "1/2 cup feta cheese, crumbled",
+      "1/4 cup fresh mint leaves, chopped",
+      "3 tablespoons fresh lime juice",
+      "2 tablespoons extra virgin olive oil",
+      "Salt and pepper to taste",
+      "Fresh mint sprigs for garnish"
+    ],
+    instructions: [
+      {
+        section: "Preparation",
+        steps: [
+          "Cube watermelon into 1-inch pieces.",
+          "Slice cucumber into thin rounds.",
+          "Thinly slice red onion and chop fresh mint."
+        ]
+      },
+      {
+        section: "Dressing",
+        steps: [
+          "In a small bowl, whisk together lime juice and olive oil.",
+          "Season with salt and pepper."
+        ]
+      },
+      {
+        section: "Assembly",
+        steps: [
+          "In a large bowl, gently combine watermelon, cucumber, and red onion.",
+          "Drizzle with dressing and toss very gently.",
+          "Sprinkle crumbled feta cheese and chopped mint over the top.",
+          "Garnish with fresh mint sprigs.",
+          "Serve immediately or chill for up to 30 minutes before serving."
+        ]
+      }
+    ],
+    nutrition: {
+      calories: "140",
+      carbs: "15g",
+      protein: "3g",
+      fat: "8g",
+      saturatedFat: "3g",
+      cholesterol: "15mg",
+      sodium: "180mg",
+      fiber: "2g",
+      sugar: "11g",
+      vitaminC: "25mg",
+      calcium: "100mg"
+    },
+    tags: ["Salad", "Summer", "Vegetarian", "Refreshing", "Fruit", "Healthy", "Quick"],
+    video: "https://www.youtube.com/embed/nMi1X3kiSR0?si=YeumbKRQ6SOedaDI"
   }
 ];

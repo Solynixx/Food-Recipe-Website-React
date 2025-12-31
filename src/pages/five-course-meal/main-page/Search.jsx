@@ -83,7 +83,7 @@ export default class Search extends React.Component {
         const showDropdown = isFocused;
         const trendingSearches = [
             'Chicken Cordon Bleu',
-            'Sapo Tofu',
+            'Claypot Tofu',
             'Panacotta',
             'Palmiers',
             'Greek Gyros'

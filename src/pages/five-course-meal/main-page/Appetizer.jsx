@@ -8,7 +8,7 @@ import TopPicks from "./TopPicks";
 import { FaCanadianMapleLeaf, FaChevronLeft, FaChevronRight, FaHeart, FaRegHeart, FaSnowflake, FaLeaf, FaSun, FaGift } from "react-icons/fa";
 import { PiRabbit } from "react-icons/pi";
 import { GiChickenOven, GiPumpkinLantern } from "react-icons/gi";
-import { bread, dip_based, finger_food, allAppetizerRecipes } from './AppetizerData';
+import { bread, dipBased, fingerFood, allAppetizerRecipes } from './AppetizerData';
 import Search from "./Search";
 
 export default class Appetizer extends React.Component {
@@ -87,8 +87,8 @@ export default class Appetizer extends React.Component {
     return (
       <Fragment>
         <RecipeCard recipes={bread} title="Bread" />
-        <RecipeCard recipes={dip_based} title="Dip Based" />
-        <RecipeCard recipes={finger_food} title="Finger Food" />
+        <RecipeCard recipes={dipBased} title="Dip Based" />
+        <RecipeCard recipes={fingerFood} title="Finger Food" />
       </Fragment>
     )
   }

@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import RecipeSection from '../RecipeSection';
-import { appetizerRecipes } from './AppetizerRecipeData';
+import { breadRecipes, dipRecipes, fingerFoodRecipes } from './AppetizerRecipeData';
 import RecipeNavbar from '../../RecipesNavBar';
 import '../../styles/recipe.css';
 import Footer from "../../../home/Footer";
@@ -29,25 +29,6 @@ export default class AppetizerRecipe extends React.Component {
   }
 
     render() {
-        // Categorize appetizers by type based on tags or recipe characteristics
-        const breadRecipes = appetizerRecipes.filter(recipe => 
-            recipe.tags?.some(tag => tag.toLowerCase().includes('bread')) || 
-            recipe.name.toLowerCase().includes('bread') ||
-            recipe.name.toLowerCase().includes('ciabatta') ||
-            recipe.name.toLowerCase().includes('bruschetta')
-        );
-        
-        const dipRecipes = appetizerRecipes.filter(recipe => 
-            recipe.tags?.some(tag => tag.toLowerCase().includes('dip')) || 
-            recipe.name.toLowerCase().includes('dip') ||
-            recipe.name.toLowerCase().includes('hummus') ||
-            recipe.name.toLowerCase().includes('guacamole')
-        );
-        
-        const fingerFoodRecipes = appetizerRecipes.filter(recipe => 
-            !breadRecipes.includes(recipe) && !dipRecipes.includes(recipe)
-        );
-
         return (
             <Fragment>
                 <RecipeNavbar />
