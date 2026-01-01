@@ -2,9 +2,8 @@ import React from "react";
 import "../Inspiration.css";
 import "./seasonal.css";
 import "../../home/Home.css";
-import Footer from "../../home/Footer";
-import Modals from "../../home/Modals";
-
+import Footer from "../../../components/footer/Footer";
+import Modals from "../../../components/modals/Modals";
 import InspirationNav from "../InspirationNav";
 import SeasonsGrid from "./SeasonsGrid";
 import Calendar from "./Calendar";

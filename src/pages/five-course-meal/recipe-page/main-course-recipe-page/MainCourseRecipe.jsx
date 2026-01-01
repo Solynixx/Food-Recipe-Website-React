@@ -3,8 +3,8 @@ import RecipeSection from '../RecipeSection';
 import { chickenRecipes, beefRecipes, porkRecipes, lambRecipes, seafoodRecipes } from './MainCourseRecipeData';
 import RecipeNavbar from '../../RecipesNavBar';
 import '../../styles/recipe.css';
-import Footer from "../../../home/Footer";
-import Modal from "../../../home/Modals";
+import Footer from "../../../../components/footer/Footer";
+import Modal from "../../../../components/modals/Modals";
 import Search from "../../main-page/Search";
 
 export default class MainCourseRecipe extends React.Component {
