@@ -21,7 +21,7 @@ const inspirationItems = [
 const shopItems = [
   { image: '/assets/shop/Ingredients/ingredients_pfp.jpg', alt: 'Cooking Ingredients', label: 'Cooking Ingredients', href: '/shop/ingredients' },
   { image: '/assets/shop/Kitchen Tools/kitchen_tools_pfp.jpg', alt: 'Kitchen Tools', label: 'Kitchen Tools', href: '/shop/kitchen-tools' },
-  { image: '/assets/shop/Recipe Themed/recipe_themed_merch_pfp.png', alt: 'Recipe Themed Merch', label: 'Recipe Themed Merch', href: '/shop/recipe-themed' },
+  { image: '/assets/shop/Recipe Themed/recipe_themed_merch_pfp.png', alt: 'Recipe Themed Merch', label: 'Recipe Themed Merch', href: '/shop/recipe-themed-merch' },
   { image: '/assets/shop/Digital Products/digital_products_pfp.png', alt: 'Digital Products', label: 'Digital Products', href: '/shop/digital-products' },
 ];
 
