@@ -70,6 +70,14 @@ const routes = [
     component: React.lazy(() => import('./pages/shop/ingredients/Ingredients')),
   },
   {
+    path: '/shop/kitchen-tools', 
+    component: React.lazy(() => import('./pages/shop/kitchen-tools/KitchenTools')),
+  },
+  {
+    path: '/shop/recipe-themed-merch', 
+    component: React.lazy(() => import('./pages/shop/recipe-themed-merch/RecipeThemedMerch')),
+  },
+  {
     path: '/shop/digital-products', 
     component: React.lazy(() => import('./pages/shop/digital-product/DigitalProduct')),
   },
