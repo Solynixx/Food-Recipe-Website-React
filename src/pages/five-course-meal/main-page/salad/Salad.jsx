@@ -1,15 +1,15 @@
 import React, {Fragment} from "react";
-import "../../home/Home.css";
-import "../styles/main.css";
-import RecipeNavBar from "../RecipesNavBar"; 
-import Footer from "../../home/Footer";
-import Modal from "../../home/Modals";
-import RecipeCard from "./RecipeCard";
-import TopPicks from "./TopPicks";
+import "../../../home/Home.css";
+import "../../styles/main.css";
+import RecipeNavBar from "../../RecipesNavBar"; 
+import Footer from "../../../home/Footer";
+import Modal from "../../../home/Modals";
+import RecipeCard from "../RecipeCard";
+import TopPicks from "../TopPicks";
 import { FaChevronLeft, FaChevronRight, FaHeart, FaRegHeart} from "react-icons/fa";
-import FilterRecipe from './FilterRecipe';
+import FilterRecipe from '../FilterRecipe';
 import { lettuceBased, mixedVegetable, specialty, allSaladRecipes } from './SaladData';
-import Search from "./Search";
+import Search from "../Search";
 
 export default class Salad extends React.Component {
   constructor(props) {

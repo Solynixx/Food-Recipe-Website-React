@@ -1,17 +1,17 @@
 import React, {Fragment} from "react";
-import "../../home/Home.css";
-import "../styles/main.css";
-import RecipeNavBar from "../RecipesNavBar"; 
-import Footer from "../../home/Footer";
-import Modal from "../../home/Modals";
-import RecipeCard from "./RecipeCard";
-import TopPicks from "./TopPicks";
+import "../../../home/Home.css";
+import "../../styles/main.css";
+import RecipeNavBar from "../../RecipesNavBar"; 
+import Footer from "../../../home/Footer";
+import Modal from "../../../home/Modals";
+import RecipeCard from "../RecipeCard";
+import TopPicks from "../TopPicks";
 import { FaChevronLeft, FaChevronRight, FaHeart, FaRegHeart} from "react-icons/fa";
-import FilterRecipe from './FilterRecipe';
-import { cake, pastry, pudding, tiramisu, allDessertRecipes } from './DessertData';
-import Search from "./Search";
+import FilterRecipe from '../FilterRecipe';
+import { bread, dipBased, fingerFood, allAppetizerRecipes } from './AppetizerData';
+import Search from "../Search";
 
-export default class Dessert extends React.Component {
+export default class Appetizer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,18 +22,17 @@ export default class Dessert extends React.Component {
       activeFilter: 'all'
     };
     this.topPicks = [
-      {img: "/assets/desserts/Cake/Blueberry Heaven on Earth Cake.jpg", title: "Blueberry Heaven on Earth Cake"},
-      {img: "/assets/desserts/Cake/Italian Lemon Ricotta Cake.jpeg", title: "Italian Lemon Ricotta Cake"},
-      {img: "/assets/desserts/Tiramisu/Oreo Tiramisu Trifle.webp", title: "Oreo Tiramisu Trifle"},
-      {img: "/assets/desserts/Tiramisu/Pumpkin Chai Tiramisu.webp", title: "Pumpkin Chai Tiramisu"},
-      {img:  "/assets/desserts/Cake/Chocolate Sheet Cake.jpg", title: "Chocolate Sheet Cake"},
-      {img: "/assets/desserts/Cake/Boston Cream Poke Cake.jpg", title: "Boston Cream Poke Cake"},
+      {img: "/assets/appetizers/Finger-Food/Ham n Cheese Biscuit Stacks.jpg", title: "Ham n Cheese Biscuit Stacks"},
+      {img: "/assets/appetizers/Dip-Based/Tex Mex Skillet Poblano Dip.jpg", title: "Tex Mex Skillet Poblano Dip"},
+      {img: "/assets/appetizers/Finger-Food/Fried Prosciutto Tortellini.jpg", title: "Fried Prosciutto Tortellini"},
+      {img: "/assets/appetizers/Bread/Sourdough Garlic Knots.jpg", title: "Sourdough Garlic Knots"},
+      {img: "/assets/appetizers/Bread/Grilled Tomato-Peach Pizza.jpg", title: "Grilled Tomato-Peach Pizza"},
+      {img:  "/assets/appetizers/Finger-Food/Tanghulu.jpg", title: "Tanghulu"},
     ];
     this.toggleSave = this.toggleSave.bind(this);
     this.paginate = this.paginate.bind(this);
     this.handleHeartTap = this.handleHeartTap.bind(this);
     this.setFilter = this.setFilter.bind(this);
-    this.scrollIntoAllRecipes = this.scrollIntoAllRecipes.bind(this);
   }
 
   setFilter(filter) {
@@ -45,8 +44,8 @@ export default class Dessert extends React.Component {
 
   getFilteredRecipes() {
     const { activeFilter } = this.state;
-    if (activeFilter === 'all') return allDessertRecipes;
-    return allDessertRecipes.filter((recipe) => recipe.tags && recipe.tags.includes(activeFilter) ? true : false)
+    if (activeFilter === 'all') return allAppetizerRecipes;
+    return allAppetizerRecipes.filter((recipe) => recipe.tags && recipe.tags.includes(activeFilter) ? true : false)
   }
 
   handleHeartTap(recipeTitle) {
@@ -78,23 +77,18 @@ export default class Dessert extends React.Component {
 
   paginate(pageNumber) {
     this.setState({currentPage: pageNumber});
-    this.scrollIntoAllRecipes();
-  }
-
-  scrollIntoAllRecipes() {
     const allRecipesTitle = document.querySelector('.all-recipes');
     if (allRecipesTitle) {
-        allRecipesTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } 
+      allRecipesTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   renderCategoryRecipes() {
     return (
       <Fragment>
-        <RecipeCard recipes={cake} title="Cake" />
-        <RecipeCard recipes={tiramisu} title="Tiramisu" />
-        <RecipeCard recipes={pudding} title="Pudding" />
-        <RecipeCard recipes={pastry} title="Pastry" />
+        <RecipeCard recipes={bread} title="Bread" />
+        <RecipeCard recipes={dipBased} title="Dip Based" />
+        <RecipeCard recipes={fingerFood} title="Finger Food" />
       </Fragment>
     )
   }
@@ -173,17 +167,12 @@ export default class Dessert extends React.Component {
 
         <Search />
         <main>
-          <h1 class="main-title">Dessert</h1>
-          <section class="dessert-description">
-              <div class="dessert-summary-content">
-                  <p class="food-definition">Dessert, a delectable treat enjoyed after a meal, is the sweet finale that brings joy to our taste buds.</p>
+          <h1 class="head-title">Appetizer</h1>
+          <div class="appetizer text-container">
+              <div class="content">
+                  <p class="check-out">Explore our website's full appetizer recipe collection. Log in or create your account to easily save, revisit and review all your favourite appetizer dishes!</p>
               </div>
-              <button class="cta-button" onClick={() => this.scrollIntoAllRecipes()}>
-                <i class="bi bi-bookmark-heart"></i>
-                &nbsp;
-                Save Your Favorites
-              </button>
-          </section>
+          </div>
 
           <TopPicks topPicks={this.topPicks} title="Dessert" />
 
@@ -202,11 +191,11 @@ export default class Dessert extends React.Component {
               <div className="row align-items-center">
                 <div className="col-lg-6">
                   <div className="cooking-badge">COOKING FOR EVERYONE</div>
-                  <h1 className="more-section-title">DESSERT</h1>
+                  <h1 className="more-section-title">APPETIZER</h1>
                   <p className="description-text">
-                    For more best dessert recipe ideas, Celestial's got you covered!
+                    For more best appetizer recipe ideas, Celestial's got you covered!
                   </p>
-                  <button type="button" className="cta-button">MORE DESSERT RECIPE</button>
+                  <button type="button" className="cta-button">MORE APPETIZER RECIPE</button>
                 </div>
               </div>
             </div>
