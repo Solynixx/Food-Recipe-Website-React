@@ -1,4 +1,4 @@
-const USD_RATE = 16000;
+const USD_TO_IDR_RATE = 16000;
 
 export function parseIdrToNumber(idrString) {
   const clean = String(idrString || "")
@@ -8,7 +8,7 @@ export function parseIdrToNumber(idrString) {
   return Number(clean) || 0;
 }
 export function idrToUsd(idrValue) {
-  return idrValue / USD_RATE;
+  return idrValue / USD_TO_IDR_RATE;
 }
 
 export function formatUsd(n) {

@@ -136,7 +136,7 @@ export default class Payment extends React.Component {
         <h2>
           Shopping Cart <span className="cart-count">({count} items)</span>
         </h2>
-
+        
         {count === 0 ? (
           <div className="empty-cart">
             <div className="empty-cart-icon">🛒</div>
@@ -171,6 +171,11 @@ export default class Payment extends React.Component {
                 </div>
               );
             })}
+            <div className="cart-footer">
+                <a href="#shopping-modal" className="add-more-link">
+                    Add more items
+                </a>
+            </div>
           </div>
         )}
       </section>
