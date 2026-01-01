@@ -1,17 +1,53 @@
 import React from 'react';
-import Navbar from '../../home/Navbar';
-import Footer from '../../home/Footer';
 import ShopLayout from '../ShopLayout';
+import ShopPageLayout from '../ShopPageLayout';
 import { products, filters } from './DigitalProductData';
 
 class DigitalProduct extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { filter: 'all', search: '', selected: null };
+    this.state = {
+      filter: 'all',
+      search: '',
+      selected: null,
+      addItem: null,
+      quantity: 1,
+    };
   }
 
   handleFilterChange = (filter) => this.setState({ filter });
   handleSearchChange = (search) => this.setState({ search });
+
+  handleAddClick = (product) => this.setState({ addItem: product, quantity: 1 });
+  closeAddModal = () => this.setState({ addItem: null, quantity: 1 });
+
+  incQty = () => this.setState((s) => ({ quantity: Math.min(99, s.quantity + 1) }));
+  decQty = () => this.setState((s) => ({ quantity: Math.max(1, s.quantity - 1) }));
+  handleQtyChange = (e) => {
+    const v = Math.max(1, Math.min(99, parseInt(e.target.value, 10) || 1));
+    this.setState({ quantity: v });
+  };
+
+  saveToCart = () => {
+    const { addItem, quantity } = this.state;
+    if (!addItem) return;
+
+    const stored = JSON.parse(localStorage.getItem('cart') || '[]');
+    const existing = stored.find((i) => i.id === addItem.id);
+    if (existing) {
+      existing.quantity += quantity;
+    } else {
+      stored.push({
+        id: addItem.id,
+        title: addItem.title,
+        price: addItem.price,
+        quantity,
+      });
+    }
+    localStorage.setItem('cart', JSON.stringify(stored));
+    window.dispatchEvent(new CustomEvent('cart-updated', { detail: stored }));
+    this.closeAddModal();
+  };
 
   filteredProducts() {
     const { filter, search } = this.state;
@@ -39,10 +75,18 @@ class DigitalProduct extends React.Component {
               <div className="small text-muted">Stock: {p.stock}</div>
             </div>
             <div className="d-flex gap-2 align-items-start">
-              <button className="small btn btn-sm btn-outline-secondary" type="button" onClick={() => this.setState({ selected: p })}>
+              <button
+                className="small btn btn-sm btn-outline-secondary"
+                type="button"
+                onClick={() => this.setState({ selected: p })}
+              >
                 Details
               </button>
-              <button className="btn btn-sm btn-primary btn-add" aria-disabled="true" disabled>
+              <button
+                className="btn btn-sm btn-primary btn-add"
+                type="button"
+                onClick={() => this.handleAddClick(p)}
+              >
                 Add
               </button>
             </div>
@@ -52,7 +96,7 @@ class DigitalProduct extends React.Component {
     </div>
   );
 
-  renderModal() {
+  renderDetailsModal() {
     const { selected } = this.state;
     if (!selected) return null;
     return (
@@ -71,11 +115,53 @@ class DigitalProduct extends React.Component {
     );
   }
 
+  renderAddModal() {
+    const { addItem, quantity } = this.state;
+    if (!addItem) return null;
+    return (
+      <div className="modal" role="dialog" aria-modal="true" style={{ display: 'flex' }}>
+        <div className="modal-content">
+          <button className="close" aria-label="Close" onClick={this.closeAddModal}>
+            ×
+          </button>
+          <h2>Add to Cart</h2>
+          <p className="mb-2"><strong>{addItem.title}</strong></p>
+          <p>{addItem.price}</p>
+
+          <div className="quantity-control" aria-label="Quantity selector">
+            <button type="button" className="qty-btn" onClick={this.decQty} aria-label="Decrease quantity">
+              –
+            </button>
+            <input
+              type="number"
+              min="1"
+              max="99"
+              value={quantity}
+              onChange={this.handleQtyChange}
+              aria-label="Quantity"
+            />
+            <button type="button" className="qty-btn" onClick={this.incQty} aria-label="Increase quantity">
+              +
+            </button>
+          </div>
+
+          <div className="d-flex gap-2 mt-3">
+            <button type="button" className="btn btn-secondary w-100" onClick={this.closeAddModal}>
+              Cancel
+            </button>
+            <button type="button" className="btn btn-primary btn-add-cart w-100" onClick={this.saveToCart}>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     const items = this.filteredProducts();
     return (
-      <>
-        <Navbar />
+      <ShopPageLayout>
         <ShopLayout
           title="Digital Products"
           searchPlaceholder="Search digital products..."
@@ -89,9 +175,9 @@ class DigitalProduct extends React.Component {
             {items.map(this.renderCard)}
           </section>
         </ShopLayout>
-        {this.renderModal()}
-        <Footer />
-      </>
+        {this.renderDetailsModal()}
+        {this.renderAddModal()}
+      </ShopPageLayout>
     );
   }
 }
