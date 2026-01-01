@@ -1,4 +1,5 @@
 import React from 'react';
+import './Modals.css';
 
 class Modals extends React.Component {
   constructor(props) {

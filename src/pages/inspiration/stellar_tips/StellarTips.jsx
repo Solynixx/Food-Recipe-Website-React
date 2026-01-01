@@ -2,8 +2,8 @@ import React from 'react';
 import '../Inspiration.css';
 import '../../home/Home.css';  
 import StellarSections from './StellarSections';
-import Footer from '../../home/Footer';
-import Modals from '../../home/Modals';
+import Footer from "../../../components/footer/Footer";
+import Modals from "../../../components/modals/Modals";
 import InspirationNav from '../InspirationNav'; 
 
 class StellarTips extends React.Component {

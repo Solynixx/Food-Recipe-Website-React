@@ -2,9 +2,9 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import "../home/Home.css";
 import "./AboutUs.css";
-import Navbar from "../home/Navbar";
-import Footer from "../home/Footer";
-import Modals from "../home/Modals";
+import Navbar from "../../components/navigations/Navbar";
+import Footer from "../../components/footer/Footer";
+import Modals from "../../components/modals/Modals";
 
 function withLocation(Component) {
   return function Wrapped(props) {

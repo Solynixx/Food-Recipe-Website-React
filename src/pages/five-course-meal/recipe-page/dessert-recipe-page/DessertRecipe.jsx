@@ -3,8 +3,8 @@ import RecipeSection from '../RecipeSection';
 import { cakeRecipes, pastryRecipes, puddingRecipes, tiramisuRecipes } from './DessertRecipeData';
 import RecipeNavbar from '../../RecipesNavBar';
 import '../../styles/recipe.css';
-import Footer from "../../../home/Footer";
-import Modal from "../../../home/Modals";
+import Footer from "../../../../components/footer/Footer";
+import Modal from "../../../../components/modals/Modals";
 import Search from "../../main-page/Search";
 
 export default class DessertRecipe extends React.Component {

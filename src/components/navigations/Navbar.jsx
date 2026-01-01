@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import './Navbar.css';
 
 const recipesItems = [
   { image: '/assets/main_course/main_course_pfp.jpg', alt: 'Main course', label: 'Main Course', href: '/five-course-meal/main-page/main-course' },
