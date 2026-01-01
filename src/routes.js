@@ -27,23 +27,23 @@ const routes = [
   },
   {
     path : '/five-course-meal/main-page/appetizer',
-    component: React.lazy(() => import('./pages/five-course-meal/main-page/Appetizer')),
+    component: React.lazy(() => import('./pages/five-course-meal/main-page/appetizer/Appetizer')),
   },
   {
     path : '/five-course-meal/main-page/salad',
-    component: React.lazy(() => import('./pages/five-course-meal/main-page/Salad')),
+    component: React.lazy(() => import('./pages/five-course-meal/main-page/salad/Salad')),
   },
   {
     path : '/five-course-meal/main-page/main-course',
-    component: React.lazy(() => import('./pages/five-course-meal/main-page/MainCourse')),
+    component: React.lazy(() => import('./pages/five-course-meal/main-page/main-course/MainCourse')),
   },
   {
     path : '/five-course-meal/main-page/dessert',
-    component: React.lazy(() => import('./pages/five-course-meal/main-page/Dessert')),
+    component: React.lazy(() => import('./pages/five-course-meal/main-page/dessert/Dessert')),
   },
   {
     path : '/five-course-meal/main-page/special-diets',
-    component: React.lazy(() => import('./pages/five-course-meal/main-page/SpecialDiet')),
+    component: React.lazy(() => import('./pages/five-course-meal/main-page/special-diets/SpecialDiet')),
   },
   {
     path: '/five-course-meal/recipes/main-course', 

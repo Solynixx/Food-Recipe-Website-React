@@ -1,17 +1,18 @@
 import React, {Fragment} from "react";
-import "../../home/Home.css";
-import "../styles/main.css";
-import RecipeNavBar from "../RecipesNavBar"; 
-import Footer from "../../home/Footer";
-import Modal from "../../home/Modals";
-import RecipeCard from "./RecipeCard";
-import TopPicks from "./TopPicks";
+import "../../../home/Home.css";
+import "../../styles/main.css";
+import RecipeNavBar from "../../RecipesNavBar"; 
+import Footer from "../../../home/Footer";
+import Modal from "../../../home/Modals";
+import RecipeCard from "../RecipeCard";
+import TopPicks from "../TopPicks";
 import { FaChevronLeft, FaChevronRight, FaHeart, FaRegHeart} from "react-icons/fa";
-import FilterRecipe from './FilterRecipe';
-import { dairyFree, glutenFree, vegan, vegetarian, allSpecialDietsRecipes } from './SpecialDietsData';
-import Search from "./Search";
+import FilterRecipe from '../FilterRecipe';
+import { chicken, beef, lamb, pork, seafood, allMainCourseRecipes } from './MainCourseData';
+import Search from "../Search";
+import { Link } from 'react-router-dom';
 
-export default class Salad extends React.Component {
+export default class MainCourse extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,12 +23,15 @@ export default class Salad extends React.Component {
       activeFilter: 'all'
     };
     this.topPicks = [
-      {img: "/assets/special_diets/vegetarian/Pea and Mint Soup.jpg", title: "Pea and Mint Soup"},
-      {img: "/assets/special_diets/vegetarian/Ratatouille.jpg", title: "Ratatouille"},
-      {img: "/assets/special_diets/vegetarian/Cauliflower Steaks.jpg", title: "Cauliflower Steaks"},
-      {img: "/assets/special_diets/vegan/Sapo Tofu.jpg", title: "Sapo Tofu"},
-      {img: "/assets/special_diets/vegan/Mushroom Miso Risotto.jpg", title: "Mushroom Miso Risotto"},
-      {img: "/assets/special_diets/gluten_free/Steamed Fish.jpg", title: "Steamed Fish"},
+        { img: "/assets/main_course/Chicken/Chicken Cordon Bleu.png", title: "Chicken Cordon Bleu" },
+        { img: "/assets/main_course/Seafood/Salmon Steak in Coconut Milk with Peas.png", title: "Salmon Steak" },
+        { img: "/assets/main_course/Seafood/Shrimp Avocado Cocktail.png", title: "Shrimp Avocado Cocktail" },
+        { img: "/assets/main_course/Pork/Tonkatsu.jpg", title: "Tonkatsu", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "40 mins" },
+        { img: "/assets/main_course/Seafood/Lobster Thermidor.jpg", title: "Lobster Thermidor", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "40 mins" },
+        { img: "/assets/main_course/Pork/Crispy Pork Schnitzel.png", title: "Crispy Pork Schnitzel", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "35 mins" },
+        { img: "/assets/main_course/Pork/Pork Eggs Benedict.jpg", title: "Pulled Pork Eggs Benedict", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "35 mins" },
+        { img: "/assets/main_course/Lamb/Greek Gyros.jpg", title: "Greek Gyros", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "1 hr 10 mins" },
+        { img: "/assets/main_course/Beef/Beef Teppanyaki.jpg", title: "Beef Teppanyaki", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "1 hr 30 mins" },
     ];
     this.toggleSave = this.toggleSave.bind(this);
     this.paginate = this.paginate.bind(this);
@@ -44,8 +48,8 @@ export default class Salad extends React.Component {
 
   getFilteredRecipes() {
     const { activeFilter } = this.state;
-    if (activeFilter === 'all') return allSpecialDietsRecipes;
-    return allSpecialDietsRecipes.filter((recipe) => recipe.tags && recipe.tags.includes(activeFilter) ? true : false)
+    if (activeFilter === 'all') return allMainCourseRecipes;
+    return allMainCourseRecipes.filter((recipe) => recipe.tags && recipe.tags.includes(activeFilter) ? true : false)
   }
 
   handleHeartTap(recipeTitle) {
@@ -86,10 +90,11 @@ export default class Salad extends React.Component {
   renderCategoryRecipes() {
     return (
       <Fragment>
-        <RecipeCard recipes={dairyFree} title="Dairy Free" />
-        <RecipeCard recipes={glutenFree} title="Gluten Free" />
-        <RecipeCard recipes={vegan} title="Vegan" />
-        <RecipeCard recipes={vegetarian} title="Vegetarian" />
+        <RecipeCard recipes={chicken} title="Chicken" />
+        <RecipeCard recipes={beef} title="Beef" />
+        <RecipeCard recipes={lamb} title="Lamb" />
+        <RecipeCard recipes={pork} title="Pork" />
+        <RecipeCard recipes={seafood} title="Seafood" />
       </Fragment>
     )
   }
@@ -129,7 +134,7 @@ export default class Salad extends React.Component {
                 </div>
                 <div className="card-content">
                   <div className="text">
-                    <a href={r.href}>{r.title}</a>
+                    <Link to={r.href}>{r.title}</Link>
                     <p>{r.time}</p>
                   </div>
                 </div>
@@ -168,14 +173,17 @@ export default class Salad extends React.Component {
 
         <Search />
         <main>
-          <h1 class="head-title">Special Diets</h1>
-          <div class="diet text-container">
-              <div class="content">
-                  <p class="check-out">Explore our website's full appetizer recipe collection. Log in or create your account to easily save, revisit and review all your favourite appetizer dishes!</p>
-              </div>
+          <h1 className="head-title">Main Course</h1>
+
+          <div className="main text-container">
+            <div className="content">
+              <p className="check-out">
+                Explore our website's full main course recipe collection. Log in or create your account to easily save, revisit and review all your favourite main-course dishes!
+              </p>
+            </div>
           </div>
 
-          <TopPicks topPicks={this.topPicks} title="Dessert" />
+          <TopPicks topPicks={this.topPicks} title="Main Course" />
 
           {this.renderCategoryRecipes()}
 
@@ -192,11 +200,11 @@ export default class Salad extends React.Component {
               <div className="row align-items-center">
                 <div className="col-lg-6">
                   <div className="cooking-badge">COOKING FOR EVERYONE</div>
-                  <h1 className="more-section-title">SPECIAL DIETS</h1>
+                  <h1 className="more-section-title">MAIN COURSE</h1>
                   <p className="description-text">
-                    For more best special diets recipe ideas, Celestial's got you covered!
+                    For more best main course recipe ideas, Celestial's got you covered!
                   </p>
-                  <button type="button" className="cta-button">MORE SPECIAL DIETS RECIPE</button>
+                  <button type="button" className="cta-button">MORE MAIN COURSE RECIPE</button>
                 </div>
               </div>
             </div>

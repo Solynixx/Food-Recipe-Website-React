@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 import { FaCanadianMapleLeaf, FaHeart, FaSnowflake, FaLeaf, FaSun, FaGift } from "react-icons/fa";
 import "../styles/main.css";
 import { PiRabbit } from "react-icons/pi";

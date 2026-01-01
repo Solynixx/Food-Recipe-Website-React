@@ -1,17 +1,17 @@
 import React, {Fragment} from "react";
-import "../../home/Home.css";
-import "../styles/main.css";
-import RecipeNavBar from "../RecipesNavBar"; 
-import Footer from "../../home/Footer";
-import Modal from "../../home/Modals";
-import RecipeCard from "./RecipeCard";
-import TopPicks from "./TopPicks";
+import "../../../home/Home.css";
+import "../../styles/main.css";
+import RecipeNavBar from "../../RecipesNavBar"; 
+import Footer from "../../../home/Footer";
+import Modal from "../../../home/Modals";
+import RecipeCard from "../RecipeCard";
+import TopPicks from "../TopPicks";
 import { FaChevronLeft, FaChevronRight, FaHeart, FaRegHeart} from "react-icons/fa";
-import FilterRecipe from './FilterRecipe';
-import { bread, dipBased, fingerFood, allAppetizerRecipes } from './AppetizerData';
-import Search from "./Search";
+import FilterRecipe from '../FilterRecipe';
+import { dairyFree, glutenFree, vegan, vegetarian, allSpecialDietsRecipes } from './SpecialDietsData';
+import Search from "../Search";
 
-export default class Appetizer extends React.Component {
+export default class SpecialDiets extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,12 +22,12 @@ export default class Appetizer extends React.Component {
       activeFilter: 'all'
     };
     this.topPicks = [
-      {img: "/assets/appetizers/Finger-Food/Ham n Cheese Biscuit Stacks.jpg", title: "Ham n Cheese Biscuit Stacks"},
-      {img: "/assets/appetizers/Dip-Based/Tex Mex Skillet Poblano Dip.jpg", title: "Tex Mex Skillet Poblano Dip"},
-      {img: "/assets/appetizers/Finger-Food/Fried Prosciutto Tortellini.jpg", title: "Fried Prosciutto Tortellini"},
-      {img: "/assets/appetizers/Bread/Sourdough Garlic Knots.jpg", title: "Sourdough Garlic Knots"},
-      {img: "/assets/appetizers/Bread/Grilled Tomato-Peach Pizza.jpg", title: "Grilled Tomato-Peach Pizza"},
-      {img:  "/assets/appetizers/Finger-Food/Tanghulu.jpg", title: "Tanghulu"},
+      {img: "/assets/special_diets/vegetarian/Pea and Mint Soup.jpg", title: "Pea and Mint Soup"},
+      {img: "/assets/special_diets/vegetarian/Ratatouille.jpg", title: "Ratatouille"},
+      {img: "/assets/special_diets/vegetarian/Cauliflower Steaks.jpg", title: "Cauliflower Steaks"},
+      {img: "/assets/special_diets/vegan/Sapo Tofu.jpg", title: "Sapo Tofu"},
+      {img: "/assets/special_diets/vegan/Mushroom Miso Risotto.jpg", title: "Mushroom Miso Risotto"},
+      {img: "/assets/special_diets/gluten_free/Steamed Fish.jpg", title: "Steamed Fish"},
     ];
     this.toggleSave = this.toggleSave.bind(this);
     this.paginate = this.paginate.bind(this);
@@ -44,8 +44,8 @@ export default class Appetizer extends React.Component {
 
   getFilteredRecipes() {
     const { activeFilter } = this.state;
-    if (activeFilter === 'all') return allAppetizerRecipes;
-    return allAppetizerRecipes.filter((recipe) => recipe.tags && recipe.tags.includes(activeFilter) ? true : false)
+    if (activeFilter === 'all') return allSpecialDietsRecipes;
+    return allSpecialDietsRecipes.filter((recipe) => recipe.tags && recipe.tags.includes(activeFilter) ? true : false)
   }
 
   handleHeartTap(recipeTitle) {
@@ -86,9 +86,10 @@ export default class Appetizer extends React.Component {
   renderCategoryRecipes() {
     return (
       <Fragment>
-        <RecipeCard recipes={bread} title="Bread" />
-        <RecipeCard recipes={dipBased} title="Dip Based" />
-        <RecipeCard recipes={fingerFood} title="Finger Food" />
+        <RecipeCard recipes={dairyFree} title="Dairy Free" />
+        <RecipeCard recipes={glutenFree} title="Gluten Free" />
+        <RecipeCard recipes={vegan} title="Vegan" />
+        <RecipeCard recipes={vegetarian} title="Vegetarian" />
       </Fragment>
     )
   }
@@ -167,8 +168,8 @@ export default class Appetizer extends React.Component {
 
         <Search />
         <main>
-          <h1 class="head-title">Appetizer</h1>
-          <div class="appetizer text-container">
+          <h1 class="head-title">Special Diets</h1>
+          <div class="diet text-container">
               <div class="content">
                   <p class="check-out">Explore our website's full appetizer recipe collection. Log in or create your account to easily save, revisit and review all your favourite appetizer dishes!</p>
               </div>
@@ -191,11 +192,11 @@ export default class Appetizer extends React.Component {
               <div className="row align-items-center">
                 <div className="col-lg-6">
                   <div className="cooking-badge">COOKING FOR EVERYONE</div>
-                  <h1 className="more-section-title">APPETIZER</h1>
+                  <h1 className="more-section-title">SPECIAL DIETS</h1>
                   <p className="description-text">
-                    For more best appetizer recipe ideas, Celestial's got you covered!
+                    For more best special diets recipe ideas, Celestial's got you covered!
                   </p>
-                  <button type="button" className="cta-button">MORE APPETIZER RECIPE</button>
+                  <button type="button" className="cta-button">MORE SPECIAL DIETS RECIPE</button>
                 </div>
               </div>
             </div>

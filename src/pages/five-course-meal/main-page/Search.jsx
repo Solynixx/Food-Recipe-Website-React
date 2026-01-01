@@ -2,11 +2,11 @@ import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { IoTrendingUp } from 'react-icons/io5';
 import '../styles/search.css';
-import { allMainCourseRecipes } from './MainCourseData';
-import { allAppetizerRecipes } from './AppetizerData';
-import { allDessertRecipes } from './DessertData';
-import { allSaladRecipes } from './SaladData';
-import { allSpecialDietsRecipes } from './SpecialDietsData';
+import { allMainCourseRecipes } from './main-course/MainCourseData';
+import { allAppetizerRecipes } from './appetizer/AppetizerData';
+import { allDessertRecipes } from './dessert/DessertData';
+import { allSaladRecipes } from './salad/SaladData';
+import { allSpecialDietsRecipes } from './special-diets/SpecialDietsData';
 
 export default class Search extends React.Component {
     constructor(props) {

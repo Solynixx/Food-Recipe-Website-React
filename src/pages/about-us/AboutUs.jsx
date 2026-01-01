@@ -194,24 +194,6 @@ class AboutUs extends React.Component {
           </div>
         </main>
 
-        <footer className="main-footer">
-          <h1 className="footer-title" id="footer-socials">Socials</h1>
-          <div className="socials-logo">
-            <a href="https://github.com/Dendroculus/Food-Recipe-Website"><img className="img-fluid" src="/assets/logo/Github.png" alt="Github" /></a>
-            <a href="https://www.instagram.com/"><img className="img-fluid" src="/assets/logo/Instagram.png" alt="Instagram" /></a>
-            <a href="https://www.facebook.com/"><img className="img-fluid Facebook" src="/assets/logo/Facebook.png" alt="Facebook" /></a>
-            <a href="https://twitter.com/"><img className="img-fluid" src="/assets/logo/X.png" alt="X" /></a>
-            <a href="https://www.linkedin.com/"><img className="img-fluid" src="/assets/logo/LinkedIn.jpg" alt="LinkedIn" /></a>
-          </div>
-          <nav className="footer-policy-links">
-            <a href="#terms-modal">Terms of Use</a>
-            <a href="#privacy-modal">Privacy Policy</a>
-            <a href="#cookies-modal">Cookies</a>
-            <a href="#disclaimer-modal">Disclaimer</a>
-          </nav>
-          <p className="footer-note">© 2024 Celestial. All rights reserved.</p>
-        </footer>
-
         <Modals />
         <Footer />
       </div>

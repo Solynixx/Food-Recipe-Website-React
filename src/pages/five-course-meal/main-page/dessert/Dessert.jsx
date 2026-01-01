@@ -1,18 +1,17 @@
 import React, {Fragment} from "react";
-import "../../home/Home.css";
-import "../styles/main.css";
-import RecipeNavBar from "../RecipesNavBar"; 
-import Footer from "../../home/Footer";
-import Modal from "../../home/Modals";
-import RecipeCard from "./RecipeCard";
-import TopPicks from "./TopPicks";
+import "../../../home/Home.css";
+import "../../styles/main.css";
+import RecipeNavBar from "../../RecipesNavBar"; 
+import Footer from "../../../home/Footer";
+import Modal from "../../../home/Modals";
+import RecipeCard from "../RecipeCard";
+import TopPicks from "../TopPicks";
 import { FaChevronLeft, FaChevronRight, FaHeart, FaRegHeart} from "react-icons/fa";
-import FilterRecipe from './FilterRecipe';
-import { chicken, beef, lamb, pork, seafood, allMainCourseRecipes } from './MainCourseData';
-import Search from "./Search";
-import { Link } from 'react-router-dom';
+import FilterRecipe from '../FilterRecipe';
+import { cake, pastry, pudding, tiramisu, allDessertRecipes } from './DessertData';
+import Search from "../Search";
 
-export default class MainCourse extends React.Component {
+export default class Dessert extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,20 +22,18 @@ export default class MainCourse extends React.Component {
       activeFilter: 'all'
     };
     this.topPicks = [
-        { img: "/assets/main_course/Chicken/Chicken Cordon Bleu.png", title: "Chicken Cordon Bleu" },
-        { img: "/assets/main_course/Seafood/Salmon Steak in Coconut Milk with Peas.png", title: "Salmon Steak" },
-        { img: "/assets/main_course/Seafood/Shrimp Avocado Cocktail.png", title: "Shrimp Avocado Cocktail" },
-        { img: "/assets/main_course/Pork/Tonkatsu.jpg", title: "Tonkatsu", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "40 mins" },
-        { img: "/assets/main_course/Seafood/Lobster Thermidor.jpg", title: "Lobster Thermidor", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "40 mins" },
-        { img: "/assets/main_course/Pork/Crispy Pork Schnitzel.png", title: "Crispy Pork Schnitzel", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "35 mins" },
-        { img: "/assets/main_course/Pork/Pork Eggs Benedict.jpg", title: "Pulled Pork Eggs Benedict", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "35 mins" },
-        { img: "/assets/main_course/Lamb/Greek Gyros.jpg", title: "Greek Gyros", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "1 hr 10 mins" },
-        { img: "/assets/main_course/Beef/Beef Teppanyaki.jpg", title: "Beef Teppanyaki", href: "/five-course-meal/recipes-html/main-course-recipes.html#chicken-cordon-bleu", time: "1 hr 30 mins" },
+      {img: "/assets/desserts/Cake/Blueberry Heaven on Earth Cake.jpg", title: "Blueberry Heaven on Earth Cake"},
+      {img: "/assets/desserts/Cake/Italian Lemon Ricotta Cake.jpeg", title: "Italian Lemon Ricotta Cake"},
+      {img: "/assets/desserts/Tiramisu/Oreo Tiramisu Trifle.webp", title: "Oreo Tiramisu Trifle"},
+      {img: "/assets/desserts/Tiramisu/Pumpkin Chai Tiramisu.webp", title: "Pumpkin Chai Tiramisu"},
+      {img:  "/assets/desserts/Cake/Chocolate Sheet Cake.jpg", title: "Chocolate Sheet Cake"},
+      {img: "/assets/desserts/Cake/Boston Cream Poke Cake.jpg", title: "Boston Cream Poke Cake"},
     ];
     this.toggleSave = this.toggleSave.bind(this);
     this.paginate = this.paginate.bind(this);
     this.handleHeartTap = this.handleHeartTap.bind(this);
     this.setFilter = this.setFilter.bind(this);
+    this.scrollIntoAllRecipes = this.scrollIntoAllRecipes.bind(this);
   }
 
   setFilter(filter) {
@@ -48,8 +45,8 @@ export default class MainCourse extends React.Component {
 
   getFilteredRecipes() {
     const { activeFilter } = this.state;
-    if (activeFilter === 'all') return allMainCourseRecipes;
-    return allMainCourseRecipes.filter((recipe) => recipe.tags && recipe.tags.includes(activeFilter) ? true : false)
+    if (activeFilter === 'all') return allDessertRecipes;
+    return allDessertRecipes.filter((recipe) => recipe.tags && recipe.tags.includes(activeFilter) ? true : false)
   }
 
   handleHeartTap(recipeTitle) {
@@ -81,20 +78,23 @@ export default class MainCourse extends React.Component {
 
   paginate(pageNumber) {
     this.setState({currentPage: pageNumber});
+    this.scrollIntoAllRecipes();
+  }
+
+  scrollIntoAllRecipes() {
     const allRecipesTitle = document.querySelector('.all-recipes');
     if (allRecipesTitle) {
-      allRecipesTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+        allRecipesTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } 
   }
 
   renderCategoryRecipes() {
     return (
       <Fragment>
-        <RecipeCard recipes={chicken} title="Chicken" />
-        <RecipeCard recipes={beef} title="Beef" />
-        <RecipeCard recipes={lamb} title="Lamb" />
-        <RecipeCard recipes={pork} title="Pork" />
-        <RecipeCard recipes={seafood} title="Seafood" />
+        <RecipeCard recipes={cake} title="Cake" />
+        <RecipeCard recipes={tiramisu} title="Tiramisu" />
+        <RecipeCard recipes={pudding} title="Pudding" />
+        <RecipeCard recipes={pastry} title="Pastry" />
       </Fragment>
     )
   }
@@ -134,7 +134,7 @@ export default class MainCourse extends React.Component {
                 </div>
                 <div className="card-content">
                   <div className="text">
-                    <Link to={r.href}>{r.title}</Link>
+                    <a href={r.href}>{r.title}</a>
                     <p>{r.time}</p>
                   </div>
                 </div>
@@ -173,17 +173,19 @@ export default class MainCourse extends React.Component {
 
         <Search />
         <main>
-          <h1 className="head-title">Main Course</h1>
+          <h1 class="main-title">Dessert</h1>
+          <section class="dessert-description">
+              <div class="dessert-summary-content">
+                  <p class="food-definition">Dessert, a delectable treat enjoyed after a meal, is the sweet finale that brings joy to our taste buds.</p>
+              </div>
+              <button class="cta-button" onClick={() => this.scrollIntoAllRecipes()}>
+                <i class="bi bi-bookmark-heart"></i>
+                &nbsp;
+                Save Your Favorites
+              </button>
+          </section>
 
-          <div className="main text-container">
-            <div className="content">
-              <p className="check-out">
-                Explore our website's full main course recipe collection. Log in or create your account to easily save, revisit and review all your favourite main-course dishes!
-              </p>
-            </div>
-          </div>
-
-          <TopPicks topPicks={this.topPicks} title="Main Course" />
+          <TopPicks topPicks={this.topPicks} title="Dessert" />
 
           {this.renderCategoryRecipes()}
 
@@ -200,11 +202,11 @@ export default class MainCourse extends React.Component {
               <div className="row align-items-center">
                 <div className="col-lg-6">
                   <div className="cooking-badge">COOKING FOR EVERYONE</div>
-                  <h1 className="more-section-title">MAIN COURSE</h1>
+                  <h1 className="more-section-title">DESSERT</h1>
                   <p className="description-text">
-                    For more best main course recipe ideas, Celestial's got you covered!
+                    For more best dessert recipe ideas, Celestial's got you covered!
                   </p>
-                  <button type="button" className="cta-button">MORE MAIN COURSE RECIPE</button>
+                  <button type="button" className="cta-button">MORE DESSERT RECIPE</button>
                 </div>
               </div>
             </div>
