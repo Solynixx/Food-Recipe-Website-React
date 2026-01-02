@@ -54,7 +54,7 @@ export default class InspirationNav extends React.Component {
 
   defaultRightLinks = [
     { to: "/", img: "/assets/icons/house.png", alt: "home", title: "Home" },
-    { href: "/forms/index.html", img: "/assets/icons/user.png", alt: "user", title: "Account" },
+    { href: "/form", img: "/assets/icons/user.png", alt: "user", title: "Account" },
     { href: "/payment/Payment", img: "/assets/icons/shopping_cart.png", alt: "cart", title: "Cart" }
   ];
 

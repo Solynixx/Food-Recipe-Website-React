@@ -79,7 +79,7 @@ class RecipeNavbar extends React.Component {
               <Link to="/" id="home" className="other" rel="noreferrer">
                 <img src="/assets/icons/house.png" alt="home" width="32" height="32" />
               </Link>
-              <Link to="/forms/index.html" className="other" target="_blank" rel="noreferrer">
+              <Link to="/form" className="other" target="_blank" rel="noreferrer">
                 <img src="/assets/icons/user.png" alt="user" width="32" height="32" />
               </Link>
               <Link to="/payment/payment" className="other" target="_blank" rel="noreferrer">
