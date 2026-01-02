@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+import './Form.css';
 import { Link } from "react-router-dom";
 
 class AuthPage extends React.Component {
