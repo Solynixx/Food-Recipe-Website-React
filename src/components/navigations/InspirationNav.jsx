@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../pages/inspiration/Inspiration.css";
+import "./InspirationNav.css";
 
 export default class InspirationNav extends React.Component {
   defaultNavGroups = [
