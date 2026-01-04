@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ShopLayout from './ShopLayout'; 
 import Shop from './Shop'; 
+import ShopProductCard from '../../components/shop/ShopProductCard';
+import ShopDetailsModal from '../../components/shop/ShopDetailsModal';
+import ShopAddModal from '../../components/shop/ShopAddModal';
 
 class ShopCategoryPage extends React.Component {
   constructor(props) {
@@ -26,9 +29,7 @@ class ShopCategoryPage extends React.Component {
     this.setState((state) => {
       const { addItem, quantity } = state;
       if (!addItem) return null;
-
       const maxStock = typeof addItem.stock === 'number' ? addItem.stock : 99;
-
       return { quantity: Math.min(maxStock, quantity + 1) };
     });
   };
@@ -38,12 +39,9 @@ class ShopCategoryPage extends React.Component {
   handleQtyChange = (e) => {
     const { addItem } = this.state;
     if (!addItem) return;
-
     const maxStock = typeof addItem.stock === 'number' ? addItem.stock : 99;
     const val = parseInt(e.target.value, 10);
-
     const validQuantity = Math.max(1, Math.min(maxStock, val || 1));
-    
     this.setState({ quantity: validQuantity });
   };
 
@@ -84,129 +82,19 @@ class ShopCategoryPage extends React.Component {
   };
 
   filteredProducts() {
-    const { localProducts } = this.state; 
-    const { filter, search } = this.state;
+    const { localProducts, filter, search } = this.state; 
     const term = search.trim().toLowerCase();
     
     return localProducts.filter((p) => {
       const byFilter = filter === 'all' || p.category === filter;
-      const bySearch =
-        !term ||
-        p.title.toLowerCase().includes(term) ||
-        p.meta.toLowerCase().includes(term);
+      const bySearch = !term || p.title.toLowerCase().includes(term) || p.meta.toLowerCase().includes(term);
       return byFilter && bySearch;
     });
   }
 
-renderCard = (p) => {
-    const isOutOfStock = typeof p.stock === 'number' && p.stock <= 0;
-
-    return (
-      <div key={p.id} className="col-12 col-sm-6 col-md-4 product">
-        <article className="card product-card h-100 border-0 shadow-sm">
-          <img src={p.img} className="card-img-top" alt={p.alt || p.title} loading="lazy" />
-          <div className="card-body">
-            <h5 className="card-title mb-1">{p.title}</h5>
-            <div className="meta">{p.meta}</div>
-            <div className="d-flex justify-content-between align-items-start mt-2" id="card-desc">
-              <div>
-                <strong className="text-success text-nowrap">{p.price}</strong>
-                <div className="small text-muted">
-                  {isOutOfStock ? (
-                    <span className="text-danger fw-bold">Out of Stock</span>
-                  ) : (
-                    `Stock: ${p.stock}`
-                  )}
-                </div>
-              </div>
-              <div className="d-flex gap-2 align-items-start">
-                <button
-                  className="small btn btn-sm btn-outline-secondary"
-                  type="button"
-                  onClick={() => this.setState({ selected: p })}
-                >
-                  Details
-                </button>
-                <button
-                  className="btn btn-sm btn-primary btn-add"
-                  type="button"
-                  disabled={isOutOfStock}
-                  onClick={() => this.handleAddClick(p)}
-                >
-                  {isOutOfStock ? 'Sold Out' : 'Add'}
-                </button>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    );
-  };
-
-  renderDetailsModal() {
-    const { selected } = this.state;
-    if (!selected) return null;
-    return (
-      <div className="shop-modal" role="dialog" aria-modal="true" style={{ display: 'flex' }}>
-        <div className="shop-modal-content">
-          <button className="shop-modal-close" aria-label="Close" onClick={() => this.setState({ selected: null })}>
-            ×
-          </button>
-          <h2>{selected.title}</h2>
-          <div className="modal-image-wrapper">
-            <img src={selected.img} alt={selected.title} />
-          </div>
-          <p>{selected.details}</p>
-        </div>
-      </div>
-    );
-  }
-
-  renderAddModal() {
-    const { addItem, quantity } = this.state;
-    if (!addItem) return null;
-    return (
-      <div className="shop-modal" role="dialog" aria-modal="true" style={{ display: 'flex' }}>
-        <div className="shop-modal-content">
-          <button className="shop-modal-close" aria-label="Close" onClick={this.closeAddModal}>
-            ×
-          </button>
-          <h2>Add to Cart</h2>
-          <p className="mb-2"><strong>{addItem.title}</strong></p>
-          <p>{addItem.price}</p>
-
-          <div className="quantity-control" aria-label="Quantity selector">
-            <button type="button" className="qty-btn" onClick={this.decQty} aria-label="Decrease quantity">
-              –
-            </button>
-            <input
-              type="number"
-              min="1"
-              max="99"
-              value={quantity}
-              onChange={this.handleQtyChange}
-              aria-label="Quantity"
-            />
-            <button type="button" className="qty-btn" onClick={this.incQty} aria-label="Increase quantity">
-              +
-            </button>
-          </div>
-
-          <div className="d-flex gap-2 mt-3">
-            <button type="button" className="btn btn-secondary w-100" onClick={this.closeAddModal}>
-              Cancel
-            </button>
-            <button type="button" className="btn btn-primary btn-add-cart w-100" onClick={this.saveToCart}>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   render() {
     const { title, searchPlaceholder, filters } = this.props; 
+    const { search, filter, selected, addItem, quantity } = this.state;
     const items = this.filteredProducts();
 
     return (
@@ -214,18 +102,38 @@ renderCard = (p) => {
         <ShopLayout
           title={title}
           searchPlaceholder={searchPlaceholder}
-          searchValue={this.state.search}
+          searchValue={search}
           onSearchChange={this.handleSearchChange}
           filters={filters}
-          currentFilter={this.state.filter}
+          currentFilter={filter}
           onFilterChange={this.handleFilterChange}
         >
           <section id="products" className="row g-3" aria-live="polite">
-            {items.map(this.renderCard)}
+            {items.map((p) => (
+              <ShopProductCard 
+                key={p.id} 
+                product={p} 
+                onDetailsClick={(product) => this.setState({ selected: product })}
+                onAddClick={this.handleAddClick}
+              />
+            ))}
           </section>
         </ShopLayout>
-        {this.renderDetailsModal()}
-        {this.renderAddModal()}
+        
+        <ShopDetailsModal 
+          product={selected} 
+          onClose={() => this.setState({ selected: null })} 
+        />
+        
+        <ShopAddModal 
+          product={addItem} 
+          quantity={quantity}
+          onClose={this.closeAddModal}
+          onSave={this.saveToCart}
+          onInc={this.incQty}
+          onDec={this.decQty}
+          onQtyChange={this.handleQtyChange}
+        />
       </Shop>
     );
   }
