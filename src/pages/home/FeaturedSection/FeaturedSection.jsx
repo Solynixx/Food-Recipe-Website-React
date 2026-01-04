@@ -1,33 +1,14 @@
 import React from 'react';
 import './FeaturedSection.css';
+import {featuredRecipe, spotlightRecipes, tips} from './FeaturedSectionData';
 
 class FeaturedSection extends React.Component {
   constructor(props) {
     super(props);
 
-    this.featuredRecipe = {
-      image: '/assets/main_course/Pork/Pork Chops Charcutiere Sauce.png',
-      alt: 'Recipe of the Week',
-      badgeLabel: 'Weekly Pick',
-      title: 'Recipe of the Week',
-      subtitle: 'Pork Chops Charcutiere',
-      meta: '30 min • Medium • ★ 4.8',
-      description:
-        'A quick star-worthy main that balances savory and bright flavors — perfect for weeknight dinners.',
-      href: './five-course-meal/recipes-html/main-course-recipes.html#pork-chops',
-    };
-
-    this.spotlightRecipes = [
-      { name: 'Pork Chops Charcutiere', prep: '30 min', difficulty: 'Medium', calories: '520 kcal' },
-      { name: 'Panacotta', prep: '2 hr', difficulty: 'Medium', calories: '350 kcal' },
-      { name: 'Provino Salad', prep: '10 min', difficulty: 'Easy', calories: '210 kcal' },
-    ];
-
-    this.tips = [
-      'Use seasonal produce for better flavor and lower cost.',
-      'Rest meat 5–10 minutes before slicing for juicier results.',
-      'Keep a simple pantry: olive oil, vinegar, garlic, canned tomatoes, and dried herbs.',
-    ];
+    this.featuredRecipe = featuredRecipe
+    this.spotlightRecipes = spotlightRecipes;
+    this.tips = tips;
   }
 
   render() {

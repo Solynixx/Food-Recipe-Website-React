@@ -1,4 +1,4 @@
-const todayPicks = [
+let todayPicks = [
   { image: '/assets/main_course/Pork/Pork Chops Charcutiere Sauce.png', 
     title: 'Pork Chops Charcutiere', 
     href: '/five-course-meal/recipes/main-course#pork-chops', 
