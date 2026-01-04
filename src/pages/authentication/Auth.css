@@ -48,7 +48,7 @@
 .auth-page .left-panel,
 .auth-page .right-panel {
   width: 50%;
-  padding: 2.25rem 2.5rem 2.5rem;
+  padding: 0.5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,12 +57,12 @@
   border: none;
 }
 
-.auth-page #left {
+.auth-page .left-panel {
   border-radius: var(--radius) 0 0 var(--radius);
   border: none;
 }
 
-.auth-page #right {
+.auth-page .right-panel {
   border-radius: 0 var(--radius) var(--radius) 0;
   border: none;
 }
@@ -70,7 +70,7 @@
 .auth-page .auth-header,
 .auth-page .head_right {
   text-align: left;
-  margin-bottom: 1.6rem;
+  margin-bottom: 0.7rem;
 }
 
 .auth-page .auth-header h1,
@@ -197,15 +197,13 @@
   cursor: pointer;
 }
 
-.auth-page #button:hover,
-.auth-page #button_signup:hover {
+.auth-btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 16px 30px rgba(255, 77, 43, 0.34);
   filter: brightness(1.02);
 }
 
-.auth-page #button:active,
-.auth-page #button_signup:active {
+.auth-btn:active {
   transform: translateY(0);
 }
 
@@ -394,14 +392,14 @@
   transform: translateX(50%);
 }
 
-.auth-page .form_box.mode-signin #right {
+.auth-page .form_box.mode-signin .right-panel {
   transform: translateX(100%);
   opacity: 0;
   border: none;
   pointer-events: none;
 }
 
-.auth-page .form_box.mode-signup #left {
+.auth-page .form_box.mode-signup .left-panel {
   border: none;
   transform: translateX(-100%);
   opacity: 0;
@@ -463,8 +461,8 @@
     width: min(52rem, 96vw);
   }
 
-  .auth-page #left,
-  .auth-page #right {
+  .auth-page .left-panel,
+  .auth-page .right-panel {
     padding: 2rem 2.2rem;
   }
 }
@@ -489,8 +487,8 @@
     display: none !important;
   }
 
-  .auth-page #left,
-  .auth-page #right {
+  .auth-page .left-panel,
+  .auth-page .right-panel {
     width: 100%;
     transform: none !important;
     opacity: 1 !important;
@@ -502,28 +500,28 @@
     transition: none;
   }
 
-  .auth-page .form_box.mode-signin #left,
-  .auth-page .form_box.mode-signin #right,
-  .auth-page .form_box.mode-signup #left,
-  .auth-page .form_box.mode-signup #right {
+  .auth-page .form_box.mode-signin .left-panel,
+  .auth-page .form_box.mode-signin .right-panel,
+  .auth-page .form_box.mode-signup .left-panel,
+  .auth-page .form_box.mode-signup .right-panel {
     transform: none !important;
     opacity: 1 !important;
     border: none;
   }
 
-  .auth-page .form_box.mode-signin #left {
+  .auth-page .form_box.mode-signin .left-panel {
     display: flex;
   }
 
-  .auth-page .form_box.mode-signin #right {
+  .auth-page .form_box.mode-signin .right-panel {
     display: none;
   }
 
-  .auth-page .form_box.mode-signup #left {
+  .auth-page .form_box.mode-signup .left-panel {
     display: none;
   }
 
-  .auth-page .form_box.mode-signup #right {
+  .auth-page .form_box.mode-signup .right-panel {
     display: flex;
   }
 
@@ -557,8 +555,8 @@
     overflow-y: auto;
   }
 
-  .auth-page #left,
-  .auth-page #right {
+  .auth-page .left-panel,
+  .auth-page .right-panel {
     padding: 1.1rem 1.1rem;
     width: 100%;
     transform: none !important;
@@ -566,19 +564,19 @@
     border-radius: var(--radius);
   }
 
-  .auth-page .form_box.mode-signin #left {
+  .auth-page .form_box.mode-signin .left-panel {
     display: flex;
   }
 
-  .auth-page .form_box.mode-signin #right {
+  .auth-page .form_box.mode-signin .right-panel {
     display: none;
   }
 
-  .auth-page .form_box.mode-signup #left {
+  .auth-page .form_box.mode-signup .left-panel {
     display: none;
   }
 
-  .auth-page .form_box.mode-signup #right {
+  .auth-page .form_box.mode-signup .right-panel {
     display: flex;
   }
 
@@ -602,8 +600,7 @@
     margin-left: auto;
   }
 
-  .auth-page #button,
-  .auth-page #button_signup {
+  .auth-page .auth-btn {
     padding: 0.82rem 0;
     font-size: 16px;
   }
@@ -629,8 +626,8 @@
     border-radius: 1.1rem;
   }
 
-  .auth-page #left,
-  .auth-page #right {
+  .auth-page .left-panel,
+  .auth-page .right-panel {
     padding: 0.95rem 1rem;
     width: 100%;
     transform: none !important;
@@ -638,19 +635,19 @@
     border-radius: 1.1rem;
   }
 
-  .auth-page .form_box.mode-signin #left {
+  .auth-page .form_box.mode-signin .left-panel {
     display: flex;
   }
 
-  .auth-page .form_box.mode-signin #right {
+  .auth-page .form_box.mode-signin .right-panel {
     display: none;
   }
 
-  .auth-page .form_box.mode-signup #left {
+  .auth-page .form_box.mode-signup .left-panel {
     display: none;
   }
 
-  .auth-page .form_box.mode-signup #right {
+  .auth-page .form_box.mode-signup .right-panel {
     display: flex;
   }
 

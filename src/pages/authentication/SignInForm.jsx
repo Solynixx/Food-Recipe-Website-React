@@ -1,0 +1,130 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { validateLoginForm } from '../../components/validator/AuthValidator'; 
+
+class SignInForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+      errors: {},
+      isLoading: false,
+    };
+  }
+
+  handleChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ 
+      [name]: value,
+      // Clear error immediately when user types
+      errors: { ...this.state.errors, [name]: '' } 
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { email, password } = this.state;
+    
+    // 1. USE EXTERNAL VALIDATOR
+    const validationErrors = validateLoginForm(email, password);
+
+    // 2. CHECK ERRORS
+    if (Object.keys(validationErrors).length > 0) {
+      this.setState({ errors: validationErrors });
+
+      // 3. AUTO-HIDE ERRORS AFTER 3 SECONDS
+      setTimeout(() => {
+        this.setState({ errors: {} });
+      }, 3000);
+      return;
+    }
+
+    // Simulate Login
+    this.setState({ isLoading: true });
+    setTimeout(() => {
+      alert('Login successful');
+      this.setState({ isLoading: false, email: '', password: '' });
+    }, 800);
+  };
+
+  render() {
+    const { isActive, onSwitchMode } = this.props;
+    const { email, password, errors, isLoading } = this.state;
+
+    return (
+      <div className={`auth-panel left-panel ${isActive ? 'active' : ''}`}>
+        <header className="auth-header">
+          <h1>WELCOME BACK <img src="/assets/forms/wave-unscreen.gif" alt="wave" /></h1>
+          <p className="auth-details">Welcome back! Please enter your details.</p>
+        </header>
+
+        <form className="form" onSubmit={this.handleSubmit} noValidate>
+          <section className="form_login">
+            
+            {/* EMAIL WRAPPER */}
+            <div className="input-wrapper">
+              <label htmlFor="email" className="email">Email</label>
+              <input
+                className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+                autoComplete="off"
+                value={email}
+                onChange={this.handleChange}
+              />
+              {errors.email && <small className="error-msg">{errors.email}</small>}
+            </div>
+
+            {/* PASSWORD WRAPPER */}
+            <div className="input-wrapper">
+              <label htmlFor="password" className="password">Password</label>
+              <input
+                className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter your password"
+                autoComplete="off"
+                value={password}
+                onChange={this.handleChange}
+              />
+              {errors.password && <small className="error-msg">{errors.password}</small>}
+            </div>
+
+          </section>
+
+          <div className="auth-footer">
+            <label className="remember-wrap">
+              <input type="checkbox" id="kotak" />
+              <span>Remember me</span>
+            </label>
+            <Link to="/forgot-password" className="forgot-password">Forgot password?</Link>
+          </div>
+
+          <button type="submit" className="auth-btn" disabled={isLoading}>
+            {isLoading ? 'Logging in...' : 'Sign in'}
+          </button>
+
+          <p className="auth-separator">Or</p>
+
+          <div className="switch-auth-mode">
+            <span>Don&apos;t have an account?</span>
+            <button type="button" className="switch-link" onClick={onSwitchMode}> Sign up</button>
+          </div>
+
+          <ul className="container_gambar">
+            <li><a href="https://www.google.com/"><img src="/assets/logo/Google.png" alt="google" /></a></li>
+            <li><a href="https://www.facebook.com/"><img src="/assets/logo/Facebook.png" alt="facebook" /></a></li>
+            <li><a href="https://github.com/Dendroculus/Food-Recipe-Website"><img src="/assets/logo/Github.png" alt="github" /></a></li>
+            <li><a href="https://twitter.com/"><img src="/assets/logo/X.png" alt="X" /></a></li>
+          </ul>
+        </form>
+      </div>
+    );
+  }
+}
+
+export default SignInForm;

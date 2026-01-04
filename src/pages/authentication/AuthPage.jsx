@@ -1,5 +1,6 @@
 import React from 'react';
 import './Auth.css';
+import '../../components/validator/AuthValidator.css';
 import { Link } from "react-router-dom";
 import SignInForm from './SignInForm';
 import SignUpForm from './SignUpForm';
