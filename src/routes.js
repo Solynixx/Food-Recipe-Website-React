@@ -83,7 +83,7 @@ const routes = [
   },
   {
     path: '/form', 
-    component: React.lazy(() => import('./pages/form/Form')),
+    component: React.lazy(() => import('./pages/form/AuthPage')),
   },
 ];
 

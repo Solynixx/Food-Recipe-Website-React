@@ -22,7 +22,7 @@
   font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
   background: url('/public/assets/forms/background.png') no-repeat center/cover;
   color: #111;
-  line-height: 1;
+  line-height: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,8 +45,8 @@
   backdrop-filter: blur(10px);
 }
 
-.auth-page #left,
-.auth-page #right {
+.auth-page .left-panel,
+.auth-page .right-panel {
   width: 50%;
   padding: 2.25rem 2.5rem 2.5rem;
   display: flex;
@@ -67,13 +67,13 @@
   border: none;
 }
 
-.auth-page #head,
+.auth-page .auth-header,
 .auth-page .head_right {
   text-align: left;
   margin-bottom: 1.6rem;
 }
 
-.auth-page #head h1,
+.auth-page .auth-header h1,
 .auth-page .head_right h1 {
   margin: 0 0 0.35rem 0;
   color: #555;
@@ -82,13 +82,13 @@
   font-size: 1.9rem;
 }
 
-.auth-page #head img {
+.auth-page .auth-header img {
   width: 2.4rem;
   height: 2.4rem;
   vertical-align: middle;
 }
 
-.auth-page #details {
+.auth-page .auth-details {
   margin: 0;
   color: #666;
   font-weight: 500;
@@ -145,7 +145,7 @@
   border: 1px solid #e44;
 }
 
-.auth-page #footer,
+.auth-page .auth-footer,
 .auth-page #footer_signup {
   display: flex;
   align-items: center;
@@ -168,18 +168,17 @@
   accent-color: #ff5a47;
 }
 
-.auth-page #footer a {
+.auth-page .auth-footer a {
   color: #5a5a5a;
   text-decoration: none;
   font-weight: 600;
 }
 
-.auth-page #footer a:hover {
+.auth-page .auth-footer a:hover {
   text-decoration: underline;
 }
 
-.auth-page #button,
-.auth-page #button_signup {
+.auth-btn {
   margin: 1rem 0 0.85rem;
   display: inline-flex;
   justify-content: center;
@@ -210,8 +209,8 @@
   transform: translateY(0);
 }
 
-.auth-page #or,
-.auth-page #or_signup {
+.auth-page .auth-separator,
+.auth-page .auth-separator_signup {
   display: flex;
   align-items: center;
   text-align: center;
@@ -221,18 +220,17 @@
   gap: 0.75rem;
 }
 
-.auth-page #or::before,
-.auth-page #or::after,
-.auth-page #or_signup::before,
-.auth-page #or_signup::after {
+.auth-page .auth-separator::before,
+.auth-page .auth-separator::after,
+.auth-page .auth-separator_signup::before,
+.auth-page .auth-separator_signup::after {
   content: "";
   flex: 1;
   border-bottom: 1px solid #828181;
   transform: translateY(-1px);
 }
 
-.auth-page #sign_up,
-.auth-page #sign_in {
+.switch-auth-mode {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -533,12 +531,12 @@
     font-size: 16px;
   }
 
-  .auth-page #head h1,
+  .auth-page .auth-header h1,
   .auth-page .head_right h1 {
     font-size: 1.5rem;
   }
 
-  .auth-page #details {
+  .auth-page .auth-details {
     font-size: 1rem;
   }
 }
@@ -584,23 +582,23 @@
     display: flex;
   }
 
-  .auth-page #head h1,
+  .auth-page .auth-header h1,
   .auth-page .head_right h1 {
     font-size: 1.25rem;
     margin-bottom: 0.3rem;
   }
 
-  .auth-page #details {
+  .auth-page .auth-details {
     font-size: 0.95rem;
     margin-bottom: 0.6rem;
   }
 
-  .auth-page #footer,
+  .auth-page .auth-footer,
   .auth-page #footer_signup {
     flex-wrap: wrap;
   }
 
-  .auth-page #footer a {
+  .auth-page .auth-footer a {
     margin-left: auto;
   }
 
@@ -656,7 +654,7 @@
     display: flex;
   }
 
-  .auth-page #head h1,
+  .auth-page .auth-header h1,
   .auth-page .head_right h1 {
     font-size: 1.12rem;
   }
