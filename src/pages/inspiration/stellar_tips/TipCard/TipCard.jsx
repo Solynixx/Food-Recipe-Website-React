@@ -1,7 +1,27 @@
 import React from "react";
 import './TipCard.css';
 
+/**
+ * TipCard displays a single tip with icon, title, description and metadata.
+ *
+ * Props:
+ * - tip: {
+ *     number: string,
+ *     icon: ReactNode,
+ *     title: string,
+ *     description: string,
+ *     badgeClass: string,
+ *     badgeLabel: string,
+ *     difficulty: string
+ *   }
+ *
+ * @extends React.Component
+ */
 export default class TipCard extends React.Component {
+  /**
+   * Render the tip card including SVG icon, title, description and meta badges.
+   * @returns {JSX.Element} Tip card markup.
+   */
   render() {
     const { tip } = this.props;
 

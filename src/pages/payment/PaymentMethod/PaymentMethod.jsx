@@ -1,7 +1,21 @@
 import React from "react";
 import "./PaymentMethod.css";
 
+/**
+ * PaymentMethods component displays accepted payment logos and an optional "more" entry.
+ *
+ * Props:
+ * - accepted: Array<{src: string, alt: string}>
+ * - includeMore: boolean - whether to show the "more" button
+ * - moreModalId: string - href for the more payments modal trigger
+ *
+ * @extends React.Component
+ */
 export default class PaymentMethods extends React.Component {
+  /**
+   * Render payment methods section.
+   * @returns {JSX.Element} Payment methods markup.
+   */
   render() {
     const { accepted = [], includeMore = false, moreModalId = "#more-payments-modal" } = this.props;
 

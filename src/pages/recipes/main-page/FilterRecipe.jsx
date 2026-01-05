@@ -4,7 +4,20 @@ import "./styles/FilterRecipe.css";
 import { PiRabbit } from "react-icons/pi";
 import { GiChickenOven, GiPumpkinLantern } from "react-icons/gi";
 
+/**
+ * FilterRecipe component renders a set of filter buttons for recipe lists.
+ *
+ * Props:
+ * - activeFilter: string - currently selected filter key
+ * - onChangeFilter: function - callback invoked with the new filter key
+ *
+ * @extends React.Component
+ */
 export default class FilterRecipe extends React.Component {
+    /**
+     * Render the filter UI including seasonal and event filters.
+     * @returns {JSX.Element} Filter controls markup.
+     */
     render() {
         const { activeFilter, onChangeFilter } = this.props;
         return (

@@ -1,7 +1,20 @@
 import React from "react";
 import "./OrderSummary.css";
 
+/**
+ * OrderSummary component displays a breakdown of order costs and total.
+ *
+ * Props:
+ * - summary: { subtotal?: number, shipping?: number, tax?: number }
+ * - money: function (optional) - formatter function for currency values
+ *
+ * @extends React.Component
+ */
 export default class OrderSummary extends React.Component {
+  /**
+   * Render the order summary table.
+   * @returns {JSX.Element} Order summary section.
+   */
   render() {
     const { summary = {}, money } = this.props;
     const rows = [

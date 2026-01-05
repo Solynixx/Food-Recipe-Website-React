@@ -2,7 +2,22 @@ import React from "react";
 import TipCard from "../TipCard/TipCard";
 import './TipsCategory.css';
 
+/**
+ * TipsCategory renders a category section containing multiple TipCard items.
+ *
+ * Props:
+ * - title: string - Category title
+ * - icon: string | ReactNode - Category icon
+ * - description: string - Short description of the category
+ * - tips: Array<Object> - Array of tip objects accepted by TipCard
+ *
+ * @extends React.Component
+ */
 export default class TipsCategory extends React.Component {
+  /**
+   * Render the category with header and a grid of TipCard components.
+   * @returns {JSX.Element} Category section markup.
+   */
   render() {
     const { title, icon, description, tips } = this.props;
 

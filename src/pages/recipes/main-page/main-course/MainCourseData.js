@@ -1,3 +1,7 @@
+/**
+ * Top picks for the Main Course section.
+ * @type {Array<{img: string, title: string}>}
+ */
 export const topPicks = [
     { img: "/assets/main_course/Chicken/Chicken Cordon Bleu.png", title: "Chicken Cordon Bleu" },
     { img: "/assets/main_course/Seafood/Salmon Steak in Coconut Milk with Peas.png", title: "Salmon Steak" },
@@ -10,8 +14,16 @@ export const topPicks = [
     { img: "/assets/main_course/Beef/Beef Teppanyaki.jpg", title: "Beef Teppanyaki"},
 ];
 
+/**
+ * Description text for Main Course section.
+ * @type {string}
+ */
 export const description = "Explore our website's full main course recipe collection. Log in or create your account to easily save, revisit and review all your favourite main-course dishes!";
     
+/**
+ * Full list of main course recipes.
+ * @type {Array<Object>}
+ */
 export const allMainCourseRecipes = [
   { 
     id: 1, 
@@ -345,10 +357,19 @@ export const allMainCourseRecipes = [
   },
 ];
 
+/**
+ * Helper to filter main course recipes by subcategory.
+ * @param {string} subcategory - Subcategory key.
+ * @returns {Array<Object>} Filtered main course recipes.
+ */
 const getMainCourseBySubcategory = (subcategory) => {
   return allMainCourseRecipes.filter(recipe => recipe.subcategory === subcategory);
 }
 
+/**
+ * Exported arrays of main course subcategories derived from allMainCourseRecipes.
+ * @type {Array<Object>}
+ */
 export const beef = getMainCourseBySubcategory('beef');
 export const seafood = getMainCourseBySubcategory('seafood');
 export const chicken = getMainCourseBySubcategory('chicken');

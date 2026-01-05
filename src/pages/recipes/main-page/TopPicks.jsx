@@ -2,6 +2,18 @@ import React from "react";
 import './styles/TopPickCarousel.css';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
+/**
+ * TopPicks component displays a simple autoplaying carousel of featured picks.
+ *
+ * Props:
+ * - topPicks: Array<{img: string, title: string}>
+ * - title: string - heading used in thumbnail area
+ *
+ * State:
+ * - currentIndex: number - current active slide
+ *
+ * @extends React.Component
+ */
 export default class TopPicks extends React.Component {
     constructor(props) {
         super(props);
@@ -13,20 +25,36 @@ export default class TopPicks extends React.Component {
         this.autoPlayInterval = null;
     }
 
+    /**
+     * Start autoplay when component mounts.
+     * @returns {void}
+     */
     componentDidMount() {
         this.startAutoPlay();
     }
     
+    /**
+     * Stop autoplay on unmount.
+     * @returns {void}
+     */
     componentWillUnmount() {
         this.stopAutoPlay();
     }
 
+    /**
+     * Start the autoplay interval advancing slides.
+     * @returns {void}
+     */
     startAutoPlay = () => {
         this.autoPlayInterval = setInterval(() => {
             this.nextSlide();
         }, 3000);
     }
 
+    /**
+     * Stop the autoplay interval if running.
+     * @returns {void}
+     */
     stopAutoPlay = () => {
         if (this.autoPlayInterval) {
             clearInterval(this.autoPlayInterval);
@@ -34,11 +62,19 @@ export default class TopPicks extends React.Component {
         }
     }
 
+    /**
+     * Restart autoplay by stopping then starting.
+     * @returns {void}
+     */
     resetAutoPlay = () => {
         this.stopAutoPlay();
         this.startAutoPlay();
     }
 
+    /**
+     * Advance to the next slide.
+     * @returns {void}
+     */
     nextSlide = () => {
         const { topPicks } = this.props;
         this.setState({
@@ -46,6 +82,10 @@ export default class TopPicks extends React.Component {
         })
     }
 
+    /**
+     * Move to the previous slide.
+     * @returns {void}
+     */
     prevSlide = () => {
         const { topPicks } = this.props;
         this.setState({
@@ -53,20 +93,37 @@ export default class TopPicks extends React.Component {
         })
     }
 
+    /**
+     * Jump to a specific slide index.
+     * @param {number} index - Slide index to display.
+     * @returns {void}
+     */
     goToSlide = (index) => {
         this.setState({ 
             currentIndex: index
         })
     }
 
+    /**
+     * Pause autoplay on mouse enter.
+     * @returns {void}
+     */
     handleMouseEnter = () => {
         this.stopAutoPlay();
     }
 
+    /**
+     * Resume autoplay on mouse leave.
+     * @returns {void}
+     */
     handleMouseLeave = () => {
         this.startAutoPlay();
     }
 
+    /**
+     * Render the TopPicks carousel UI.
+     * @returns {JSX.Element} Carousel markup.
+     */
     render() {
         const { currentIndex } = this.state;
         const topPicks = this.props.topPicks;

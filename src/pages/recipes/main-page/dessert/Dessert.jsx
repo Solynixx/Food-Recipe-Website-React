@@ -3,6 +3,11 @@ import MainPageLayout from "../MainPageLayout";
 import RecipeCard from "../RecipeCard";
 import { cake, pastry, pudding, tiramisu, allDessertRecipes, topPicks } from './DessertData';
 
+/**
+ * Dessert page component built on MainPageLayout.
+ * Supplies custom header and recipe cards for dessert subcategories.
+ * @extends React.Component
+ */
 export default class Dessert extends React.Component {
   render() {
     return (

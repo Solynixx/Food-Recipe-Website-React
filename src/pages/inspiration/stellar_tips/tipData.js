@@ -1,3 +1,8 @@
+/**
+ * Array of essential cooking tips used by the Stellar tips sections.
+ * Each item includes number, title, description, badgeClass, badgeLabel, difficulty, and icon (JSX).
+ * @type {Array<Object>}
+ */
 export const essentialTips = [
   {
     number: "01",
@@ -87,6 +92,10 @@ export const essentialTips = [
   },
 ];
 
+/**
+ * Additional flavor-focused tips.
+ * @type {Array<Object>}
+ */
 export const flavorTips = [
   {
     number: "07",
@@ -186,6 +195,10 @@ export const flavorTips = [
   },
 ];
 
+/**
+ * Pro-level tips for more advanced techniques and concepts.
+ * @type {Array<Object>}
+ */
 export const proTips = [
   {
     number: "13",
@@ -234,6 +247,10 @@ export const proTips = [
   },
 ];
 
+/**
+ * Small, actionable quick tips used in the QuickTipsSection.
+ * @type {Array<{icon: string, title: string, text: string}>}
+ */
 export const quickTips = [
   { icon: "🧂", title: "Season Early & Often", text: "Build flavor layers by seasoning throughout cooking, not just at the end." },
   { icon: "🔥", title: "High Heat = Flavor", text: "Don't fear high heat for searing! Caramelization creates deep, complex flavors." },
@@ -245,6 +262,11 @@ export const quickTips = [
   { icon: "🥄", title: "Wooden Spoons Win", text: "Won't scratch pans, won't conduct heat, and won't melt. A kitchen essential!" },
 ];
 
+/**
+ * Single chef secret object featured in the ChefSecretCard component.
+ * Contains an SVG icon element for badgeIcon and descriptive fields.
+ * @type {{badgeIcon: ReactNode, badgeLabel: string, title: string, description: string, stats: Array<{label: string, value: string}>}}
+ */
 export const chefSecret = {
   badgeIcon: (
     <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
