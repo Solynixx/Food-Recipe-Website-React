@@ -593,6 +593,15 @@
     contain: layout style paint;
 }
 
+.no-recipes-header {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #007A70;
+    margin: 1.5rem auto 2rem;
+}
+
 .recipe-section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
