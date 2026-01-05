@@ -2,7 +2,20 @@ import React from "react";
 import Modals from "../../../components/modals/Modals";
 import './PaymentFooter.css';
 
+/**
+ * PaymentFooter renders footer links and related modals used on the payment page.
+ *
+ * Props:
+ * - footerLinks: Array<{href: string, label: string}>
+ * - morePayments: Array<{src: string, alt: string}>
+ *
+ * @extends React.Component
+ */
 export default class PaymentFooter extends React.Component {
+  /**
+   * Render modal showing additional payment logos.
+   * @returns {JSX.Element} More payments modal JSX.
+   */
   renderMorePaymentsModal() {
     const { morePayments = [] } = this.props;
     return (
@@ -25,6 +38,10 @@ export default class PaymentFooter extends React.Component {
     );
   }
 
+  /**
+   * Render modal describing security practices and user guidance.
+   * @returns {JSX.Element} Security modal JSX.
+   */
   renderSecurityModal() {
     return (
       <div id="security-modal" className="modal">
@@ -62,6 +79,10 @@ export default class PaymentFooter extends React.Component {
     );
   }
 
+  /**
+   * Render modal linking to shop sections used by the checkout flow.
+   * @returns {JSX.Element} Shopping modal JSX.
+   */
   renderShoppingModal() {
     const shops = [
       { href: "/shop/ingredients", img: "/assets/shop/Ingredients/ingredients_pfp.jpg", label: "Cooking Ingredients", alt: "Ingredients" },
@@ -90,6 +111,10 @@ export default class PaymentFooter extends React.Component {
     );
   }
 
+  /**
+   * Render the footer and associated modals.
+   * @returns {JSX.Element} Footer and modal JSX.
+   */
   render() {
     const { footerLinks = [] } = this.props;
 

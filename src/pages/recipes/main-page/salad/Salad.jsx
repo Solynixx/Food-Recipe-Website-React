@@ -3,6 +3,11 @@ import MainPageLayout from "../MainPageLayout";
 import RecipeCard from "../RecipeCard";
 import { lettuceBased, mixedVegetable, specialty, allSaladRecipes, description, topPicks } from './SaladData';
 
+/**
+ * Salad page component that composes the MainPageLayout for salad recipes.
+ * Renders RecipeCard carousels for lettuce-based, mixed vegetable, and specialty subcategories.
+ * @extends React.Component
+ */
 export default class Salad extends React.Component {
   render() {
     return (

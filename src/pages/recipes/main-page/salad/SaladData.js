@@ -1,5 +1,13 @@
+/**
+ * Description text for the Salad section.
+ * @type {string}
+ */
 export const description = "Explore our website's full salad recipe collection. Log in or create your account to easily save, revisit and review all your favourite salad dishes!";
     
+/**
+ * Top picks for the Salad section.
+ * @type {Array<{img: string, title: string}>}
+ */
 export const topPicks = [
       {img: "/assets/salad/Mixed Vegetable/Mediterranean ChickPea Salad.jpg", title: "Mediterranean ChickPea Salad"},
       {img: "/assets/salad/Mixed Vegetable/Mediterranean Salad.jpg", title: "Mediterranean Salad"},
@@ -9,6 +17,10 @@ export const topPicks = [
       {img: "/assets/salad/Mixed Vegetable/Italian Salad.png", title: "Italian Salad"},
     ];
 
+/**
+ * All salad recipes dataset used throughout the app.
+ * @type {Array<Object>}
+ */
 export const allSaladRecipes = [
   { 
     id: 62,
@@ -144,10 +156,19 @@ export const allSaladRecipes = [
   },
 ];
 
+/**
+ * Helper to filter salad recipes by subcategory.
+ * @param {string} subcategory - Subcategory key.
+ * @returns {Array<Object>} Filtered salad recipes.
+ */
 const getSaladBySubcategory = (subcategory) => {
   return allSaladRecipes.filter(recipe => recipe.subcategory === subcategory);
 }
 
+/**
+ * Exported arrays of salad subcategories derived from allSaladRecipes.
+ * @type {Array<Object>}
+ */
 export const lettuceBased = getSaladBySubcategory('lettuceBased');
 export const mixedVegetable = getSaladBySubcategory('mixedVegetable');
 export const specialty = getSaladBySubcategory('specialty');

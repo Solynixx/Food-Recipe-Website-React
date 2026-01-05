@@ -8,6 +8,18 @@ import { allDessertRecipes } from './dessert/DessertData';
 import { allSaladRecipes } from './salad/SaladData';
 import { allSpecialDietsRecipes } from './special-diets/SpecialDietsData';
 
+/**
+ * Search component provides an inline search box with live results and trending/category suggestions.
+ *
+ * State:
+ * - searchTerm: string
+ * - isFocused: boolean
+ * - searchResults: Array<Object>
+ *
+ * The component searches across multiple recipe datasets imported at top.
+ *
+ * @extends React.Component
+ */
 export default class Search extends React.Component {
     constructor(props) {
         super(props);
@@ -17,6 +29,10 @@ export default class Search extends React.Component {
             searchResults: []
         };
 
+        /**
+         * Combined list of all recipes to search through.
+         * @type {Array<Object>}
+         */
         this.allRecipes = [
             ...allMainCourseRecipes,
             ...allAppetizerRecipes,
@@ -26,6 +42,11 @@ export default class Search extends React.Component {
         ];
     }
 
+    /**
+     * Handle changes to the search input and trigger search if appropriate.
+     * @param {Event} e - Input change event.
+     * @returns {void}
+     */
     handleSearchChange = (e) => {
         const target = e.target.value;
         this.setState({ searchTerm: target });
@@ -36,6 +57,12 @@ export default class Search extends React.Component {
         }
     };
 
+    /**
+     * Perform a search across the combined recipe list matching title, keywords, category, subcategory, or tags.
+     * Limits results to first 8 matches.
+     * @param {string} target - Search query.
+     * @returns {void}
+     */
     performSearch = (target) => {
         const results = this.allRecipes.filter((recipe) => {
 
@@ -58,26 +85,48 @@ export default class Search extends React.Component {
         this.setState({ searchResults: results.slice(0, 8) });
     }
 
+    /**
+     * Set focus state to true to show dropdown.
+     * @returns {void}
+     */
     handleSearchFocus = () => {
         this.setState({ isFocused: true });
     }
 
+    /**
+     * Blur handler hides dropdown after a short timeout to allow clicks.
+     * @returns {void}
+     */
     handleSearchBlur = () => {
         setTimeout(() => {
             this.setState({ isFocused: false });
         }, 200);
     }
 
+    /**
+     * Trigger a search using a trending term.
+     * @param {string} searchTerm - Trending search term to execute.
+     * @returns {void}
+     */
     handleTrendingClick = (searchTerm) => {
         this.setState({ searchTerm: searchTerm }, () => {
         this.performSearch(searchTerm);
         });
     };
 
+    /**
+     * Navigate to a category path.
+     * @param {string} categoryPath - Category path to navigate to.
+     * @returns {void}
+     */
     handleCategoryClick = (categoryPath) => {
         window.location.href = `/recipes/main-page/${categoryPath}`;
     };
 
+    /**
+     * Render the search input, dropdown results, trending searches and category shortcuts.
+     * @returns {JSX.Element} Search UI markup.
+     */
     render() {
         const { searchTerm, isFocused, searchResults } = this.state;
         const showDropdown = isFocused;

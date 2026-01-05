@@ -1,7 +1,27 @@
 import React from "react";
 import './ChefSecretCard.css'
 
+/**
+ * ChefSecretCard component displays a highlighted chef secret with stats and an illustrative graphic.
+ *
+ * Props:
+ * - secret: {
+ *     badgeIcon: ReactNode, // SVG path(s) to render inside badge svg
+ *     badgeLabel: string,
+ *     title: string,
+ *     description: string,
+ *     stats: Array<{label: string, value: string}>
+ *   }
+ *
+ * @extends React.Component
+ */
 export default class ChefSecretCard extends React.Component {
+  /**
+   * Render a single stat item used in the stats list.
+   * @param {{label: string, value: string}} stat - Stat object to render.
+   * @param {number} index - Index of the stat in the list.
+   * @returns {JSX.Element} JSX element representing a stat item.
+   */
   renderStatItem(stat, index) {
     return (
       <div key={index} className="stat-item">
@@ -10,6 +30,10 @@ export default class ChefSecretCard extends React.Component {
     );
   }
 
+  /**
+   * Render the ChefSecretCard section with badge, title, description, stats and illustration.
+   * @returns {JSX.Element} Chef secret card markup.
+   */
   render() {
     const { secret } = this.props;
 

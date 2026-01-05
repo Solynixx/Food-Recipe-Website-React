@@ -1,5 +1,13 @@
+/**
+ * Short description for the Dessert section.
+ * @type {string}
+ */
 export const description = "Dessert, a delectable treat enjoyed after a meal, is the sweet finale that brings joy to our taste buds.";
 
+/**
+ * Top picks for the Dessert section.
+ * @type {Array<{img: string, title: string}>}
+ */
 export const topPicks = [
   {img: "/assets/desserts/Cake/Blueberry Heaven on Earth Cake.jpg", title: "Blueberry Heaven on Earth Cake"},
   {img: "/assets/desserts/Cake/Italian Lemon Ricotta Cake.jpeg", title: "Italian Lemon Ricotta Cake"},
@@ -9,6 +17,10 @@ export const topPicks = [
   {img: "/assets/desserts/Cake/Boston Cream Poke Cake.jpg", title: "Boston Cream Poke Cake"},
 ];
 
+/**
+ * Complete list of dessert recipe objects.
+ * @type {Array<Object>}
+ */
 export const allDessertRecipes = [
   { 
     id: 46,
@@ -188,10 +200,19 @@ export const allDessertRecipes = [
   },
 ];
 
+/**
+ * Helper to filter dessert recipes by subcategory.
+ * @param {string} subcategory - Subcategory key.
+ * @returns {Array<Object>} Filtered dessert recipes.
+ */
 const getDessertBySubcategory = (subcategory) => {
   return allDessertRecipes.filter(recipe => recipe.subcategory === subcategory);
 }
 
+/**
+ * Exported arrays of dessert subcategories derived from allDessertRecipes.
+ * @type {Array<Object>}
+ */
 export const cake = getDessertBySubcategory('cake');
 export const pastry = getDessertBySubcategory('pastry');
 export const pudding = getDessertBySubcategory('pudding');

@@ -6,7 +6,23 @@ import ChefSecretCard from "../ChefSecretCard/ChefSecretCard";
 import QuickTipsSection from "../QuickTipsSection/QuickTipsSection";
 import { essentialTips, flavorTips, proTips, quickTips, chefSecret } from "../tipData";
 
+/**
+ * StellarSections composes several sub-sections of the Stellar Tips page:
+ * - essential techniques
+ * - flavor tips
+ * - pro tips
+ * - a featured Chef secret card
+ * - quick tips section
+ *
+ * The component loads tip data into state and renders the respective components.
+ *
+ * @extends React.Component
+ */
 class StellarSections extends React.Component {
+  /**
+   * Initialize component state with imported tip data.
+   * @param {object} props - React props.
+   */
   constructor(props) {
     super(props);
 
@@ -19,6 +35,10 @@ class StellarSections extends React.Component {
     };
   }
 
+  /**
+   * Render the StellarSections including categories and featured content.
+   * @returns {JSX.Element} Stellar sections markup.
+   */
   render() {
     const { essentialTips: essential, flavorTips: flavor, proTips: pro, quickTips: quick, chefSecret: secret } = this.state;
 

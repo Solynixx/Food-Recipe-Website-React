@@ -16,7 +16,18 @@ import PaymentMethods from "./PaymentMethod/PaymentMethod";
 import PaymentFooter from "./PaymentFooter/PaymentFooter";
 import { parseIdrToNumber, idrToUsd, formatUsd } from "./CurrencyConverter";
 
+/**
+ * Payment page component handling checkout flow, cart synchronization, and submission.
+ *
+ * Uses localStorage to sync cart state and emits/listens to a custom "cart-updated" event.
+ *
+ * @extends React.Component
+ */
 export default class Payment extends React.Component {
+  /**
+   * Initialize Payment component and bind handlers.
+   * @param {object} props
+   */
   constructor(props) {
     super(props);
 
@@ -36,25 +47,46 @@ export default class Payment extends React.Component {
     this.removeFromCart = this.removeFromCart.bind(this);
   }
 
+  /**
+   * Component did mount lifecycle: sync cart from localStorage and attach event listener.
+   * @returns {void}
+   */
   componentDidMount() {
     this.syncCart();
     window.addEventListener("cart-updated", this.handleCartUpdated);
   }
 
+  /**
+   * Remove event listener on unmount.
+   * @returns {void}
+   */
   componentWillUnmount() {
     window.removeEventListener("cart-updated", this.handleCartUpdated);
   }
 
+  /**
+   * Handler for the custom "cart-updated" event. Updates local cart state and recalculates summary.
+   * @param {CustomEvent} e - Event with detail containing the updated cart array.
+   * @returns {void}
+   */
   handleCartUpdated(e) {
     const cart = e?.detail ?? [];
     this.setState({ cart }, this.recalcSummary);
   }
 
+  /**
+   * Synchronize cart from localStorage into component state and recalculate summary.
+   * @returns {void}
+   */
   syncCart() {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
     this.setState({ cart }, this.recalcSummary);
   }
 
+  /**
+   * Recalculate order summary (subtotal in IDR and USD conversion) and update state.
+   * @returns {void}
+   */
   recalcSummary() {
     const subtotalIdr = (this.state.cart || []).reduce((sum, item) => {
       const idr = parseIdrToNumber(item.price);
@@ -74,6 +106,11 @@ export default class Payment extends React.Component {
     }));
   }
 
+  /**
+   * Remove an item from the cart by id, persist to localStorage and dispatch update event.
+   * @param {string|number} id - Item id to remove.
+   * @returns {void}
+   */
   removeFromCart(id) {
     const next = (this.state.cart || []).filter((item) => item.id !== id);
     localStorage.setItem("cart", JSON.stringify(next));
@@ -81,19 +118,37 @@ export default class Payment extends React.Component {
     this.setState({ cart: next }, this.recalcSummary);
   }
 
+  /**
+   * Money formatter using USD format helper.
+   * @param {number} n - Number to format.
+   * @returns {string} Formatted currency string.
+   */
   money(n) {
     return formatUsd(n);
   }
 
+  /**
+   * Compute the total (subtotal + shipping + tax) in USD from state summary.
+   * @returns {number} Total amount.
+   */
   total() {
     const { subtotal, shipping, tax } = this.state.summary;
     return Number(subtotal || 0) + Number(shipping || 0) + Number(tax || 0);
   }
 
+  /**
+   * Return number of items in the cart.
+   * @returns {number} Count of cart items.
+   */
   cartCount() {
     return (this.state.cart || []).length;
   }
 
+  /**
+   * Determine whether the form can be submitted.
+   * Checks that the cart is not empty and required fields are present.
+   * @returns {boolean} True if submission is allowed.
+   */
   canSubmit() {
     if (this.cartCount() === 0) return false;
 
@@ -115,6 +170,11 @@ export default class Payment extends React.Component {
     return required.every((k) => String(this.state.form[k] || "").trim().length > 0);
   }
 
+  /**
+   * Handle input change events and update form state.
+   * @param {Event} e - Input change event.
+   * @returns {void}
+   */
   handleChange(e) {
     const { name, value } = e.target;
     this.setState((prev) => ({
@@ -122,12 +182,21 @@ export default class Payment extends React.Component {
     }));
   }
 
+  /**
+   * Handle form submission for checkout. Performs a final canSubmit check.
+   * @param {Event} e - Form submit event.
+   * @returns {void}
+   */
   handleSubmit(e) {
     e.preventDefault();
     if (!this.canSubmit()) return;
     alert("Purchase completed (demo).");
   }
 
+  /**
+   * Render the shopping cart section with items or an empty state.
+   * @returns {JSX.Element} Cart section JSX.
+   */
   renderCart() {
     const count = this.cartCount();
 
@@ -182,6 +251,10 @@ export default class Payment extends React.Component {
     );
   }
 
+  /**
+   * Render the full payment page including forms, summary, and footer.
+   * @returns {JSX.Element} Payment page markup.
+   */
   render() {
     return (
       <div className="payment-page">

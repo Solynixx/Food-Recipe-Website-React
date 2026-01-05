@@ -1,7 +1,22 @@
 import React from "react";
 import "./PaymentForms.css";
 
+/**
+ * ShippingInformation renders dynamic shipping form sections and input fields.
+ *
+ * Props:
+ * - sections: Array of section objects { sectionTitle: string, groups: Array }
+ * - form: Object containing current form values
+ * - onChange: function handler for field changes
+ *
+ * @extends React.Component
+ */
 export default class ShippingInformation extends React.Component {
+  /**
+   * Render shipping form sections and input fields.
+   * Returns null if no sections are provided.
+   * @returns {JSX.Element|null} Shipping information form markup or null.
+   */
   render() {
     const { sections = [], form = {}, onChange } = this.props;
     if (!sections.length) return null;

@@ -13,6 +13,27 @@ import "./styles/RecipeCard.css";
 import "./styles/Pagination.css";
 import "../../home/Home.css";
 
+/**
+ * MainPageLayout composes the main listing page for recipes with filtering, pagination, and save (heart) interactions.
+ *
+ * Props:
+ * - title: string (required)
+ * - description: string
+ * - allRecipes: array (required) - array of recipe objects to display
+ * - topPicks: array (required)
+ * - children: node
+ * - type: string
+ * - customHeader: function (optional) - if provided, customHeader(scrollToRecipes) will be rendered
+ *
+ * State:
+ * - savedRecipes: Array<string> - titles of saved recipes
+ * - currentPage: number
+ * - recipesPerPage: number
+ * - tappedHeart: string | null - temporary visual tap indicator
+ * - activeFilter: string - current filter key
+ *
+ * @extends React.Component
+ */
 class MainPageLayout extends React.Component {
   constructor(props) {
     super(props);
@@ -25,10 +46,19 @@ class MainPageLayout extends React.Component {
     };
   }
 
+  /**
+   * Set the active filter and reset pagination to the first page.
+   * @param {string} filter - Filter key to apply.
+   * @returns {void}
+   */
   setFilter = (filter) => {
     this.setState({ activeFilter: filter, currentPage: 1 });
   }
 
+  /**
+   * Return the filtered list of recipes based on activeFilter.
+   * @returns {Array<Object>} Filtered recipes.
+   */
   getFilteredRecipes() {
     const { allRecipes } = this.props;
     const { activeFilter } = this.state;
@@ -36,12 +66,22 @@ class MainPageLayout extends React.Component {
     return allRecipes.filter((recipe) => recipe.tags && recipe.tags.includes(activeFilter));
   }
 
+  /**
+   * Handle a heart tap for visual feedback and toggle save state.
+   * @param {string} recipeTitle - Title of the recipe tapped.
+   * @returns {void}
+   */
   handleHeartTap = (recipeTitle) => {
     this.toggleSave(recipeTitle);
     this.setState({ tappedHeart: recipeTitle });
     setTimeout(() => this.setState({ tappedHeart: null }), 300);
   }
 
+  /**
+   * Toggle saved state for a recipe title.
+   * @param {string} recipeTitle - Title of the recipe to toggle.
+   * @returns {void}
+   */
   toggleSave = (recipeTitle) => {
     this.setState((state) => {
       const { savedRecipes } = state;
@@ -53,16 +93,29 @@ class MainPageLayout extends React.Component {
     });
   }
 
+  /**
+   * Smooth-scroll to the "all-recipes" section header.
+   * @returns {void}
+   */
   scrollToRecipes = () => {
     const allRecipesTitle = document.querySelector('.all-recipes');
     if (allRecipesTitle) allRecipesTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  /**
+   * Set the current page and scroll to the recipes list.
+   * @param {number} pageNumber - Page number to navigate to.
+   * @returns {void}
+   */
   paginate = (pageNumber) => {
     this.setState({ currentPage: pageNumber });
     this.scrollToRecipes();
   }
 
+  /**
+   * Render the list of recipes with pagination controls, filter UI, and save buttons.
+   * @returns {JSX.Element} Fragment containing recipe list and pagination.
+   */
   renderAllRecipes() {
     const { currentPage, recipesPerPage, activeFilter, savedRecipes } = this.state;
     const filteredRecipes = this.getFilteredRecipes();
@@ -147,6 +200,10 @@ class MainPageLayout extends React.Component {
     );
   }
 
+  /**
+   * Render the overall page layout including navbar, search, pick carousel, and recipes.
+   * @returns {JSX.Element} Full page markup.
+   */
   render() {
     const { title, description, topPicks, children, type, customHeader } = this.props;
     const bgClass = type || title.toLowerCase().replace(' ', '');
@@ -201,6 +258,10 @@ class MainPageLayout extends React.Component {
   }
 }
 
+/**
+ * Prop types for MainPageLayout.
+ * @type {Object}
+ */
 MainPageLayout.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,

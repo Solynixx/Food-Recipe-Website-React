@@ -3,6 +3,11 @@ import MainPageLayout from "../MainPageLayout";
 import RecipeCard from "../RecipeCard";
 import { chicken, beef, lamb, pork, seafood, allMainCourseRecipes, topPicks, description } from './MainCourseData';
 
+/**
+ * MainCourse page component that displays main course recipe categories using MainPageLayout.
+ * Renders RecipeCard carousels for chicken, beef, lamb, pork, and seafood.
+ * @extends React.Component
+ */
 export default class MainCourse extends React.Component {
   render() {
     return (
