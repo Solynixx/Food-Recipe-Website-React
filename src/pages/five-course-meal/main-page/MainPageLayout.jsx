@@ -72,9 +72,31 @@ class MainPageLayout extends React.Component {
     const totalPages = Math.ceil(filteredRecipes.length / recipesPerPage);
     const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
+    const filterNames = {
+      all: "All",
+      winter: "Winter",
+      spring: "Spring",
+      summer: "Summer",
+      fall: "Fall",
+      christmas: "Christmas",
+      thanksgiving: "Thanksgiving",
+      valentine: "Valentine",
+      easter: "Easter",
+      halloween: "Halloween",
+    };
+
+    const activeFilterName = filterNames[activeFilter] || activeFilter;
+
     return (
       <Fragment>
         <FilterRecipe activeFilter={activeFilter} onChangeFilter={this.setFilter} />
+
+        {activeFilter !== 'all' && currentRecipes.length === 0 && (
+          <h2 className="no-recipes-header">
+            No current {activeFilterName.toLowerCase()} recipes!
+          </h2>
+        )}
+
         <section className="recipe-section">
           {currentRecipes.map((r) => {
             const isSaved = savedRecipes.includes(r.title);
