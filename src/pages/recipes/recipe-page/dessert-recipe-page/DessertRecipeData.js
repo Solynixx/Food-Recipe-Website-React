@@ -1,42 +1,4 @@
-/**
- * @typedef {Object} Recipe
- * @property {string} id
- * @property {string} title
- * @property {string} image
- * @property {string} description
- * @property {Object} meta
- * @property {string} meta.prepTime
- * @property {string} [meta.cookTime]
- * @property {string} [meta.waitTime]
- * @property {string} meta.totalTime
- * @property {string} meta.difficulty
- * @property {number} meta.rating
- * @property {number} meta.reviews
- * @property {string[]} ingredients
- * @property {Array<{
- *   section: string,
- *   steps: string[]
- * }>} instructions
- * @property {Object} nutrition
- * @property {string} nutrition.calories
- * @property {string} nutrition.carbs
- * @property {string} nutrition.protein
- * @property {string} nutrition.fat
- * @property {string} [nutrition.saturatedFat]
- * @property {string} [nutrition.transFat]
- * @property {string} [nutrition.cholesterol]
- * @property {string} [nutrition.sodium]
- * @property {string} [nutrition.potassium]
- * @property {string} [nutrition.fiber]
- * @property {string} [nutrition.sugar]
- * @property {string} [nutrition.vitaminA]
- * @property {string} [nutrition.vitaminC]
- * @property {string} [nutrition.vitaminD]
- * @property {string} [nutrition.calcium]
- * @property {string} [nutrition.iron]
- * @property {string[]} tags
- * @property {string} video
- */
+/** @type {import('../types').Recipe[]} */
 
 /** @type {Recipe[]} */
 export const cakeRecipes = [
@@ -298,36 +260,6 @@ export const cakeRecipes = [
   }
 ];
 
-/**
- * @typedef {Object} Recipe
- * @property {string} id
- * @property {string} title
- * @property {string} image
- * @property {string} description
- * @property {Object} meta
- * @property {string} meta.prepTime
- * @property {string} meta.cookTime
- * @property {string} meta.totalTime
- * @property {string} meta.difficulty
- * @property {number} meta.rating
- * @property {number} meta.reviews
- * @property {string[]} ingredients
- * @property {Array<{
- *   section: string,
- *   steps: string[]
- * }>} instructions
- * @property {Object} nutrition
- * @property {string} nutrition.calories
- * @property {string} nutrition.carbs
- * @property {string} nutrition.protein
- * @property {string} nutrition.fat
- * @property {string} nutrition.saturatedFat
- * @property {string} nutrition.cholesterol
- * @property {string} nutrition.sodium
- * @property {string} nutrition.sugar
- * @property {string[]} tags
- * @property {string} video
- */
 
 /** @type {Recipe[]} */
 export const pastryRecipes = [
@@ -581,36 +513,6 @@ export const pastryRecipes = [
   }
 ];
 
-/**
- * @typedef {Object} Recipe
- * @property {string} id
- * @property {string} title
- * @property {string} image
- * @property {string} description
- * @property {Object} meta
- * @property {string} meta.prepTime
- * @property {string} meta.cookTime
- * @property {string} meta.totalTime
- * @property {string} meta.difficulty
- * @property {number} meta.rating
- * @property {number} meta.reviews
- * @property {string[]} ingredients
- * @property {Array<{
- *   section: string,
- *   steps: string[]
- * }>} instructions
- * @property {Object} nutrition
- * @property {string} nutrition.calories
- * @property {string} nutrition.carbs
- * @property {string} nutrition.protein
- * @property {string} nutrition.fat
- * @property {string} nutrition.saturatedFat
- * @property {string} nutrition.cholesterol
- * @property {string} nutrition.sodium
- * @property {string} nutrition.sugar
- * @property {string[]} tags
- * @property {string} video
- */
 
 /** @type {Recipe[]} */
 export const puddingRecipes = [
@@ -865,37 +767,6 @@ export const puddingRecipes = [
     video: "https://www.youtube.com/embed/vt6chv4bEv0?si=1bJtjZD_0GuK4zso"
   }
 ];
-
-/**
- * @typedef {Object} Recipe
- * @property {string} id
- * @property {string} title
- * @property {string} image
- * @property {string} description
- * @property {Object} meta
- * @property {string} meta.prepTime
- * @property {string} meta.waitTime
- * @property {string} meta.totalTime
- * @property {string} meta.difficulty
- * @property {number} meta.rating
- * @property {number} meta.reviews
- * @property {string[]} ingredients
- * @property {Array<{
- *   section: string,
- *   steps: string[]
- * }>} instructions
- * @property {Object} nutrition
- * @property {string} nutrition.calories
- * @property {string} nutrition.carbs
- * @property {string} nutrition.protein
- * @property {string} nutrition.fat
- * @property {string} nutrition.saturatedFat
- * @property {string} nutrition.cholesterol
- * @property {string} nutrition.sodium
- * @property {string} nutrition.sugar
- * @property {string[]} tags
- * @property {string} video
- */
 
 /** @type {Recipe[]} */
 export const tiramisuRecipes = [

@@ -1,51 +1,4 @@
-/**
- * @typedef {Object} RecipeMeta
- * @property {string} prepTime
- * @property {string} cookTime
- * @property {string} totalTime
- * @property {string} difficulty
- * @property {number} rating
- * @property {number} reviews
- */
-
-/**
- * @typedef {Object} InstructionSection
- * @property {string} section
- * @property {string[]} steps
- */
-
-/**
- * @typedef {Object} Nutrition
- * @property {string} calories
- * @property {string} carbs
- * @property {string} protein
- * @property {string} fat
- * @property {string} saturatedFat
- * @property {string} transFat
- * @property {string} cholesterol
- * @property {string} sodium
- * @property {string} potassium
- * @property {string} fiber
- * @property {string} sugar
- * @property {string} vitaminA
- * @property {string} vitaminC
- * @property {string} calcium
- * @property {string} iron
- */
-
-/**
- * @typedef {Object} Recipe
- * @property {string} id
- * @property {string} title
- * @property {string} image
- * @property {string} description
- * @property {RecipeMeta} meta
- * @property {string[]} ingredients
- * @property {InstructionSection[]} instructions
- * @property {Nutrition} nutrition
- * @property {string[]} tags
- * @property {string} video
- */
+/** @type {import('../types').Recipe[]} */
 
 /**
  * Chicken recipes collection
@@ -490,54 +443,6 @@ export const chickenRecipes = [
 ];
 
 /**
- * @typedef {Object} RecipeMeta
- * @property {string} prepTime
- * @property {string} cookTime
- * @property {string} totalTime
- * @property {string} difficulty
- * @property {number} rating
- * @property {number} reviews
- */
-
-/**
- * @typedef {Object} InstructionSection
- * @property {string} section
- * @property {string[]} steps
- */
-
-/**
- * @typedef {Object} Nutrition
- * @property {string} calories
- * @property {string} carbs
- * @property {string} protein
- * @property {string} fat
- * @property {string} saturatedFat
- * @property {string} transFat
- * @property {string} cholesterol
- * @property {string} sodium
- * @property {string} fiber
- * @property {string} sugar
- * @property {string} [calcium]
- * @property {string} [iron]
- * @property {string} [vitaminD]
- * @property {string} [phosphorus]
- */
-
-/**
- * @typedef {Object} Recipe
- * @property {string} id
- * @property {string} title
- * @property {string} image
- * @property {string} description
- * @property {RecipeMeta} meta
- * @property {string[]} ingredients
- * @property {InstructionSection[]} instructions
- * @property {Nutrition} nutrition
- * @property {string[]} tags
- * @property {string} video
- */
-
-/**
  * Beef recipes collection
  * @type {Recipe[]}
  */
@@ -958,50 +863,6 @@ export const beefRecipes = [
     video: "https://www.youtube.com/embed/Zre_f47P_OM?si=Ssc2eoOmCMQnSwo8"
   },
 ];
-
-/**
- * @typedef {Object} RecipeMeta
- * @property {string} prepTime
- * @property {string} cookTime
- * @property {string} totalTime
- * @property {string} difficulty
- * @property {number} rating
- * @property {number} reviews
- */
-
-/**
- * @typedef {Object} InstructionSection
- * @property {string} section
- * @property {string[]} steps
- */
-
-/**
- * @typedef {Object} Nutrition
- * @property {string} calories
- * @property {string} carbs
- * @property {string} protein
- * @property {string} fat
- * @property {string} saturatedFat
- * @property {string} [transFat]
- * @property {string} [cholesterol]
- * @property {string} sodium
- * @property {string} fiber
- * @property {string} [sugar]
- */
-
-/**
- * @typedef {Object} Recipe
- * @property {string} id
- * @property {string} title
- * @property {string} image
- * @property {string} description
- * @property {RecipeMeta} meta
- * @property {string[]} ingredients
- * @property {InstructionSection[]} instructions
- * @property {Nutrition} nutrition
- * @property {string[]} tags
- * @property {string} video
- */
 
 /**
  * Pork recipes collection
@@ -1434,55 +1295,6 @@ export const porkRecipes = [
     video: "https://www.youtube.com/embed/FYcNvOcip1U?si=nix9vG5fgL8wo6SP"
   }
 ];
-
-/**
- * @typedef {Object} RecipeMeta
- * @property {string} prepTime
- * @property {string} cookTime
- * @property {string} totalTime
- * @property {string} difficulty
- * @property {number} rating
- * @property {number} reviews
- */
-
-/**
- * @typedef {Object} InstructionSection
- * @property {string} section
- * @property {string[]} steps
- */
-
-/**
- * @typedef {Object} Nutrition
- * @property {string} calories
- * @property {string} carbs
- * @property {string} protein
- * @property {string} fat
- * @property {string} saturatedFat
- * @property {string} [transFat]
- * @property {string} [cholesterol]
- * @property {string} [sodium]
- * @property {string} [potassium]
- * @property {string} [fiber]
- * @property {string} [sugar]
- * @property {string} [vitaminA]
- * @property {string} [vitaminC]
- * @property {string} [calcium]
- * @property {string} [iron]
- */
-
-/**
- * @typedef {Object} Recipe
- * @property {string} id
- * @property {string} title
- * @property {string} image
- * @property {string} description
- * @property {RecipeMeta} meta
- * @property {string[]} ingredients
- * @property {InstructionSection[]} instructions
- * @property {Nutrition} nutrition
- * @property {string[]} tags
- * @property {string} video
- */
 
 /**
  * Lamb recipes collection
@@ -1946,54 +1758,6 @@ export const lambRecipes = [
     video: "https://www.youtube.com/embed/8CWIKOqi_aQ?si=fLGvXsq1u6febRYe"
   }
 ];
-
-/**
- * @typedef {Object} RecipeMeta
- * @property {string} prepTime
- * @property {string} cookTime
- * @property {string} totalTime
- * @property {string} difficulty
- * @property {number} rating
- * @property {number} reviews
- */
-
-/**
- * @typedef {Object} InstructionSection
- * @property {string} section
- * @property {string[]} steps
- */
-
-/**
- * @typedef {Object} Nutrition
- * @property {string} calories
- * @property {string} carbs
- * @property {string} protein
- * @property {string} fat
- * @property {string} saturatedFat
- * @property {string} [transFat]
- * @property {string} [cholesterol]
- * @property {string} [sodium]
- * @property {string} [potassium]
- * @property {string} [fiber]
- * @property {string} [sugar]
- * @property {string} [vitaminD]
- * @property {string} [calcium]
- * @property {string} [iron]
- */
-
-/**
- * @typedef {Object} Recipe
- * @property {string} id
- * @property {string} title
- * @property {string} image
- * @property {string} description
- * @property {RecipeMeta} meta
- * @property {string[]} ingredients
- * @property {InstructionSection[]} instructions
- * @property {Nutrition} nutrition
- * @property {string[]} tags
- * @property {string} video
- */
 
 /**
  * Seafood recipes collection

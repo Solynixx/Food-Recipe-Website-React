@@ -1,3 +1,23 @@
+/**
+ * @typedef {Object} Filter
+ * @property {string} value
+ * @property {string} label
+ */
+
+/**
+ * @typedef {Object} Product
+ * @property {string} id
+ * @property {string} title
+ * @property {string} price
+ * @property {number|string} stock
+ * @property {string} category
+ * @property {string} meta
+ * @property {string} img
+ * @property {string} alt
+ * @property {string} details
+ */
+
+/** @type {Filter[]} */
 export const filters = [
   { value: 'all', label: 'All Categories' },
   { value: 'apparel', label: 'Apparel' },
@@ -14,6 +34,7 @@ export const filters = [
   { value: 'limited', label: 'Limited / Collabs' },
 ];
 
+/** @type {Product[]} */
 export const products = [
   // --- Apparel ---
   {

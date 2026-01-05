@@ -1,7 +1,9 @@
-/**
- * Top picks for the Appetizer section.
- * @type {Array<{img: string, title: string}>}
- */
+/** @type {import('../types').Recipe[]} */
+
+/** @type {string} */
+export const description = "Explore our website's full appetizer recipe collection. Log in or create your account to easily save, revisit and review all your favourite appetizer dishes!";
+
+/** @type {import('../types').TopPick[]} */
 export const topPicks = [
   {img: "/assets/appetizers/Finger-Food/Ham n Cheese Biscuit Stacks.jpg", title: "Ham n Cheese Biscuit Stacks"},
   {img: "/assets/appetizers/Dip-Based/Tex Mex Skillet Poblano Dip.jpg", title: "Tex Mex Skillet Poblano Dip"},
@@ -11,16 +13,7 @@ export const topPicks = [
   {img: "/assets/appetizers/Finger-Food/Tanghulu.jpg", title: "Tanghulu"},
 ];
 
-/**
- * Description text for the Appetizer section.
- * @type {string}
- */
-export const description = "Explore our website's full appetizer recipe collection. Log in or create your account to easily save, revisit and review all your favourite appetizer dishes!";
-
-/**
- * Complete list of appetizer recipe objects used across the app.
- * @type {Array<Object>}
- */
+/** @type {import('../types').RecipeCard[]} */
 export const allAppetizerRecipes = [
   { 
     id: 31,
@@ -190,10 +183,8 @@ export const allAppetizerRecipes = [
 ];
 
 /**
- * Helper to filter appetizers by a given subcategory.
- * Accepts recipes where subcategory may be a string or an array.
- * @param {string} subcategory - Subcategory key to filter by.
- * @returns {Array<Object>} Filtered appetizer recipes.
+ * @param {string} subcategory
+ * @returns {import('../types').RecipeCard[]}
  */
 const getAppetizerBySubcategory = (subcategory) => {
   return allAppetizerRecipes.filter(recipe =>
@@ -202,18 +193,7 @@ const getAppetizerBySubcategory = (subcategory) => {
   );
 }
 
-/**
- * Bread subcategory derived from allAppetizerRecipes.
- * @type {Array<Object>}
- */
+/** @type {import('../types').RecipeCard[]} */
 export const bread = getAppetizerBySubcategory('bread');
-/**
- * Dip-based subcategory derived from allAppetizerRecipes.
- * @type {Array<Object>}
- */
 export const dipBased = getAppetizerBySubcategory('dipBased');
-/**
- * Finger food subcategory derived from allAppetizerRecipes.
- * @type {Array<Object>}
- */
 export const fingerFood = getAppetizerBySubcategory('fingerFood');

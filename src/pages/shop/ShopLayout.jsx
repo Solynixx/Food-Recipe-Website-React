@@ -1,7 +1,26 @@
 import React from 'react';
 import './Shop.css';
 
+/**
+ * ShopLayout
+ *
+ * Reusable layout component for shop listing pages. Renders header with title and search,
+ * category filter buttons, and children content area where product grid is shown.
+ *
+ * Props:
+ * - title: string - page title to show
+ * - filters: array - filter objects { value, label }
+ * - currentFilter: string - active filter value
+ * - onFilterChange: function - callback when filter button is clicked
+ * - searchPlaceholder: string - placeholder for search input
+ * - searchValue: string - current search string
+ * - onSearchChange: function - callback when search input changes
+ * - children: React nodes - main content to render inside layout
+ */
 class ShopLayout extends React.Component {
+  /**
+   * Render filter buttons from props.filters
+   */
   renderFilters() {
     const { filters = [], currentFilter, onFilterChange } = this.props;
     return (
@@ -21,6 +40,9 @@ class ShopLayout extends React.Component {
     );
   }
 
+  /**
+   * Render the search form
+   */
   renderSearch() {
     const { searchPlaceholder, searchValue, onSearchChange } = this.props;
     return (

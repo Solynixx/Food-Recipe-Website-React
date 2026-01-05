@@ -1,3 +1,10 @@
+/**
+ * @typedef {Object} Filter
+ * @property {string} value
+ * @property {string} label
+ */
+
+/** @type {Filter[]} */
 export const filters = [
   { value: 'all', label: 'All' },
   { value: 'recipes', label: 'Recipes & Meal Plans' },
@@ -5,6 +12,20 @@ export const filters = [
   { value: 'printables', label: 'Printables & Stationery' },
 ];
 
+/**
+ * @typedef {Object} Product
+ * @property {string} id
+ * @property {string} title
+ * @property {string} price
+ * @property {string} stock
+ * @property {'recipes' | 'ebooks' | 'printables'} category
+ * @property {string} meta
+ * @property {string} img
+ * @property {string} alt
+ * @property {string} details
+ */
+
+/** @type {Product[]} */
 export const products = [
   {
     id: 'meal-plan-weeknight-7d',

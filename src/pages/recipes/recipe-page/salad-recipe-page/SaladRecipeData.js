@@ -1,51 +1,4 @@
-/**
- * @typedef {Object} RecipeMeta
- * @property {string} prepTime
- * @property {string} cookTime
- * @property {string} totalTime
- * @property {string} difficulty
- * @property {number} rating
- * @property {number} reviews
- */
-
-/**
- * @typedef {Object} InstructionSection
- * @property {string} section
- * @property {string[]} steps
- */
-
-/**
- * @typedef {Object} Nutrition
- * @property {string} calories
- * @property {string} carbs
- * @property {string} protein
- * @property {string} fat
- * @property {string} saturatedFat
- * @property {string} transFat
- * @property {string} cholesterol
- * @property {string} sodium
- * @property {string} potassium
- * @property {string} fiber
- * @property {string} sugar
- * @property {string} vitaminA
- * @property {string} vitaminC
- * @property {string} calcium
- * @property {string} iron
- */
-
-/**
- * @typedef {Object} Recipe
- * @property {string} id
- * @property {string} title
- * @property {string} image
- * @property {string} description
- * @property {RecipeMeta} meta
- * @property {string[]} ingredients
- * @property {InstructionSection[]} instructions
- * @property {Nutrition} nutrition
- * @property {string[]} tags
- * @property {string} video
- */
+/** @type {import('../types').Recipe[]} */
 
 /**
  * Lettuce-based recipes collection
@@ -311,51 +264,6 @@ export const lettuceBasedRecipes = [
     video: "https://www.youtube.com/embed/SVth9Zm74W4?si=-xLNvAvRtVC_W6Fu"
   }
 ];
-
-/**
- * @typedef {Object} RecipeMeta
- * @property {string} prepTime
- * @property {string} cookTime
- * @property {string} totalTime
- * @property {string} difficulty
- * @property {number} rating
- * @property {number} reviews
- */
-
-/**
- * @typedef {Object} InstructionSection
- * @property {string} section
- * @property {string[]} steps
- */
-
-/**
- * @typedef {Object} Nutrition
- * @property {string} calories
- * @property {string} carbs
- * @property {string} protein
- * @property {string} fat
- * @property {string} saturatedFat
- * @property {string} cholesterol
- * @property {string} sodium
- * @property {string} fiber
- * @property {string} sugar
- * @property {string} [vitaminC]
- * @property {string} [calcium]
- */
-
-/**
- * @typedef {Object} Recipe
- * @property {string} id
- * @property {string} title
- * @property {string} image
- * @property {string} description
- * @property {RecipeMeta} meta
- * @property {string[]} ingredients
- * @property {InstructionSection[]} instructions
- * @property {Nutrition} nutrition
- * @property {string[]} tags
- * @property {string} video
- */
 
 /**
  * Mixed vegetable recipes collection
@@ -632,51 +540,6 @@ export const mixedVegetableRecipes = [
     video: "https://www.youtube.com/embed/eP0-6MYo4cI?si=QqVre1V70RTYIM41"
   }
 ];
-
-/**
- * @typedef {Object} RecipeMeta
- * @property {string} prepTime
- * @property {string} cookTime
- * @property {string} totalTime
- * @property {string} difficulty
- * @property {number} rating
- * @property {number} reviews
- */
-
-/**
- * @typedef {Object} InstructionSection
- * @property {string} section
- * @property {string[]} steps
- */
-
-/**
- * @typedef {Object} Nutrition
- * @property {string} calories
- * @property {string} carbs
- * @property {string} protein
- * @property {string} fat
- * @property {string} saturatedFat
- * @property {string} cholesterol
- * @property {string} sodium
- * @property {string} fiber
- * @property {string} sugar
- * @property {string} [vitaminC]
- * @property {string} [calcium]
- */
-
-/**
- * @typedef {Object} Recipe
- * @property {string} id
- * @property {string} title
- * @property {string} image
- * @property {string} description
- * @property {RecipeMeta} meta
- * @property {string[]} ingredients
- * @property {InstructionSection[]} instructions
- * @property {Nutrition} nutrition
- * @property {string[]} tags
- * @property {string} video
- */
 
 /**
  * Specialty salad recipes collection
