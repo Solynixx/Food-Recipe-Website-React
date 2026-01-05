@@ -1,3 +1,10 @@
+/**
+ * @typedef {Object} IngredientFilter
+ * @property {string} value
+ * @property {string} label
+ */
+
+/** @type {IngredientFilter[]} */
 export const filters = [
   { value: 'all', label: 'All' },
   { value: 'spices', label: 'Spices & Herbs' },
@@ -5,6 +12,24 @@ export const filters = [
   { value: 'oils', label: 'Oils & Vinegars' },
 ];
 
+/**
+ * @typedef {'spices' | 'pantry' | 'oils'} IngredientCategory
+ */
+
+/**
+ * @typedef {Object} IngredientProduct
+ * @property {string} id
+ * @property {string} title
+ * @property {string} price
+ * @property {number} stock
+ * @property {IngredientCategory} category
+ * @property {string} meta
+ * @property {string} img
+ * @property {string} alt
+ * @property {string} details
+ */
+
+/** @type {IngredientProduct[]} */
 export const products = [
   {
     id: 'dried-oregano',

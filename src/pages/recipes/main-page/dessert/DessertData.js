@@ -1,13 +1,9 @@
-/**
- * Short description for the Dessert section.
- * @type {string}
- */
+/** @type {import('../types').Recipe[]} */
+
+/** @type {string} */
 export const description = "Dessert, a delectable treat enjoyed after a meal, is the sweet finale that brings joy to our taste buds.";
 
-/**
- * Top picks for the Dessert section.
- * @type {Array<{img: string, title: string}>}
- */
+/** @type {import('../types').TopPick[]} */
 export const topPicks = [
   {img: "/assets/desserts/Cake/Blueberry Heaven on Earth Cake.jpg", title: "Blueberry Heaven on Earth Cake"},
   {img: "/assets/desserts/Cake/Italian Lemon Ricotta Cake.jpeg", title: "Italian Lemon Ricotta Cake"},
@@ -17,10 +13,7 @@ export const topPicks = [
   {img: "/assets/desserts/Cake/Boston Cream Poke Cake.jpg", title: "Boston Cream Poke Cake"},
 ];
 
-/**
- * Complete list of dessert recipe objects.
- * @type {Array<Object>}
- */
+/** @type {import('../types').RecipeCard[]} */
 export const allDessertRecipes = [
   { 
     id: 46,
@@ -201,18 +194,15 @@ export const allDessertRecipes = [
 ];
 
 /**
- * Helper to filter dessert recipes by subcategory.
- * @param {string} subcategory - Subcategory key.
- * @returns {Array<Object>} Filtered dessert recipes.
+ * Helper to filter main course recipes by subcategory.
+ * @param {string} subcategory
+ * @returns {import('../types').RecipeCard[]}
  */
 const getDessertBySubcategory = (subcategory) => {
   return allDessertRecipes.filter(recipe => recipe.subcategory === subcategory);
 }
 
-/**
- * Exported arrays of dessert subcategories derived from allDessertRecipes.
- * @type {Array<Object>}
- */
+/** @type {import('../types').RecipeCard[]} */
 export const cake = getDessertBySubcategory('cake');
 export const pastry = getDessertBySubcategory('pastry');
 export const pudding = getDessertBySubcategory('pudding');

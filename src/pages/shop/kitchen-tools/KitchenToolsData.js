@@ -1,3 +1,23 @@
+/**
+ * @typedef {Object} Filter
+ * @property {string} value
+ * @property {string} label
+ */
+
+/**
+ * @typedef {Object} Product
+ * @property {string} id
+ * @property {string} title
+ * @property {string} price
+ * @property {number} stock
+ * @property {string} category
+ * @property {string} meta
+ * @property {string} img
+ * @property {string} alt
+ * @property {string} details
+ */
+
+/** @type {Filter[]} */
 export const filters = [
   { value: 'all', label: 'All Categories' },
   { value: 'blenders', label: 'Blenders & Mixers' },
@@ -10,6 +30,7 @@ export const filters = [
   { value: 'cleaning', label: 'Cleaning Supplies' },
 ];
 
+/** @type {Product[]} */
 export const products = [
   {
     id: 'hand-blender',

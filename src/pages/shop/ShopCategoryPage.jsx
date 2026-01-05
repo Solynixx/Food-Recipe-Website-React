@@ -6,6 +6,19 @@ import ShopProductCard from '../../components/shop/ShopProductCard';
 import ShopDetailsModal from '../../components/shop/ShopDetailsModal';
 import ShopAddModal from '../../components/shop/ShopAddModal';
 
+/**
+ * ShopCategoryPage
+ *
+ * Page component that displays a list of products for a shop category.
+ * Manages filtering, searching, local product state, selection for details modal,
+ * and adding items to cart via the add modal.
+ *
+ * Props:
+ * - title: string - page title to display in the layout
+ * - searchPlaceholder: string - placeholder text for the search input
+ * - products: array - initial list of product objects
+ * - filters: array - list of filter objects { value, label }
+ */
 class ShopCategoryPage extends React.Component {
   constructor(props) {
     super(props);
@@ -19,12 +32,32 @@ class ShopCategoryPage extends React.Component {
     };
   }
 
+  /**
+   * Update active filter
+   * @param {string} filter - filter value to apply
+   */
   handleFilterChange = (filter) => this.setState({ filter });
+
+  /**
+   * Update search term
+   * @param {string} search - new search string
+   */
   handleSearchChange = (search) => this.setState({ search });
 
+  /**
+   * Open add-to-cart modal for given product
+   * @param {object} product - product to add
+   */
   handleAddClick = (product) => this.setState({ addItem: product, quantity: 1 });
+
+  /**
+   * Close the add modal and reset quantity
+   */
   closeAddModal = () => this.setState({ addItem: null, quantity: 1 });
 
+  /**
+   * Increase quantity for add modal (bounded by product stock if present)
+   */
   incQty = () => {
     this.setState((state) => {
       const { addItem, quantity } = state;
@@ -34,8 +67,16 @@ class ShopCategoryPage extends React.Component {
     });
   };
 
+  /**
+   * Decrease quantity for add modal (minimum 1)
+   */
   decQty = () => this.setState((s) => ({ quantity: Math.max(1, s.quantity - 1) }));
   
+  /**
+   * Handle manual quantity input change in add modal.
+   * Ensures quantity stays within 1..maxStock
+   * @param {Event} e - input change event
+   */
   handleQtyChange = (e) => {
     const { addItem } = this.state;
     if (!addItem) return;
@@ -45,6 +86,10 @@ class ShopCategoryPage extends React.Component {
     this.setState({ quantity: validQuantity });
   };
 
+  /**
+   * Save the addItem with selected quantity to localStorage 'cart' and update local product stock
+   * Also dispatches a 'cart-updated' event for other components to react.
+   */
   saveToCart = () => {
     const { addItem, quantity } = this.state;
     if (!addItem) return;
@@ -81,6 +126,10 @@ class ShopCategoryPage extends React.Component {
     }));
   };
 
+  /**
+   * Filter localProducts by current filter and search string
+   * @returns {Array} filtered product list
+   */
   filteredProducts() {
     const { localProducts, filter, search } = this.state; 
     const term = search.trim().toLowerCase();

@@ -1,13 +1,9 @@
-/**
- * Description text for the Special Diets section.
- * @type {string}
- */
+/** @type {import('../types').Recipe[]} */
+
+/** @type {string} */
 export const description = "Explore our website's full special diets recipe collection. Log in or create your account to easily save, revisit and review all your favourite special diet dishes!";
 
-/**
- * Top picks for Special Diets.
- * @type {Array<{img: string, title: string}>}
- */
+/** @type {import('../types').TopPick[]} */
 export const topPicks = [
   {img: "/assets/special_diets/vegetarian/Pea and Mint Soup.jpg", title: "Pea and Mint Soup"},
   {img: "/assets/special_diets/vegetarian/Ratatouille.jpg", title: "Ratatouille"},
@@ -17,10 +13,7 @@ export const topPicks = [
   {img: "/assets/special_diets/gluten_free/Steamed Fish.jpg", title: "Steamed Fish"},
 ];
 
-/**
- * Full list of special diets recipes.
- * @type {Array<Object>}
- */
+/** @type {import('../types').RecipeCard[]} */
 export const allSpecialDietsRecipes = [
   { 
     id: 74,
@@ -377,18 +370,14 @@ export const allSpecialDietsRecipes = [
 ];
 
 /**
- * Helper to filter special diets recipes by subcategory.
- * @param {string} subcategory - Subcategory key.
- * @returns {Array<Object>} Filtered special diets recipes.
+ * @param {string} subcategory
+ * @returns {import('../types').RecipeCard[]}
  */
 const getSpecialDietsBySubcategory = (subcategory) => {
   return allSpecialDietsRecipes.filter(recipe => recipe.subcategory === subcategory);
 }
 
-/**
- * Exported arrays of special diets subcategories derived from allSpecialDietsRecipes.
- * @type {Array<Object>}
- */
+/** @type {import('../types').RecipeCard[]} */
 export const dairyFree = getSpecialDietsBySubcategory('dairyFree');
 export const glutenFree = getSpecialDietsBySubcategory('glutenFree');
 export const vegan = getSpecialDietsBySubcategory('vegan');
