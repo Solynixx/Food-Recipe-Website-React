@@ -1,17 +1,12 @@
 import React from 'react';
 import TodayPicks from '../TodayPicks/TodayPicks';
+import Search from '../Search/Search'; 
 import './HeroSection.css';
 
 /**
- * HeroSection component displaying main headline, description, CTAs and site search.
- * Contains helper data for hero content and call-to-action buttons.
- * @extends React.Component
+ * HeroSection component displaying main headline, description, CTAs and FUNCTIONAL site search.
  */
 class HeroSection extends React.Component {
-  /**
-   * Initialize hero content and CTA button definitions.
-   * @param {object} props - React props.
-   */
   constructor(props) {
     super(props);
 
@@ -27,10 +22,6 @@ class HeroSection extends React.Component {
     ];
   }
 
-  /**
-   * Render CTA buttons based on their type definitions.
-   * @returns {Array<JSX.Element>} Array of CTA elements (button or link).
-   */
   renderCtas() {
     return this.ctaButtons.map((btn, index) => {
       if (btn.type === 'button') {
@@ -40,7 +31,6 @@ class HeroSection extends React.Component {
           </button>
         );
       }
-
       return (
         <a key={index} href={btn.href} className={btn.className}>
           {btn.label}
@@ -49,10 +39,6 @@ class HeroSection extends React.Component {
     });
   }
 
-  /**
-   * Render the hero section including TodayPicks and search form.
-   * @returns {JSX.Element} Hero section markup.
-   */
   render() {
     const { heroContent } = this;
 
@@ -68,14 +54,10 @@ class HeroSection extends React.Component {
           <TodayPicks />
         </div>
 
-        <form className="site-search" action="#">
-          <div className="search">
-            <button type="submit" title="Search">
-              <img className="img-fluid" src="/assets/icons/search.png" alt="search" width="24" height="24" />
-            </button>
-            <input type="text" id="site-search" className="form-control" placeholder="Start searching..." aria-label="Site search" />
-          </div>
-        </form>
+        {/* Functional Search Component with Hero Mode */}
+        <div className="hero-search-wrapper-outer">
+            <Search isHero={true} />
+        </div>
       </div>
     );
   }
