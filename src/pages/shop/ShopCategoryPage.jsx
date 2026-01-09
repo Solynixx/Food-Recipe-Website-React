@@ -22,8 +22,21 @@ import ShopAddModal from '../../components/shop/ShopAddModal';
 class ShopCategoryPage extends React.Component {
   constructor(props) {
     super(props);
+
+    const savedCart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+    const syncedProducts = props.products.map(product => {
+      const cartItem = savedCart.find(item => item.id === product.id);
+      
+      if (cartItem && typeof product.stock === 'number') {
+        const remainingStock = Math.max(0, product.stock - cartItem.quantity);
+        return { ...product, stock: remainingStock };
+      }
+      
+      return { ...product };
+    });
     this.state = {
-      localProducts: props.products.map(p => ({ ...p })),
+      localProducts: syncedProducts,
       filter: 'all',
       search: '',
       selected: null,
