@@ -1,6 +1,6 @@
 <div align="center">
 
-  EN <!-- | [中文](./docs/readmeCN.md) -->
+  EN | [中文](./readmeCN.md) 
 
 </div>
 
@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/Styling-CSS3-1572B6.svg?logo=css3&logoColor=white" alt="CSS">
   <img src="https://img.shields.io/badge/Hosting-Vercel-000000.svg?logo=vercel&logoColor=white" alt="Vercel">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT">
-  <img src="https://img.shields.io/badge/status-Active-brightgreen.svg" alt="Status">
+  <img src ="https://img.shields.io/badge/-Bootstrap-563D7C?style=flat-square&logo=bootstrap" alt="Bootstrap">
 </p>
 
 <div align="center">
@@ -20,8 +20,7 @@
 
 </div>
 
-A modern **React**-based food & recipe website with authentication, recipe browsing, shop pages, and inspirational content.  
-This is an **improved, fully dynamic version** of my original static Food Recipe Website.
+A modern React-based food & recipe platform featuring user authentication, shop integration with daily promos, and dynamic recipe browsing. This project is a fully dynamic evolution of my original static **[Food Recipe Website](https://github.com/Dendroculus/Food-Recipe-Website)**, focused on refactoring, maintainability, and clean architecture.
 
 Live demo: **[Food Recipe Website](https://food-recipe-website-react.vercel.app/)**
 
