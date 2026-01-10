@@ -19,6 +19,7 @@ class Ingredients extends React.Component {
         searchPlaceholder="Search ingredients..."
         products={products}
         filters={filters}
+        promoCount={10}
       />
     );
   }

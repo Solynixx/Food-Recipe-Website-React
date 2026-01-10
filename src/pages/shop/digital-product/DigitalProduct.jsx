@@ -19,6 +19,7 @@ class DigitalProduct extends React.Component {
         searchPlaceholder="Search digital products..."
         products={products}
         filters={filters}
+        promoCount={10}
       />
     );
   }
