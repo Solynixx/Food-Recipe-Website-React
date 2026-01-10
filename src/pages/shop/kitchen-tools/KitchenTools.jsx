@@ -10,6 +10,7 @@ class KitchenTools extends React.Component {
         searchPlaceholder="Search tools..."
         products={products}
         filters={filters}
+        promoCount={10}
       />
     );
   }

@@ -10,6 +10,7 @@ class RecipeThemedMerch extends React.Component {
         searchPlaceholder="Search merch..."
         products={products}
         filters={filters}
+        promoCount={10}
       />
     );
   }

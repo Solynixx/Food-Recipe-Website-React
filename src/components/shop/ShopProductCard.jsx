@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles/ShopProductCard.css';
+import PromoBadge from './PromoBadge';
 
 /**
  * Card component representing a single shop product.
- * Displays product image, title, meta, price, stock status and action buttons.
- * Expects handlers for showing details and adding the product to cart.
- * @extends React.Component
+ * Displays product image, title, meta, price (including promo price), 
+ * stock status and action buttons.
+ * * @extends React.Component
  */
 class ShopProductCard extends React.Component {
   /**
@@ -21,22 +22,41 @@ class ShopProductCard extends React.Component {
      * @type {boolean}
      */
     const isOutOfStock = typeof product.stock === 'number' && product.stock <= 0;
+    
+    /**
+     * Determine display price (promo vs regular).
+     */
+    const displayPrice = product.isPromo ? product.promoPrice : product.price;
 
     return (
       <div className="col-12 col-sm-6 col-md-4 product">
         <article className="card product-card h-100 border-0 shadow-sm">
-          <img 
-            src={product.img} 
-            className="card-img-top" 
-            alt={product.alt || product.title} 
-            loading="lazy" 
-          />
+          
+          <div className="position-relative overflow-hidden">
+            {product.isPromo && <PromoBadge percent={product.discountPercent} />}
+            <img 
+              src={product.img} 
+              className="card-img-top" 
+              alt={product.alt || product.title} 
+              loading="lazy" 
+            />
+          </div>
+
           <div className="card-body">
             <h5 className="card-title mb-1">{product.title}</h5>
             <div className="meta">{product.meta}</div>
+            
             <div className="d-flex justify-content-between align-items-start mt-2" id="card-desc">
               <div>
-                <strong className="text-success text-nowrap">{product.price}</strong>
+                <div>
+                    {product.isPromo && (
+                        <span className="original-price">{product.originalPrice}</span>
+                    )}
+                    <strong className={`${product.isPromo ? 'text-danger' : 'text-success'} text-nowrap`}>
+                        {displayPrice}
+                    </strong>
+                </div>
+
                 <div className="small text-muted">
                   {isOutOfStock ? (
                     <span className="text-danger fw-bold">Out of Stock</span>
@@ -72,7 +92,7 @@ class ShopProductCard extends React.Component {
 
 /**
  * Prop types for ShopProductCard component.
- * - product: object containing product data (img, title, price, stock, meta, alt)
+ * - product: object containing product data (img, title, price, stock, meta, alt, isPromo, promoPrice)
  * - onDetailsClick: function called with product when Details is clicked
  * - onAddClick: function called with product when Add is clicked
  * @type {Object}
